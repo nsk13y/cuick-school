@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cuick School — Modular classrooms for crisis-affected children in South Sudan</title>
+<meta name="description" content="Cuick School: rapid-deployment, climate-adapted modular classroom units for crisis-affected children in South Sudan. A pre-pilot concept seeking experienced humanitarian partners." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital@1&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#ECEEEA;          /* page paper — cool stone */
+    --surface:#F7F8F4;     /* raised surfaces / cards */
+    --ink:#16201C;         /* primary text */
+    --muted:#5A6660;       /* secondary text */
+    --line:#D4D8D0;        /* hairlines */
+    --pine:#123A30;        /* primary brand — deep pine (shade / trust) */
+    --pine-700:#0E2E26;    /* inverted backgrounds */
+    --pine-300:#356254;    /* lighter pine — airflow / accents */
+    --ochre:#BC7A1E;       /* heat signal — used only for climate / heat */
+    --ochre-soft:#EEDFBF;  /* soft heat tint */
+
+    --f-display:'Space Grotesk',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --f-body:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --f-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --f-serif:'IBM Plex Serif',Georgia,serif;
+
+    --wrap:1080px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--f-body);font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+
+  .wrap{width:min(var(--wrap),92vw);margin-inline:auto;}
+  .sec{padding:clamp(58px,9vw,108px) 0;}
+
+  /* shared atoms ------------------------------------------------ */
+  .eyebrow{
+    font-family:var(--f-mono);font-size:.72rem;font-weight:500;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+    display:flex;align-items:center;gap:.7em;margin:0 0 1.4rem;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--pine-300);display:inline-block;}
+  .eyebrow.heat{color:var(--ochre);}
+  .eyebrow.heat::before{background:var(--ochre);}
+
+  h2.title{
+    font-family:var(--f-display);font-weight:600;
+    font-size:clamp(1.6rem,3.4vw,2.25rem);line-height:1.1;
+    letter-spacing:-.02em;margin:0 0 1.1rem;max-width:18ch;
+  }
+  .lede{font-size:1.08rem;color:var(--muted);max-width:60ch;margin:0;}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:.6em;
+    font-family:var(--f-mono);font-size:.82rem;font-weight:500;letter-spacing:.04em;
+    text-decoration:none;border-radius:2px;padding:.85em 1.3em;cursor:pointer;
+    transition:transform .15s ease,background .2s ease,color .2s ease,border-color .2s ease;
+  }
+  .btn:focus-visible{outline:2px solid var(--ochre);outline-offset:3px;}
+  .btn-primary{background:var(--pine);color:#F4F6F1;border:1px solid var(--pine);}
+  .btn-primary:hover{background:var(--pine-700);transform:translateY(-1px);}
+  .btn-ghost{background:transparent;color:var(--pine);border:1px solid var(--line);}
+  .btn-ghost:hover{border-color:var(--pine);transform:translateY(-1px);}
+  .btn .arr{transition:transform .15s ease;}
+  .btn:hover .arr{transform:translateX(3px);}
+
+  /* header ------------------------------------------------------ */
+  header.site{
+    position:sticky;top:0;z-index:50;background:rgba(236,238,234,.86);
+    backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .25s ease;
+  }
+  header.site.scrolled{border-bottom-color:var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--ink);}
+  .brand .mark{flex:0 0 auto;}
+  .brand .wm{display:flex;flex-direction:column;line-height:1;}
+  .brand .wm b{font-family:var(--f-display);font-weight:600;font-size:1.06rem;letter-spacing:-.01em;}
+  .brand .wm span{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-top:.32rem;}
+  .nav-links{display:flex;align-items:center;gap:2rem;}
+  .nav-links a{
+    font-family:var(--f-mono);font-size:.78rem;letter-spacing:.04em;text-decoration:none;color:var(--muted);
+    position:relative;padding:.2rem 0;transition:color .18s ease;
+  }
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--pine);transition:width .2s ease;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{display:flex;align-items:center;gap:1.2rem;}
+
+  /* hero -------------------------------------------------------- */
+  .hero{padding-top:clamp(46px,7vw,84px);padding-bottom:clamp(40px,6vw,72px);}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center;}
+  .hero h1{
+    font-family:var(--f-display);font-weight:600;
+    font-size:clamp(2rem,4.7vw,3.35rem);line-height:1.05;letter-spacing:-.025em;
+    margin:0 0 1.5rem;max-width:16ch;
+  }
+  .hero h1 em{font-style:normal;color:var(--pine);}
+  .hero p.intro{font-size:1.1rem;color:var(--muted);max-width:54ch;margin:0 0 2rem;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;}
+  .hero-fig{
+    background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:18px 18px 10px;position:relative;
+  }
+  .hero-fig figcaption{
+    font-family:var(--f-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);display:flex;justify-content:space-between;border-top:1px solid var(--line);
+    margin-top:8px;padding-top:10px;
+  }
+
+  /* problem ----------------------------------------------------- */
+  .problem{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:.5rem 0 2.4rem;border-top:1px solid var(--line);}
+  .stat{padding:1.8rem 1.6rem 1.8rem 0;border-right:1px solid var(--line);}
+  .stat:last-child{border-right:none;}
+  .stat .fig{font-family:var(--f-mono);font-weight:500;font-size:clamp(2.1rem,4.6vw,3rem);line-height:1;letter-spacing:-.01em;color:var(--pine);}
+  .stat.heat .fig{color:var(--ochre);}
+  .stat .lab{margin-top:.85rem;font-size:.96rem;color:var(--muted);max-width:24ch;}
+  .problem .closing{max-width:64ch;font-size:1.06rem;margin:0;}
+
+  /* solution ---------------------------------------------------- */
+  .sol-head{max-width:62ch;margin-bottom:2.6rem;}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+  .card{background:var(--surface);padding:2rem 1.8rem;}
+  .card .num{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;color:var(--pine-300);}
+  .card .ic{margin:.4rem 0 1.1rem;color:var(--pine);}
+  .card h3{font-family:var(--f-display);font-weight:600;font-size:1.18rem;letter-spacing:-.01em;margin:0 0 .6rem;}
+  .card p{margin:0;color:var(--muted);font-size:.98rem;}
+
+  /* standards (inverted) --------------------------------------- */
+  .standards{background:var(--pine-700);color:#DDE6E0;}
+  .standards .eyebrow{color:#8FB0A4;}
+  .standards .eyebrow::before{background:#8FB0A4;}
+  .standards h2.title{color:#F2F6F2;}
+  .standards .lede{color:#AEC2BA;}
+  .std-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,60px);align-items:start;margin-top:2.2rem;}
+  .std-refs{display:flex;flex-direction:column;gap:14px;}
+  .ref{border:1px solid #2A493F;border-radius:4px;padding:1.05rem 1.2rem;background:rgba(255,255,255,.02);}
+  .ref .tag{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:#7FA396;}
+  .ref .name{font-family:var(--f-display);font-weight:500;font-size:1.04rem;margin-top:.35rem;color:#EEF4F0;}
+  .ref .desc{font-size:.9rem;color:#A6BBB2;margin-top:.4rem;}
+  .safeguard{font-size:1.05rem;color:#C8D6CF;}
+  .safeguard b{color:#F2F6F2;font-weight:600;}
+
+  /* stage ------------------------------------------------------- */
+  .steps{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:2.2rem;}
+  .step{background:var(--surface);padding:1.9rem 1.8rem;position:relative;}
+  .step .dot{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:.6em;color:var(--muted);}
+  .step .dot::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--pine);display:inline-block;}
+  .step.pending .dot::before{background:transparent;border:1.5px solid var(--ochre);}
+  .step.pending .dot{color:var(--ochre);}
+  .step h3{font-family:var(--f-display);font-weight:600;font-size:1.12rem;margin:.9rem 0 .5rem;letter-spacing:-.01em;}
+  .step p{margin:0;color:var(--muted);font-size:.97rem;}
+
+  /* pull quote -------------------------------------------------- */
+  .quote{text-align:center;padding:clamp(56px,8vw,92px) 0;}
+  .quote blockquote{
+    font-family:var(--f-serif);font-style:italic;font-weight:400;
+    font-size:clamp(1.5rem,3.6vw,2.3rem);line-height:1.35;color:var(--pine);
+    margin:0 auto;max-width:22ch;
+  }
+  .quote .src{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:1.6rem;}
+
+  /* the ask ----------------------------------------------------- */
+  .ask{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .ask-list{margin:2.4rem 0 0;border-top:1px solid var(--line);}
+  .ask-item{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,4vw,48px);padding:1.9rem 0;border-bottom:1px solid var(--line);align-items:baseline;}
+  .ask-item .n{font-family:var(--f-mono);font-size:1.4rem;font-weight:500;color:var(--pine-300);}
+  .ask-item h3{font-family:var(--f-display);font-weight:600;font-size:1.18rem;letter-spacing:-.01em;margin:0 0 .4rem;}
+  .ask-item p{margin:0;color:var(--muted);}
+
+  /* contact ----------------------------------------------------- */
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,64px);align-items:center;}
+  .contact h2{font-family:var(--f-display);font-weight:600;font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.02em;line-height:1.08;margin:0 0 1.1rem;}
+  .contact .sub{color:var(--muted);font-size:1.08rem;max-width:46ch;margin:0 0 2rem;}
+  .info-card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.8rem;}
+  .info-row{display:flex;justify-content:space-between;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--line);}
+  .info-row:last-child{border-bottom:none;padding-bottom:0;}
+  .info-row:first-child{padding-top:0;}
+  .info-row .k{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+  .info-row .v{font-size:.96rem;text-align:right;font-weight:500;}
+  .info-row .v.ph{color:var(--ochre);font-family:var(--f-mono);font-size:.86rem;}
+  .info-card .btn{margin-top:1.5rem;width:100%;justify-content:center;}
+
+  /* footer ------------------------------------------------------ */
+  footer.site{background:var(--pine-700);color:#9FB6AD;padding:46px 0;}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center;}
+  .foot-grid .brand .wm b{color:#EEF4F0;}
+  .foot-grid .brand .wm span{color:#7FA396;}
+  .foot-note{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.04em;color:#7FA396;max-width:42ch;text-align:right;line-height:1.7;}
+  .foot-note a{color:#C8D6CF;text-decoration:none;border-bottom:1px solid #356254;}
+
+  /* reveal ------------------------------------------------------ */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* responsive -------------------------------------------------- */
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-fig{order:-1;}
+    .std-grid,.contact-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+  }
+  @media (max-width:620px){
+    body{font-size:16px;}
+    .cards,.steps{grid-template-columns:1fr;}
+    .stat-row{grid-template-columns:1fr;}
+    .stat{border-right:none;border-bottom:1px solid var(--line);padding:1.4rem 0;}
+    .stat:last-child{border-bottom:none;}
+    .ask-item{grid-template-columns:1fr;gap:.5rem;}
+    .foot-note{text-align:left;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
+    *{transition:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Cuick School home">
+      <svg class="mark" width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+        <path d="M3 12 L15 5 L27 12" stroke="#123A30" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="8" y="13" width="14" height="12" rx="1" stroke="#123A30" stroke-width="1.8"/>
+        <line x1="13" y1="25" x2="13" y2="18" stroke="#123A30" stroke-width="1.6"/>
+        <circle cx="24.5" cy="6.5" r="2.4" fill="#BC7A1E"/>
+      </svg>
+      <span class="wm"><b>Cuick&nbsp;School</b><span>A Brighter Boxes project</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#problem">Problem</a>
+      <a href="#solution">Solution</a>
+      <a href="#standards">Standards</a>
+      <a href="#stage">Stage</a>
+      <a href="#partner">Partner</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="#contact">Get in touch <span class="arr">→</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero wrap">
+  <div class="hero-grid">
+    <div class="reveal">
+      <p class="eyebrow">Project concept note · v1.0 · for field &amp; technical partners</p>
+      <h1>Rapid-deployment, climate-adapted classrooms for children in <em>South&nbsp;Sudan</em>.</h1>
+      <p class="intro">Across South Sudan, climate disasters and protracted conflict have left hundreds of thousands of children without safe, usable learning spaces. Cuick School proposes a standardized modular classroom unit — transported and assembled quickly in low-resource environments, engineered for extreme heat, and paired with established emergency-education curricula.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#partner">What we're asking of partners <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#solution">See the model</a>
+      </div>
+    </div>
+
+    <!-- SIGNATURE: engineering elevation of the unit -->
+    <figure class="hero-fig reveal">
+      <svg viewBox="0 0 560 430" role="img" aria-label="Technical elevation sketch of a Cuick School modular classroom unit: a ventilated classroom beneath a raised shade canopy, with passive ventilation through the gap, an ambient heat source, and an illustrative footprint dimension." xmlns="http://www.w3.org/2000/svg">
+        <title>Cuick School modular classroom — concept elevation</title>
+        <desc>An illustrative engineering elevation showing the classroom unit, a raised shade canopy on posts, a passive-ventilation airflow path through the gap between them, an ambient heat source, and an approximate footprint dimension. Not to scale.</desc>
+
+        <defs>
+          <marker id="ah" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+            <path d="M0 0 L6 3 L0 6 Z" fill="#356254"/>
+          </marker>
+        </defs>
+
+        <!-- sun / ambient heat (top-left, label to the right) -->
+        <g stroke="#BC7A1E" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="78" cy="78" r="18" fill="#EEDFBF" stroke="#BC7A1E"/>
+          <line x1="78" y1="46" x2="78" y2="38"/>
+          <line x1="78" y1="118" x2="78" y2="110"/>
+          <line x1="46" y1="78" x2="38" y2="78"/>
+          <line x1="110" y1="78" x2="118" y2="78"/>
+          <line x1="55" y1="55" x2="49" y2="49"/>
+          <line x1="101" y1="101" x2="107" y2="107"/>
+          <line x1="101" y1="55" x2="107" y2="49"/>
+          <line x1="55" y1="101" x2="49" y2="107"/>
+        </g>
+        <text x="126" y="83" font-family="'IBM Plex Mono',monospace" font-size="13" fill="#BC7A1E" letter-spacing="0.5">40°C+ ambient</text>
+
+        <!-- shade canopy (label centred above) -->
+        <text x="295" y="138" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" fill="#5A6660" letter-spacing="0.5">shade canopy</text>
+        <rect x="150" y="150" width="290" height="11" fill="#123A30"/>
+        <line x1="150" y1="161" x2="440" y2="161" stroke="#123A30" stroke-width="1"/>
+        <line x1="175" y1="161" x2="175" y2="378" stroke="#123A30" stroke-width="1.8"/>
+        <line x1="415" y1="161" x2="415" y2="378" stroke="#123A30" stroke-width="1.8"/>
+
+        <!-- passive ventilation through the gap -->
+        <text x="295" y="190" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" fill="#356254" letter-spacing="0.5">passive ventilation</text>
+        <path d="M170 212 C 250 198, 340 198, 420 212" stroke="#356254" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="2 5" marker-end="url(#ah)"/>
+
+        <!-- the classroom unit -->
+        <rect x="180" y="240" width="230" height="118" rx="2" stroke="#123A30" stroke-width="1.8" fill="#F7F8F4"/>
+        <rect x="200" y="300" width="34" height="58" rx="1" stroke="#123A30" stroke-width="1.5" fill="#ECEEEA"/>
+        <rect x="262" y="276" width="44" height="38" rx="1" stroke="#123A30" stroke-width="1.5" fill="#ECEEEA"/>
+        <rect x="326" y="276" width="44" height="38" rx="1" stroke="#123A30" stroke-width="1.5" fill="#ECEEEA"/>
+
+        <!-- ground + earth hatching -->
+        <line x1="120" y1="378" x2="455" y2="378" stroke="#123A30" stroke-width="1.6"/>
+        <g stroke="#5A6660" stroke-width="1">
+          <line x1="138" y1="378" x2="130" y2="388"/>
+          <line x1="158" y1="378" x2="150" y2="388"/>
+          <line x1="198" y1="378" x2="190" y2="388"/>
+          <line x1="218" y1="378" x2="210" y2="388"/>
+          <line x1="238" y1="378" x2="230" y2="388"/>
+        </g>
+
+        <!-- illustrative footprint dimension -->
+        <g stroke="#123A30" stroke-width="1.2">
+          <line x1="180" y1="400" x2="268" y2="400"/>
+          <line x1="322" y1="400" x2="410" y2="400"/>
+          <line x1="180" y1="394" x2="180" y2="406"/>
+          <line x1="410" y1="394" x2="410" y2="406"/>
+        </g>
+        <text x="295" y="404" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="12" fill="#123A30" letter-spacing="0.5">≈ 6 m</text>
+      </svg>
+      <figcaption><span>Fig. 01 — Unit concept elevation</span><span>illustrative · not to scale</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="problem sec" id="problem">
+  <div class="wrap reveal">
+    <p class="eyebrow heat">The problem</p>
+    <h2 class="title">An urgent gap in safe learning spaces.</h2>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="fig">200K+</div>
+        <div class="lab">children affected by recent climate disasters in the region</div>
+      </div>
+      <div class="stat heat">
+        <div class="fig">40°C+</div>
+        <div class="lab">routine ambient temperatures that make unventilated structures unsafe for learning</div>
+      </div>
+      <div class="stat">
+        <div class="fig">Weeks</div>
+        <div class="lab">to months lost to conventional school construction in displacement settings</div>
+      </div>
+    </div>
+    <p class="closing">Conventional construction is too slow, and tented spaces too hot, for the conditions children are learning in. Cuick School sits between the two: a unit that deploys at the speed of an emergency and holds up to the climate of one.</p>
+  </div>
+</section>
+
+<!-- ============ SOLUTION ============ -->
+<section class="sec" id="solution">
+  <div class="wrap">
+    <div class="sol-head reveal">
+      <p class="eyebrow">Our solution</p>
+      <h2 class="title">A modular classroom unit, built on four principles.</h2>
+      <p class="lede">The unit is designed to distinguish itself from both permanent construction and tented temporary spaces — fast to stand up, safe in the heat, and ready to teach from day one.</p>
+    </div>
+    <div class="cards reveal">
+      <div class="card">
+        <div class="num">01</div>
+        <div class="ic">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M5 22 L15 5 L25 22 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="9" y1="22" x2="21" y2="22" stroke="currentColor" stroke-width="1.8"/></svg>
+        </div>
+        <h3>Rapid deployment</h3>
+        <p>Pre-fabricated, flat-packable components assembled on-site by a small trained team with minimal equipment.</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <div class="ic">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="6" stroke="currentColor" stroke-width="1.8"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="15" y1="3" x2="15" y2="6"/><line x1="15" y1="24" x2="15" y2="27"/><line x1="3" y1="15" x2="6" y2="15"/><line x1="24" y1="15" x2="27" y2="15"/></g></svg>
+        </div>
+        <h3>Climate adaptation</h3>
+        <p>Passive ventilation, a reflective and insulated envelope, and shading engineered to keep interior temperatures within a safe learning range.</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <div class="ic">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M5 7 H13 V24 H5 Z M25 7 H17 V24 H25 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="15" y1="7" x2="15" y2="24" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <h3>Curriculum-ready</h3>
+        <p>Each unit pairs with proven emergency-education kits and foundational literacy and numeracy programs, rather than reinventing pedagogy.</p>
+      </div>
+      <div class="card">
+        <div class="num">04</div>
+        <div class="ic">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><rect x="5" y="6" width="9" height="9" stroke="currentColor" stroke-width="1.7"/><rect x="16" y="6" width="9" height="9" stroke="currentColor" stroke-width="1.7"/><rect x="5" y="17" width="9" height="7" stroke="currentColor" stroke-width="1.7"/><rect x="16" y="17" width="9" height="7" stroke="currentColor" stroke-width="1.7"/></svg>
+        </div>
+        <h3>Low-cost &amp; repeatable</h3>
+        <p>A standardized bill of materials enabling predictable per-unit cost and scaling across sites.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STANDARDS ============ -->
+<section class="standards sec" id="standards">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Standards &amp; safeguarding</p>
+      <h2 class="title">Built to recognized humanitarian standards.</h2>
+      <p class="lede">We are developing the model against the frameworks the sector already uses — and we want partner specialists to check our work before anything is deployed.</p>
+    </div>
+    <div class="std-grid reveal">
+      <div class="std-refs">
+        <div class="ref">
+          <div class="tag">Education in emergencies</div>
+          <div class="name">INEE Minimum Standards</div>
+          <div class="desc">The unit and its programming are developed in reference to the INEE Minimum Standards for Education in Emergencies.</div>
+        </div>
+        <div class="ref">
+          <div class="tag">Shelter &amp; WASH</div>
+          <div class="name">Sphere Standards</div>
+          <div class="desc">Shelter and water, sanitation, and hygiene considerations are guided by the Sphere Standards.</div>
+        </div>
+      </div>
+      <div>
+        <p class="safeguard"><b>The project operates under a written child safeguarding commitment.</b> We actively seek partner review of our climate and safeguarding approach to ensure full compliance before any deployment — not after.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STAGE ============ -->
+<section class="sec" id="stage">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Current stage</p>
+      <h2 class="title">A documented design, at the pre-pilot stage.</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="dot">Complete</div>
+        <h3>Design &amp; engineering rationale documented</h3>
+        <p>The design concept is documented and the thermal and ventilation approach is defined.</p>
+      </div>
+      <div class="step pending">
+        <div class="dot">Pre-pilot · in progress</div>
+        <h3>Seeking validation &amp; a demonstration site</h3>
+        <p>We are seeking technical validation and a potential demonstration site before any scaling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PULL QUOTE ============ -->
+<section class="quote wrap reveal">
+  <blockquote>"We are not seeking to displace existing programs."</blockquote>
+  <div class="src">Cuick School — to prospective partners</div>
+</section>
+
+<!-- ============ THE ASK ============ -->
+<section class="ask sec" id="partner">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">What we're asking of partners</p>
+      <h2 class="title">Three things, in order of priority.</h2>
+      <p class="lede">We're looking for the experience and judgment of partners already working in the field. Concretely, we're asking for:</p>
+    </div>
+    <div class="ask-list reveal">
+      <div class="ask-item">
+        <div class="n">01</div>
+        <div>
+          <h3>A short conversation</h3>
+          <p>To align our model with field realities and existing education-cluster priorities.</p>
+        </div>
+      </div>
+      <div class="ask-item">
+        <div class="n">02</div>
+        <div>
+          <h3>A technical review</h3>
+          <p>Of our climate and safeguarding approach, by your specialists.</p>
+        </div>
+      </div>
+      <div class="ask-item">
+        <div class="n">03</div>
+        <div>
+          <h3>Guidance toward a demonstration unit</h3>
+          <p>Toward a possible supervised demonstration unit at an appropriate site.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact sec wrap" id="contact">
+  <div class="contact-grid">
+    <div class="reveal">
+      <p class="eyebrow">Start a conversation</p>
+      <h2>Let's find out if this fits your work.</h2>
+      <p class="sub">If our model could be useful to a program you run — or if it shouldn't be deployed as designed — we want to hear it from you. A short call is the best place to start.</p>
+      <a class="btn btn-primary" href="mailto:nkim2028@chadwickschool.org?subject=Cuick%20School%20%E2%80%94%20partnership%20enquiry">Email the team <span class="arr">→</span></a>
+    </div>
+    <div class="info-card reveal">
+      <div class="info-row"><span class="k">Project lead</span><span class="v">Nathan&nbsp;Kim</span></div>
+      <div class="info-row"><span class="k">Email</span><span class="v">nkim2028@chadwickschool.org</span></div>
+      <div class="info-row"><span class="k">Phone</span><span class="v">+82&nbsp;10&nbsp;4075&nbsp;1758</span></div>
+      <div class="info-row"><span class="k">Organization</span><span class="v">Brighter Boxes · Chadwick&nbsp;International</span></div>
+      <div class="info-row"><span class="k">Web</span><span class="v"><a href="https://cuickschool.org" style="text-decoration:none;border-bottom:1px solid var(--line);">cuickschool.org</a></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="wrap foot-grid">
+    <a class="brand" href="#top" aria-label="Cuick School">
+      <svg class="mark" width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+        <path d="M3 12 L15 5 L27 12" stroke="#EEF4F0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="8" y="13" width="14" height="12" rx="1" stroke="#EEF4F0" stroke-width="1.8"/>
+        <line x1="13" y1="25" x2="13" y2="18" stroke="#EEF4F0" stroke-width="1.6"/>
+        <circle cx="24.5" cy="6.5" r="2.4" fill="#BC7A1E"/>
+      </svg>
+      <span class="wm"><b>Cuick&nbsp;School</b><span>A Brighter Boxes project</span></span>
+    </a>
+    <div class="foot-note">
+      A project by Brighter Boxes, Chadwick International (Songdo, South Korea).<br>
+      Project Concept Note v1.0 · Confidential · Prepared for prospective field &amp; technical partners. · <a href="https://cuickschool.org">cuickschool.org</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // sticky header border on scroll
+  var header = document.querySelector('header.site');
+  window.addEventListener('scroll', function(){
+    if (window.scrollY > 8) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  }, {passive:true});
+
+  // gentle scroll reveal (respects reduced motion)
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>
