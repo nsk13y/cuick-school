@@ -6,23 +6,26 @@
 <title>Cuick School — Modular, climate-adapted classrooms for South Sudan | Brighter Boxes</title>
 <meta name="description" content="Cuick School (Brighter Boxes, Chadwick International): rapid-deployment, climate-adapted modular container classrooms for crisis-affected children in South Sudan. Education in emergencies, temporary learning spaces, off-grid solar, School-in-a-Box curriculum. Pre-pilot — seeking humanitarian partners." />
 <meta name="keywords" content="Cuick School, Brighter Boxes, container classroom, modular classroom, education in emergencies, temporary learning space, South Sudan education, climate-adapted school, off-grid solar school, School-in-a-Box, INEE, Sphere standards, humanitarian logistics" />
-<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect x="1" y="1" width="8" height="8" rx="1.5" fill="%23123A30"/><rect x="11" y="1" width="8" height="8" rx="1.5" fill="%23123A30"/><rect x="21" y="1" width="8" height="8" rx="1.5" fill="%23BC7A1E"/><rect x="1" y="11" width="8" height="8" rx="1.5" fill="%23123A30"/><rect x="1" y="21" width="8" height="8" rx="1.5" fill="%23123A30"/><rect x="11" y="21" width="8" height="8" rx="1.5" fill="%23123A30"/><rect x="21" y="21" width="8" height="8" rx="1.5" fill="%23123A30"/></svg>' />
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M10.5 8 A5.5 5.5 0 0 1 21.5 8 Z" fill="%23BC7A1E"/><path d="M15 10.5 L4 13 L4 28 L15 25.5 Z" fill="%23123A30"/><path d="M17 10.5 L28 13 L28 28 L17 25.5 Z" fill="%23123A30"/></svg>' />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital@0;1&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg:#FBFBF7;          /* page paper — clean warm white */
-    --surface:#FFFFFF;     /* raised surfaces / cards */
-    --ink:#16201C;         /* primary text */
-    --muted:#59655F;       /* secondary text */
-    --line:#E4E5DE;        /* hairlines */
-    --pine:#123A30;        /* primary brand — deep pine */
-    --pine-700:#0E2E26;    /* inverted backgrounds */
-    --pine-300:#356254;    /* lighter pine accents */
-    --pine-050:#EFF3EF;    /* pine tint */
-    --ochre:#BC7A1E;       /* heat signal — climate / heat only */
-    --ochre-soft:#F2E4C6;  /* soft heat tint */
+    --bg:#FBFBF7;
+    --surface:#FFFFFF;
+    --ink:#16201C;
+    --muted:#59655F;
+    --line:#E4E5DE;
+    --pine:#123A30;
+    --pine-700:#0E2E26;
+    --pine-300:#356254;
+    --pine-050:#EFF3EF;
+    --ochre:#BC7A1E;
+    --ochre-soft:#F2E4C6;
+    --ocean:#D9E4E2;
+    --land:#F1EEE1;
+    --coast:#C6CBBC;
 
     --f-display:'Space Grotesk',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
     --f-body:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
@@ -58,9 +61,15 @@
   h2.title{
     font-family:var(--f-display);font-weight:600;
     font-size:clamp(1.6rem,3.4vw,2.25rem);line-height:1.1;
-    letter-spacing:-.02em;margin:0 0 1.1rem;max-width:22ch;
+    letter-spacing:-.02em;margin:0 0 1.1rem;max-width:24ch;
   }
   .lede{font-size:1.08rem;color:var(--muted);max-width:62ch;margin:0;}
+  .subhead{
+    font-family:var(--f-display);font-weight:600;font-size:clamp(1.25rem,2.6vw,1.6rem);
+    letter-spacing:-.015em;margin:0 0 .8rem;
+  }
+  .sub-block{margin-top:clamp(48px,6vw,72px);}
+  .sub-block .lede{margin-bottom:1.8rem;}
 
   .btn{
     display:inline-flex;align-items:center;gap:.6em;
@@ -129,7 +138,30 @@
   }
   .purpose .sub{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;color:#8FB0A4;margin:1.3rem 0 0;text-transform:uppercase;}
 
-  /* vision ------------------------------------------------------ */
+  /* impact banner (the problem) --------------------------------- */
+  .impact{
+    position:relative;isolation:isolate;min-height:clamp(400px,58vh,560px);
+    display:flex;align-items:flex-end;background:var(--pine-700);color:#F2F6F2;
+  }
+  .impact img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
+  .impact::after{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(180deg,rgba(14,32,26,.18) 0%,rgba(14,32,26,.55) 55%,rgba(14,32,26,.88) 100%);
+  }
+  .impact .inner{padding:3.2rem 0 2.6rem;}
+  .impact .k{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:#D9C39A;margin:0 0 1rem;display:flex;align-items:center;gap:.7em;}
+  .impact .k::before{content:"";width:26px;height:1px;background:#D9C39A;}
+  .impact .line{
+    font-family:var(--f-serif);font-style:italic;font-size:clamp(1.55rem,4vw,2.6rem);
+    line-height:1.25;margin:0;max-width:24ch;text-shadow:0 1px 14px rgba(0,0,0,.35);
+  }
+  .impact .sub{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;color:#CFDCD5;margin:1.2rem 0 0;max-width:60ch;}
+  .impact .credit{
+    position:absolute;right:14px;bottom:10px;font-family:var(--f-mono);font-size:.58rem;
+    letter-spacing:.08em;color:rgba(233,240,236,.75);text-transform:uppercase;
+  }
+
+  /* vision / generic cards -------------------------------------- */
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
   .cards.two{grid-template-columns:repeat(2,1fr);}
   .card{background:var(--surface);padding:2rem 1.8rem;}
@@ -139,22 +171,22 @@
   .card p{margin:0;color:var(--muted);font-size:.97rem;}
   .card .flag{display:inline-block;font-family:var(--f-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ochre);border:1px solid var(--ochre);border-radius:2px;padding:.2em .55em;margin-left:.55em;vertical-align:middle;}
 
-  /* problem ----------------------------------------------------- */
-  .problem{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  /* research stats (fixed spacing) ------------------------------- */
+  .research{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:.5rem 0 0;border-top:1px solid var(--line);}
   .stat-row.second{border-top:none;grid-template-columns:repeat(2,1fr);}
-  .stat{padding:1.8rem 1.6rem 1.8rem 0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .stat{padding:1.8rem 1.5rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .stat:first-child{padding-left:0;}
   .stat:last-child{border-right:none;}
-  .stat .fig{font-family:var(--f-mono);font-weight:500;font-size:clamp(1.9rem,4.2vw,2.7rem);line-height:1;letter-spacing:-.01em;color:var(--pine);}
+  .stat .fig{font-family:var(--f-mono);font-weight:500;font-size:clamp(1.9rem,4.2vw,2.6rem);line-height:1;letter-spacing:-.01em;color:var(--pine);}
   .stat.heat .fig{color:var(--ochre);}
   .stat .lab{margin-top:.85rem;font-size:.95rem;color:var(--muted);max-width:34ch;}
   .stat .src{margin-top:.6rem;font-family:var(--f-mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);opacity:.75;}
-  .problem .closing{max-width:66ch;font-size:1.06rem;margin:2.2rem 0 0;}
 
-  /* photo band -------------------------------------------------- */
-  .photos{padding:clamp(48px,7vw,84px) 0;}
-  .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:2rem;}
+  /* field photos -------------------------------------------------- */
+  .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:2rem;}
   .ph{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+  .ph img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--pine-050);}
   .ph .frame{
     aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;
     background:repeating-linear-gradient(45deg,#F4F5EF 0,#F4F5EF 10px,#EDEEE7 10px,#EDEEE7 20px);
@@ -163,79 +195,9 @@
   .ph .frame .tag{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;}
   .ph .cap{padding:.85rem 1rem;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);line-height:1.5;}
   .ph .cap b{color:var(--ink);font-weight:600;display:block;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.3rem;}
+  .ph .cap .cr{display:block;margin-top:.4rem;font-family:var(--f-mono);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;opacity:.7;}
 
-  /* solution ---------------------------------------------------- */
-  .sol-head{max-width:64ch;margin-bottom:2.4rem;}
-  .subhead{
-    font-family:var(--f-display);font-weight:600;font-size:clamp(1.25rem,2.6vw,1.6rem);
-    letter-spacing:-.015em;margin:0 0 .8rem;
-  }
-  .sub-block{margin-top:clamp(48px,6vw,72px);}
-  .sub-block .lede{margin-bottom:1.8rem;}
-
-  /* route map ---------------------------------------------------- */
-  .map-card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 18px 12px;}
-  .map-scroll{overflow-x:auto;}
-  .map-scroll svg{min-width:680px;width:100%;height:auto;}
-  .rn{cursor:pointer;outline:none;}
-  .rn .hit{fill:transparent;}
-  .rn .c{fill:var(--surface);stroke:var(--pine);stroke-width:2;transition:all .15s ease;}
-  .rn .ring{fill:none;stroke:var(--pine);stroke-width:1;opacity:0;transition:opacity .15s ease;}
-  .rn .nm{font-family:var(--f-mono);font-size:11.5px;fill:var(--ink);letter-spacing:.4px;}
-  .rn .rl{font-family:var(--f-mono);font-size:9.5px;fill:var(--muted);letter-spacing:.6px;text-transform:uppercase;}
-  .rn:hover .c,.rn:focus-visible .c{stroke-width:3;}
-  .rn.active .c{fill:var(--pine);}
-  .rn.active .ring{opacity:1;}
-  .rn.active .nm{fill:var(--pine);font-weight:500;}
-  .route-detail{border-top:1px solid var(--line);margin-top:6px;padding-top:16px;display:grid;grid-template-columns:auto 1fr auto;gap:1.2rem;align-items:start;}
-  .route-detail .step{font-family:var(--f-mono);font-size:1.5rem;color:var(--pine-300);line-height:1.1;padding-top:.15rem;}
-  .route-detail .step small{display:block;font-size:.62rem;letter-spacing:.14em;color:var(--muted);margin-top:.35rem;text-transform:uppercase;}
-  .route-detail h4{font-family:var(--f-display);font-weight:600;font-size:1.08rem;letter-spacing:-.01em;margin:0 0 .4rem;}
-  .route-detail p{margin:0;color:var(--muted);font-size:.95rem;max-width:70ch;}
-  .route-detail .meta{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ochre);margin-top:.6rem;}
-  .route-nav{display:flex;gap:.5rem;}
-  .route-nav button{padding:.55em .8em;}
-  @keyframes dashmove{to{stroke-dashoffset:-60;}}
-  .flow{stroke-dasharray:4 8;animation:dashmove 3.2s linear infinite;}
-  @supports (offset-path:path('M0,0 L10,10')){
-    .cargo{
-      offset-path:path('M60,150 L175,118 L300,98 L430,104 L550,126 L665,158');
-      offset-rotate:0deg;
-      animation:ride 14s linear infinite;
-    }
-    @keyframes ride{from{offset-distance:0%;}to{offset-distance:100%;}}
-  }
-
-  /* funding ------------------------------------------------------ */
-  .funding{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .steps{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:2rem 0 0;}
-  .step{background:var(--surface);padding:1.7rem 1.7rem;position:relative;}
-  .step .dot{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:.6em;color:var(--muted);}
-  .step .dot::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--pine);display:inline-block;flex:0 0 auto;}
-  .step.pending .dot::before{background:transparent;border:1.5px solid var(--ochre);}
-  .step.pending .dot{color:var(--ochre);}
-  .step h3{font-family:var(--f-display);font-weight:600;font-size:1.1rem;margin:.85rem 0 .45rem;letter-spacing:-.01em;}
-  .step p{margin:0;color:var(--muted);font-size:.96rem;}
-  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:2rem;}
-  .tier{background:var(--surface);padding:1.9rem 1.7rem;}
-  .tier .amt{font-family:var(--f-mono);font-weight:500;font-size:1.9rem;color:var(--pine);letter-spacing:-.01em;}
-  .tier .amt small{font-size:.85rem;color:var(--muted);letter-spacing:0;}
-  .tier h3{font-family:var(--f-display);font-weight:600;font-size:1.05rem;margin:.8rem 0 .4rem;letter-spacing:-.01em;}
-  .tier p{margin:0;color:var(--muted);font-size:.94rem;}
-  .prior{margin-top:2rem;border-top:1px solid var(--line);}
-  .prior .row{display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3.5vw,40px);padding:1.3rem 0;border-bottom:1px solid var(--line);align-items:baseline;}
-  .prior .n{font-family:var(--f-mono);font-size:1.15rem;color:var(--pine-300);}
-  .prior h4{font-family:var(--f-display);font-weight:600;font-size:1.05rem;margin:0 0 .25rem;letter-spacing:-.01em;}
-  .prior p{margin:0;color:var(--muted);font-size:.95rem;}
-
-  /* research ------------------------------------------------------ */
-  .r-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:2rem;}
-  .r-stat{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.7rem 1.6rem;}
-  .r-stat .fig{font-family:var(--f-mono);font-weight:500;font-size:1.85rem;color:var(--pine);letter-spacing:-.01em;line-height:1.1;}
-  .r-stat.heat .fig{color:var(--ochre);}
-  .r-stat p{margin:.7rem 0 0;color:var(--muted);font-size:.95rem;}
-  .r-stat .src{margin-top:.8rem;font-family:var(--f-mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);opacity:.75;}
-  .why{margin-top:clamp(40px,5vw,56px);}
+  /* standards card ------------------------------------------------ */
   .std-card{
     margin-top:clamp(40px,5vw,56px);background:var(--pine-700);color:#DDE6E0;border-radius:6px;
     padding:clamp(28px,4vw,44px);display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,4vw,52px);align-items:start;
@@ -248,6 +210,70 @@
   .ref .tag{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#7FA396;}
   .ref .name{font-family:var(--f-display);font-weight:500;font-size:1rem;margin-top:.3rem;color:#EEF4F0;}
   .ref .desc{font-size:.87rem;color:#A6BBB2;margin-top:.35rem;line-height:1.55;}
+
+  /* route map ---------------------------------------------------- */
+  .map-card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 18px 12px;}
+  .map-scroll{overflow-x:auto;border-radius:4px;}
+  .map-scroll svg{min-width:700px;width:100%;height:auto;display:block;}
+  .rn{cursor:pointer;outline:none;}
+  .rn .hit{fill:transparent;}
+  .rn .c{fill:var(--surface);stroke:var(--pine);stroke-width:2;transition:all .15s ease;}
+  .rn .ring{fill:none;stroke:var(--pine);stroke-width:1;opacity:0;transition:opacity .15s ease;}
+  .rn .nm{font-family:var(--f-mono);font-size:11.5px;fill:var(--ink);letter-spacing:.4px;}
+  .rn .rl{font-family:var(--f-mono);font-size:9px;fill:var(--muted);letter-spacing:.6px;text-transform:uppercase;}
+  .rn:hover .c,.rn:focus-visible .c{stroke-width:3;}
+  .rn.active .c{fill:var(--pine);}
+  .rn.active .ring{opacity:1;}
+  .rn.active .nm{fill:var(--pine);font-weight:500;}
+  .geo-label{font-family:'IBM Plex Mono',monospace;fill:#95A09A;letter-spacing:2.5px;font-size:9.5px;}
+  .route-detail{border-top:1px solid var(--line);margin-top:6px;padding-top:16px;display:grid;grid-template-columns:auto 1fr auto;gap:1.2rem;align-items:start;}
+  .route-detail .step{font-family:var(--f-mono);font-size:1.5rem;color:var(--pine-300);line-height:1.1;padding-top:.15rem;}
+  .route-detail .step small{display:block;font-size:.62rem;letter-spacing:.14em;color:var(--muted);margin-top:.35rem;text-transform:uppercase;}
+  .route-detail h4{font-family:var(--f-display);font-weight:600;font-size:1.08rem;letter-spacing:-.01em;margin:0 0 .4rem;}
+  .route-detail p{margin:0;color:var(--muted);font-size:.95rem;max-width:70ch;}
+  .route-detail .meta{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ochre);margin-top:.6rem;}
+  .route-nav{display:flex;gap:.5rem;}
+  .route-nav button{padding:.55em .8em;}
+  @keyframes dashmove{to{stroke-dashoffset:-60;}}
+  .flow{stroke-dasharray:4 8;animation:dashmove 3.2s linear infinite;}
+  @supports (offset-path:path('M0,0 L10,10')){
+    .cargo{
+      offset-path:path('M676,53 L692,68 L688,84 L665,95 L634,122 L610,175 L565,235 L535,278 L505,252 L481,246 L420,256 L386,262 L300,285 L200,300 L135,312 L117,295 L91,285 L87,264 L100,243');
+      offset-rotate:0deg;
+      animation:ride 18s linear infinite;
+    }
+    @keyframes ride{from{offset-distance:0%;}to{offset-distance:100%;}}
+  }
+
+  /* funding ------------------------------------------------------ */
+  .steps{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:2rem 0 0;}
+  .step{background:var(--surface);padding:1.7rem 1.7rem;position:relative;}
+  .step .dot{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:.6em;color:var(--muted);}
+  .step .dot::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--pine);display:inline-block;flex:0 0 auto;}
+  .step.pending .dot::before{background:transparent;border:1.5px solid var(--ochre);}
+  .step.pending .dot{color:var(--ochre);}
+  .step h3{font-family:var(--f-display);font-weight:600;font-size:1.1rem;margin:.85rem 0 .45rem;letter-spacing:-.01em;}
+  .step p{margin:0;color:var(--muted);font-size:.96rem;}
+
+  .fund-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px;margin-top:2rem;align-items:stretch;}
+  .fund-zero{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.9rem 1.8rem;display:flex;flex-direction:column;justify-content:center;}
+  .fund-zero .big{font-family:var(--f-mono);font-weight:500;font-size:clamp(2.6rem,6vw,3.6rem);color:var(--pine);line-height:1;}
+  .fund-zero .when{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.7rem;}
+  .fund-zero p{color:var(--muted);font-size:.97rem;margin:1.1rem 0 0;}
+  .fund-chart{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.4rem 1.4rem 1rem;}
+  .fund-chart .cap{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line);margin-top:.6rem;padding-top:.8rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:2rem;}
+  .tier{background:var(--surface);padding:1.9rem 1.7rem;}
+  .tier .amt{font-family:var(--f-mono);font-weight:500;font-size:1.9rem;color:var(--pine);letter-spacing:-.01em;}
+  .tier .amt small{font-size:.85rem;color:var(--muted);letter-spacing:0;}
+  .tier h3{font-family:var(--f-display);font-weight:600;font-size:1.05rem;margin:.8rem 0 .4rem;letter-spacing:-.01em;}
+  .tier p{margin:0;color:var(--muted);font-size:.94rem;}
+  .prior{margin-top:2rem;border-top:1px solid var(--line);}
+  .prior .row{display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3.5vw,40px);padding:1.3rem 0;border-bottom:1px solid var(--line);align-items:baseline;}
+  .prior .n{font-family:var(--f-mono);font-size:1.15rem;color:var(--pine-300);}
+  .prior h4{font-family:var(--f-display);font-weight:600;font-size:1.05rem;margin:0 0 .25rem;letter-spacing:-.01em;}
+  .prior p{margin:0;color:var(--muted);font-size:.95rem;}
 
   /* pull quote -------------------------------------------------- */
   .quote{text-align:center;padding:clamp(52px,7.5vw,88px) 0;}
@@ -296,10 +322,9 @@
   @media (max-width:860px){
     .hero-grid{grid-template-columns:1fr;}
     .hero-fig{order:-1;}
-    .contact-grid,.std-card{grid-template-columns:1fr;}
+    .contact-grid,.std-card,.fund-grid{grid-template-columns:1fr;}
     .cards{grid-template-columns:1fr 1fr;}
-    .photo-grid{grid-template-columns:1fr;}
-    .r-stats{grid-template-columns:1fr;}
+    .field-grid{grid-template-columns:1fr;}
   }
   @media (max-width:620px){
     body{font-size:16px;}
@@ -325,25 +350,28 @@
 <header class="site" id="top">
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Cuick School home">
-      <!-- Modular-C mark: seven modules forming a C — the unit is the building block.
-           The single ochre module = the first funded unit. -->
-      <svg class="mark" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
-        <rect x="1" y="1" width="8" height="8" rx="1.5" fill="#123A30"/>
-        <rect x="11" y="1" width="8" height="8" rx="1.5" fill="#123A30"/>
-        <rect x="21" y="1" width="8" height="8" rx="1.5" fill="#BC7A1E"/>
-        <rect x="1" y="11" width="8" height="8" rx="1.5" fill="#123A30"/>
-        <rect x="1" y="21" width="8" height="8" rx="1.5" fill="#123A30"/>
-        <rect x="11" y="21" width="8" height="8" rx="1.5" fill="#123A30"/>
-        <rect x="21" y="21" width="8" height="8" rx="1.5" fill="#123A30"/>
+      <!-- Emblem: a shipping container opened like a book, under a rising sun.
+           The corrugation lines double as pages — "open the container, open the school." -->
+      <svg class="mark" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M11.5 7 A4.5 4.5 0 0 1 20.5 7 Z" fill="#BC7A1E"/>
+        <path d="M16 10 L5 12.5 L5 27 L16 24.5 Z" fill="#FFFFFF" stroke="#123A30" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="M16 10 L27 12.5 L27 27 L16 24.5 Z" fill="#FFFFFF" stroke="#123A30" stroke-width="1.7" stroke-linejoin="round"/>
+        <line x1="16" y1="10" x2="16" y2="24.5" stroke="#123A30" stroke-width="1.7"/>
+        <g stroke="#123A30" stroke-width="1.1">
+          <line x1="8.7" y1="11.9" x2="8.7" y2="26"/>
+          <line x1="12.4" y1="11" x2="12.4" y2="25.2"/>
+          <line x1="19.6" y1="11" x2="19.6" y2="25.2"/>
+          <line x1="23.3" y1="11.9" x2="23.3" y2="26"/>
+        </g>
       </svg>
       <span class="wm"><b>Cuick&nbsp;School</b><span>A Brighter Boxes project</span></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#vision">Vision</a>
       <a href="#problem">Problem</a>
+      <a href="#research">Research</a>
+      <a href="#vision">Vision</a>
       <a href="#solution">Solution</a>
       <a href="#funding">Funding</a>
-      <a href="#research">Research</a>
       <a href="#partner">Partner</a>
     </nav>
     <a class="btn btn-primary" href="#contact">Get in touch <span class="arr">→</span></a>
@@ -354,7 +382,7 @@
 <section class="hero wrap">
   <div class="hero-grid">
     <div class="reveal">
-      <p class="eyebrow">Project concept · v1.1 · for field &amp; technical partners</p>
+      <p class="eyebrow">Project concept · v1.2 · for field &amp; technical partners</p>
       <h1>Rapid-deployment, climate-adapted classrooms for children in <em>South&nbsp;Sudan</em>.</h1>
       <p class="intro">Across South Sudan, climate disasters and protracted conflict have left hundreds of thousands of children without safe, usable learning spaces. Cuick School proposes a standardized modular classroom unit — a retrofitted shipping container transported and assembled quickly in low-resource environments, engineered for extreme heat, and paired with established emergency-education curricula.</p>
       <div class="hero-actions">
@@ -426,49 +454,26 @@
   </div>
 </section>
 
-<!-- ============ VISION ============ -->
-<section class="sec" id="vision">
-  <div class="wrap">
-    <div class="sol-head reveal">
-      <p class="eyebrow">The long-term vision</p>
-      <h2 class="title">From one unit to a campus.</h2>
-      <p class="lede">The first container is proof, not the finish line. Cuick School is designed from day one as a system that scales — structurally, energetically, and locally.</p>
-    </div>
-    <div class="cards reveal">
-      <div class="card">
-        <div class="num">V1</div>
-        <div class="ic">
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><rect x="4" y="17" width="10" height="8" stroke="currentColor" stroke-width="1.7"/><rect x="16" y="17" width="10" height="8" stroke="currentColor" stroke-width="1.7"/><rect x="10" y="7" width="10" height="8" stroke="currentColor" stroke-width="1.7"/></svg>
-        </div>
-        <h3>Modular, Lego-style scaling</h3>
-        <p>The unit is the building block, not the building. Standardized units combine into multi-classroom clusters and, eventually, full campuses — with layouts adapted to each region's climate, terrain, and community needs.</p>
-      </div>
-      <div class="card">
-        <div class="num">V2</div>
-        <div class="ic">
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M16 3 L8 17 H14 L12 27 L22 12 H15 Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
-        </div>
-        <h3>Smart energy systems <span class="flag">Roadmap</span></h3>
-        <p>Solar generation paired with battery storage and simple load management, so a unit banks power where electricity access is inconsistent — keeping lights, fans, and lesson screens running through the school day.</p>
-      </div>
-      <div class="card">
-        <div class="num">V3</div>
-        <div class="ic">
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="10" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M6 25 C6 19 24 19 24 25" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-        </div>
-        <h3>Locally run, by design</h3>
-        <p>Deployment ends with handover, not dependence. Local teams assemble and maintain units, community teachers deliver the lessons, and partner NGOs anchor operations on the ground.</p>
-      </div>
-    </div>
+<!-- ============ THE PROBLEM — IMPACT BANNER ============ -->
+<section class="impact" id="problem">
+  <!-- Photo: Oxfam East Africa, "Children displaced in the crisis are not going to school" (South Sudan, 2014).
+       License: CC BY 2.0, via Wikimedia Commons. Keep the on-page credit if you keep the photo.
+       To swap in your own photo, replace the src below. -->
+  <img class="bg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Children_displaced_in_the_crisis_are_not_going_to_school_(12451437163).jpg/1600px-Children_displaced_in_the_crisis_are_not_going_to_school_(12451437163).jpg" alt="Children displaced by the crisis in South Sudan stand together at a displacement site — out of school." />
+  <div class="wrap inner">
+    <p class="k">The problem</p>
+    <p class="line">Right now in South Sudan, a child is more likely to be out of school than in one.</p>
+    <p class="sub">2.8M+ children out of school — over 70% of the school-age population, most of them girls (UNICEF). And in 40°C+ heat, even the classrooms that exist are closing.</p>
   </div>
+  <span class="credit">Photo: Oxfam East Africa · CC BY 2.0 · Wikimedia Commons</span>
 </section>
 
-<!-- ============ PROBLEM ============ -->
-<section class="problem sec" id="problem">
+<!-- ============ RESEARCH ============ -->
+<section class="research sec" id="research">
   <div class="wrap reveal">
-    <p class="eyebrow heat">The problem</p>
-    <h2 class="title">An urgent gap in safe learning spaces.</h2>
-    <p class="lede" style="margin-bottom:2rem;">South Sudan faces one of the world's most severe education-access crises — and climate extremes are now closing even the classrooms that exist.</p>
+    <p class="eyebrow">Research</p>
+    <h2 class="title">The numbers behind the problem — and the model.</h2>
+    <p class="lede" style="margin-bottom:1.6rem;">We build from published data, and we cite it. Full source list available on request.</p>
     <div class="stat-row">
       <div class="stat">
         <div class="fig">2.8M+</div>
@@ -498,296 +503,26 @@
         <div class="src">Project concept note</div>
       </div>
     </div>
-    <p class="closing">Conventional construction is too slow, and tents and iron-sheet shelters are too hot, for the conditions children are actually learning in. Cuick School sits between the two: a temporary learning space that deploys at the speed of an emergency and holds up to the climate of one.</p>
-  </div>
-</section>
 
-<!-- ============ FIELD CONTEXT / PHOTOS ============ -->
-<section class="photos wrap">
-  <div class="reveal">
-    <p class="eyebrow">Field context</p>
-    <h2 class="title">What this looks like on the ground.</h2>
-    <p class="lede">We are assembling a photo record with partners — of the environments we're designing for, and of the prototype as it takes shape at Chadwick.</p>
-  </div>
-  <div class="photo-grid reveal">
-    <!-- To use a real photo: replace the div.frame with
-         <img src="photos/your-image.jpg" alt="describe the photo" style="aspect-ratio:4/3;object-fit:cover;width:100%;">
-         Use images you own or have licensed; for photos of children, only use partner-supplied,
-         consent-cleared imagery (standard humanitarian practice). -->
-    <figure class="ph">
-      <div class="frame">
-        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="6" width="22" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="13" cy="14" r="4.5" stroke="currentColor" stroke-width="1.6"/><rect x="9" y="3" width="8" height="3" rx="1" stroke="currentColor" stroke-width="1.6"/></svg>
-        <span class="tag">Photo in acquisition</span>
-      </div>
-      <figcaption class="cap"><b>P1 — Extreme-heat learning environments</b>Iron-sheet and open-air classrooms in 40°C+ conditions — the environments the unit is engineered to replace.</figcaption>
-    </figure>
-    <figure class="ph">
-      <div class="frame">
-        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="6" width="22" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="13" cy="14" r="4.5" stroke="currentColor" stroke-width="1.6"/><rect x="9" y="3" width="8" height="3" rx="1" stroke="currentColor" stroke-width="1.6"/></svg>
-        <span class="tag">Photo in acquisition</span>
-      </div>
-      <figcaption class="cap"><b>P2 — Learning in displacement settings</b>Temporary learning spaces in displacement sites — consent-cleared imagery to be supplied with field partners.</figcaption>
-    </figure>
-    <figure class="ph">
-      <div class="frame">
-        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="6" width="22" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="13" cy="14" r="4.5" stroke="currentColor" stroke-width="1.6"/><rect x="9" y="3" width="8" height="3" rx="1" stroke="currentColor" stroke-width="1.6"/></svg>
-        <span class="tag">Photo in acquisition</span>
-      </div>
-      <figcaption class="cap"><b>P3 — The prototype, as it's built</b>Design models and the first demonstration build, documented by the Brighter Boxes team at Chadwick International.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- ============ SOLUTION ============ -->
-<section class="sec" id="solution" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
-  <div class="wrap">
-    <div class="sol-head reveal">
-      <p class="eyebrow">Our solution</p>
-      <h2 class="title">The unit, the program, and the journey between.</h2>
-      <p class="lede">A modular classroom unit built on four principles — fast to stand up, safe in the heat, ready to teach from day one, and cheap enough to repeat.</p>
-    </div>
-    <div class="cards reveal" style="grid-template-columns:repeat(2,1fr);">
-      <div class="card">
-        <div class="num">01</div>
-        <div class="ic">
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M5 22 L15 5 L25 22 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="9" y1="22" x2="21" y2="22" stroke="currentColor" stroke-width="1.8"/></svg>
+    <div class="field-grid">
+      <!-- Photo: Oxfam East Africa, Awerial displacement site, South Sudan (2014). CC BY 2.0 via Wikimedia Commons. -->
+      <figure class="ph">
+        <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/A_boy_demonstrates_the_difference_between_the_clean_water_Oxfam_is_now_providing_and_the_dirty_water_from_the_river_Nile_in_Awerial_(11978165045).jpg/1600px-A_boy_demonstrates_the_difference_between_the_clean_water_Oxfam_is_now_providing_and_the_dirty_water_from_the_river_Nile_in_Awerial_(11978165045).jpg" alt="A boy at the Awerial displacement site in South Sudan compares clean water provided by Oxfam with untreated water from the Nile." />
+        <figcaption class="cap"><b>Field conditions — Awerial, South Sudan</b>Displacement sites in South Sudan's heat: families rebuilding daily life — water, shade, and school — from almost nothing. These are the conditions the unit is engineered for.<span class="cr">Photo: Oxfam East Africa · CC BY 2.0 · Wikimedia Commons</span></figcaption>
+      </figure>
+      <!-- To use a real photo here: replace the div.frame with
+           <img src="photos/your-image.jpg" alt="describe the photo" style="aspect-ratio:4/3;object-fit:cover;width:100%;">
+           Best source: your own build-session photos — they carry the most credibility with partners. -->
+      <figure class="ph">
+        <div class="frame">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="6" width="22" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="13" cy="14" r="4.5" stroke="currentColor" stroke-width="1.6"/><rect x="9" y="3" width="8" height="3" rx="1" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span class="tag">Photo in acquisition</span>
         </div>
-        <h3>Rapid deployment</h3>
-        <p>Pre-fabricated, flat-packable components assembled on-site by a small trained team with minimal equipment — days of assembly instead of months of construction.</p>
-      </div>
-      <div class="card">
-        <div class="num">02</div>
-        <div class="ic">
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="6" stroke="currentColor" stroke-width="1.8"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="15" y1="3" x2="15" y2="6"/><line x1="15" y1="24" x2="15" y2="27"/><line x1="3" y1="15" x2="6" y2="15"/><line x1="24" y1="15" x2="27" y2="15"/></g></svg>
-        </div>
-        <h3>Climate adaptation</h3>
-        <p>Passive ventilation, a reflective and insulated envelope, and shading engineered to keep interior temperatures within a safe learning range — in the same 40°C+ conditions that close iron-sheet schools.</p>
-      </div>
-      <div class="card">
-        <div class="num">03</div>
-        <div class="ic">
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M5 7 H13 V24 H5 Z M25 7 H17 V24 H25 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="15" y1="7" x2="15" y2="24" stroke="currentColor" stroke-width="1.6"/></svg>
-        </div>
-        <h3>Curriculum-ready</h3>
-        <p>Each unit pairs with proven emergency-education (EiE) kits and foundational literacy and numeracy programs, rather than reinventing pedagogy — managed by our Textbook Team below.</p>
-      </div>
-      <div class="card">
-        <div class="num">04</div>
-        <div class="ic">
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><rect x="5" y="6" width="9" height="9" stroke="currentColor" stroke-width="1.7"/><rect x="16" y="6" width="9" height="9" stroke="currentColor" stroke-width="1.7"/><rect x="5" y="17" width="9" height="7" stroke="currentColor" stroke-width="1.7"/><rect x="16" y="17" width="9" height="7" stroke="currentColor" stroke-width="1.7"/></svg>
-        </div>
-        <h3>Low-cost &amp; repeatable</h3>
-        <p>A standardized bill of materials enabling predictable per-unit cost and scaling across sites — the same spec, every time, anywhere.</p>
-      </div>
-    </div>
-
-    <!-- ——— The journey: interactive route map ——— -->
-    <div class="sub-block reveal">
-      <h3 class="subhead">From Songdo to the school site.</h3>
-      <p class="lede">The model's quiet advantage: <b style="color:var(--ink);">the classroom ships as its own crate.</b> Brighter Boxes sources a surplus shipping container in Korea, retrofits it to the Cuick spec, packs it with its own education payload, and sends it through the same global logistics network as any commercial cargo. Click each stop to follow one unit's journey.</p>
-      <figure class="map-card">
-        <div class="map-scroll">
-        <svg viewBox="0 0 720 260" role="img" aria-label="Schematic deployment route with six interactive stops: Songdo, Busan, Indian Ocean sea freight, Mombasa, Nimule border crossing, and the school site near Juba." xmlns="http://www.w3.org/2000/svg">
-          <title>Deployment corridor — Songdo to South Sudan</title>
-          <!-- graticule -->
-          <g stroke="#E4E5DE" stroke-width="1">
-            <line x1="40" y1="30" x2="40" y2="215"/><line x1="150" y1="30" x2="150" y2="215"/>
-            <line x1="260" y1="30" x2="260" y2="215"/><line x1="370" y1="30" x2="370" y2="215"/>
-            <line x1="480" y1="30" x2="480" y2="215"/><line x1="590" y1="30" x2="590" y2="215"/>
-            <line x1="700" y1="30" x2="700" y2="215"/>
-            <line x1="40" y1="60" x2="700" y2="60"/><line x1="40" y1="130" x2="700" y2="130"/>
-            <line x1="40" y1="200" x2="700" y2="200"/>
-          </g>
-          <!-- region labels -->
-          <g font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="#8B958F" letter-spacing="2.5">
-            <text x="60" y="238">SOUTH KOREA</text>
-            <text x="300" y="238">INDIAN OCEAN</text>
-            <text x="530" y="238">EAST AFRICA → SOUTH SUDAN</text>
-          </g>
-          <!-- route -->
-          <path class="flow" d="M60,150 L175,118 L300,98 L430,104 L550,126 L665,158" stroke="#356254" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-          <!-- moving cargo marker (progressive enhancement) -->
-          <rect class="cargo" x="-5" y="-3.5" width="10" height="7" rx="1" fill="#BC7A1E"/>
-          <!-- nodes -->
-          <g class="rn" data-i="0" tabindex="0" role="button" aria-label="Stop 1: Songdo — source, retrofit and pack">
-            <circle class="hit" cx="60" cy="150" r="22"/>
-            <circle class="ring" cx="60" cy="150" r="14"/>
-            <circle class="c" cx="60" cy="150" r="8"/>
-            <text class="nm" x="60" y="182" text-anchor="middle">Songdo</text>
-            <text class="rl" x="60" y="196" text-anchor="middle">build &amp; pack</text>
-          </g>
-          <g class="rn" data-i="1" tabindex="0" role="button" aria-label="Stop 2: Busan — export">
-            <circle class="hit" cx="175" cy="118" r="22"/>
-            <circle class="ring" cx="175" cy="118" r="14"/>
-            <circle class="c" cx="175" cy="118" r="8"/>
-            <text class="nm" x="175" y="88" text-anchor="middle">Busan</text>
-            <text class="rl" x="175" y="100" text-anchor="middle">export</text>
-          </g>
-          <g class="rn" data-i="2" tabindex="0" role="button" aria-label="Stop 3: Indian Ocean — sea freight">
-            <circle class="hit" cx="300" cy="98" r="22"/>
-            <circle class="ring" cx="300" cy="98" r="14"/>
-            <circle class="c" cx="300" cy="98" r="8"/>
-            <text class="nm" x="300" y="130" text-anchor="middle">Sea transit</text>
-            <text class="rl" x="300" y="144" text-anchor="middle">≈4–6 weeks</text>
-          </g>
-          <g class="rn" data-i="3" tabindex="0" role="button" aria-label="Stop 4: Mombasa — gateway port">
-            <circle class="hit" cx="430" cy="104" r="22"/>
-            <circle class="ring" cx="430" cy="104" r="14"/>
-            <circle class="c" cx="430" cy="104" r="8"/>
-            <text class="nm" x="430" y="74" text-anchor="middle">Mombasa</text>
-            <text class="rl" x="430" y="86" text-anchor="middle">gateway port</text>
-          </g>
-          <g class="rn" data-i="4" tabindex="0" role="button" aria-label="Stop 5: Nimule — Northern Corridor and border crossing">
-            <circle class="hit" cx="550" cy="126" r="22"/>
-            <circle class="ring" cx="550" cy="126" r="14"/>
-            <circle class="c" cx="550" cy="126" r="8"/>
-            <text class="nm" x="550" y="158" text-anchor="middle">Nimule</text>
-            <text class="rl" x="550" y="172" text-anchor="middle">border crossing</text>
-          </g>
-          <g class="rn" data-i="5" tabindex="0" role="button" aria-label="Stop 6: School site — assembly and opening">
-            <circle class="hit" cx="665" cy="158" r="22"/>
-            <circle class="ring" cx="665" cy="158" r="14"/>
-            <circle class="c" cx="665" cy="158" r="8"/>
-            <text class="nm" x="665" y="128" text-anchor="middle">School site</text>
-            <text class="rl" x="665" y="140" text-anchor="middle">assembly</text>
-          </g>
-        </svg>
-        </div>
-        <div class="route-detail">
-          <div class="step"><span id="route-step">01</span><small>of 06</small></div>
-          <div>
-            <h4 id="route-title"></h4>
-            <p id="route-body"></p>
-            <div class="meta" id="route-meta"></div>
-          </div>
-          <div class="route-nav">
-            <button class="btn btn-ghost" id="route-prev" aria-label="Previous stop">←</button>
-            <button class="btn btn-ghost" id="route-next" aria-label="Next stop">→</button>
-          </div>
-        </div>
-        <figcaption><span>Fig. 02 — Deployment corridor (interactive)</span><span>schematic · route &amp; timings indicative · final routing set with implementing partners</span></figcaption>
+        <figcaption class="cap"><b>The prototype, as it's built</b>Design models and the first demonstration build, documented by the Brighter Boxes team at Chadwick International — added as the build progresses.</figcaption>
       </figure>
     </div>
 
-    <!-- ——— Textbook team ——— -->
     <div class="sub-block reveal">
-      <h3 class="subhead">The Textbook Team — remote curriculum management.</h3>
-      <p class="lede">A container is only a classroom if there's something worth teaching inside it. Our education team (Pillar A) builds and manages that layer remotely from Songdo — designed for settings with low literacy, no internet, and limited electricity.</p>
-      <div class="cards reveal" style="grid-template-columns:repeat(2,1fr);margin-top:1.8rem;">
-        <div class="card">
-          <div class="num">A1</div>
-          <h3>Adapt, don't reinvent</h3>
-          <p>We package proven emergency-education materials and foundational literacy &amp; numeracy programs — adapted for low-resource, offline classrooms — rather than writing pedagogy from scratch.</p>
-        </div>
-        <div class="card">
-          <div class="num">A2</div>
-          <h3>Offline by design</h3>
-          <p>Printed subject packets in math, reading, health, and art, plus short video micro-lessons for TV/USB playback. No internet connection required, ever.</p>
-        </div>
-        <div class="card">
-          <div class="num">A3</div>
-          <h3>School-in-a-Box</h3>
-          <p>Every unit ships with a complete teacher kit — lesson guides, materials, and supplies — so a community teacher can run a functional classroom from day one.</p>
-        </div>
-        <div class="card">
-          <div class="num">A4</div>
-          <h3>Managed remotely, refreshed physically</h3>
-          <p>Curriculum is versioned in Songdo and updated through USB refresh packs and reprints delivered on partner visits — with a feedback loop from local teachers shaping every revision.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FUNDING ============ -->
-<section class="sec" id="funding">
-  <div class="wrap">
-    <div class="reveal">
-      <p class="eyebrow">Funding</p>
-      <h2 class="title">Where the project stands, and what funding buys.</h2>
-      <p class="lede">We're at the pre-pilot stage: the design is documented, and the next steps are physical — a prototype, a demonstration unit, and the first education kits.</p>
-    </div>
-    <div class="steps reveal">
-      <div class="step">
-        <div class="dot">Complete</div>
-        <h3>Design &amp; engineering rationale documented</h3>
-        <p>The design concept is documented and the thermal and ventilation approach is defined.</p>
-      </div>
-      <div class="step pending">
-        <div class="dot">Pre-pilot · in progress</div>
-        <h3>Seeking validation &amp; a demonstration site</h3>
-        <p>We are seeking technical validation and a potential demonstration site before any scaling.</p>
-      </div>
-    </div>
-    <div class="tiers reveal">
-      <div class="tier">
-        <div class="amt">$50</div>
-        <h3>One desk, two students</h3>
-        <p>Funds one classroom desk — seating for two students in a deployed unit.</p>
-      </div>
-      <div class="tier">
-        <div class="amt">$500</div>
-        <h3>One solar power set</h3>
-        <p>Off-grid solar for an entire classroom — power and light so lessons don't stop when the grid does.</p>
-      </div>
-      <div class="tier">
-        <div class="amt">1<small> unit</small></div>
-        <h3>The Impact Unit</h3>
-        <p>Fully stocks a single container classroom: desks, chairs, and essential student supplies — pencils, pens, erasers, notebooks.</p>
-      </div>
-    </div>
-    <div class="prior reveal">
-      <div class="row">
-        <div class="n">F1</div>
-        <div><h4>Prototype materials &amp; thermal testing</h4><p>Build and instrument the first retrofit at Chadwick to validate the ventilation and heat-management approach.</p></div>
-      </div>
-      <div class="row">
-        <div class="n">F2</div>
-        <div><h4>First demonstration unit</h4><p>A supervised demonstration deployment at a site identified with an experienced field partner.</p></div>
-      </div>
-      <div class="row">
-        <div class="n">F3</div>
-        <div><h4>First education kit production run</h4><p>Printing subject packets and loading the offline video library for the first School-in-a-Box kits.</p></div>
-      </div>
-    </div>
-    <p style="margin-top:2rem;">
-      <a class="btn btn-primary" href="mailto:nkim2028@chadwickschool.org?subject=Cuick%20School%20%E2%80%94%20funding%20conversation">Start a funding conversation <span class="arr">→</span></a>
-    </p>
-  </div>
-</section>
-
-<!-- ============ RESEARCH ============ -->
-<section class="sec funding" id="research">
-  <div class="wrap">
-    <div class="reveal">
-      <p class="eyebrow">Research</p>
-      <h2 class="title">The numbers behind the model.</h2>
-      <p class="lede">We build from published data — and we cite it. Full source list available on request.</p>
-    </div>
-    <div class="r-stats reveal">
-      <div class="r-stat">
-        <div class="fig">2.8M+ out of school</div>
-        <p>More than 2.8 million children — over 70% of South Sudan's school-age population — are out of school. Girls make up the largest share, held back by poverty, distance, early marriage, and insecurity.</p>
-        <div class="src">UNICEF South Sudan</div>
-      </div>
-      <div class="r-stat heat">
-        <div class="fig">2 years of heat closures</div>
-        <p>Extreme heat closed schools nationwide in both 2024 (45°C) and 2025 (42°C) — with an average of 12 students a day collapsing in Juba before the 2025 closure was ordered.</p>
-        <div class="src">Save the Children · AP · Government statements</div>
-      </div>
-      <div class="r-stat heat">
-        <div class="fig">Iron sheets, no power</div>
-        <p>Most existing schools are makeshift iron-sheet structures without electricity for cooling — precisely the failure a ventilated, shaded, solar-powered unit is engineered to fix.</p>
-        <div class="src">AP (Feb 2025)</div>
-      </div>
-      <div class="r-stat">
-        <div class="fig">1 proven corridor</div>
-        <p>Cargo for South Sudan routinely moves through the Port of Mombasa and up the Northern Corridor through the Malaba and Nimule border posts to Juba — the same established freight route a Cuick unit would travel.</p>
-        <div class="src">Northern Corridor / regional trade reporting</div>
-      </div>
-    </div>
-
-    <div class="why reveal">
       <h3 class="subhead">Why shipping containers?</h3>
       <div class="cards">
         <div class="card">
@@ -826,6 +561,342 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ VISION ============ -->
+<section class="sec" id="vision">
+  <div class="wrap">
+    <div class="reveal" style="max-width:64ch;margin-bottom:2.4rem;">
+      <p class="eyebrow">The long-term vision</p>
+      <h2 class="title">From one unit to a campus.</h2>
+      <p class="lede">The first container is proof, not the finish line. Cuick School is designed from day one as a system that scales — structurally, energetically, and locally.</p>
+    </div>
+    <div class="cards reveal">
+      <div class="card">
+        <div class="num">V1</div>
+        <div class="ic">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><rect x="4" y="17" width="10" height="8" stroke="currentColor" stroke-width="1.7"/><rect x="16" y="17" width="10" height="8" stroke="currentColor" stroke-width="1.7"/><rect x="10" y="7" width="10" height="8" stroke="currentColor" stroke-width="1.7"/></svg>
+        </div>
+        <h3>Modular, Lego-style scaling</h3>
+        <p>The unit is the building block, not the building. Standardized units combine into multi-classroom clusters and, eventually, full campuses — with layouts adapted to each region's climate, terrain, and community needs.</p>
+      </div>
+      <div class="card">
+        <div class="num">V2</div>
+        <div class="ic">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M16 3 L8 17 H14 L12 27 L22 12 H15 Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Smart energy systems <span class="flag">Roadmap</span></h3>
+        <p>Solar generation paired with battery storage and simple load management, so a unit banks power where electricity access is inconsistent — keeping lights, fans, and lesson screens running through the school day.</p>
+      </div>
+      <div class="card">
+        <div class="num">V3</div>
+        <div class="ic">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="10" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M6 25 C6 19 24 19 24 25" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Locally run, by design</h3>
+        <p>Deployment ends with handover, not dependence. Local teams assemble and maintain units, community teachers deliver the lessons, and partner NGOs anchor operations on the ground.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOLUTION ============ -->
+<section class="sec" id="solution" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="reveal" style="max-width:64ch;margin-bottom:2.4rem;">
+      <p class="eyebrow">Our solution</p>
+      <h2 class="title">The unit, the program, and the journey between.</h2>
+      <p class="lede">A modular classroom unit built on four principles — fast to stand up, safe in the heat, ready to teach from day one, and cheap enough to repeat.</p>
+    </div>
+    <div class="cards two reveal">
+      <div class="card">
+        <div class="num">01</div>
+        <div class="ic">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M5 22 L15 5 L25 22 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="9" y1="22" x2="21" y2="22" stroke="currentColor" stroke-width="1.8"/></svg>
+        </div>
+        <h3>Rapid deployment</h3>
+        <p>Pre-fabricated, flat-packable components assembled on-site by a small trained team with minimal equipment — days of assembly instead of months of construction.</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <div class="ic">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="6" stroke="currentColor" stroke-width="1.8"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="15" y1="3" x2="15" y2="6"/><line x1="15" y1="24" x2="15" y2="27"/><line x1="3" y1="15" x2="6" y2="15"/><line x1="24" y1="15" x2="27" y2="15"/></g></svg>
+        </div>
+        <h3>Climate adaptation</h3>
+        <p>Passive ventilation, a reflective and insulated envelope, and shading engineered to keep interior temperatures within a safe learning range — in the same 40°C+ conditions that close iron-sheet schools.</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <div class="ic">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M5 7 H13 V24 H5 Z M25 7 H17 V24 H25 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="15" y1="7" x2="15" y2="24" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <h3>Curriculum-ready</h3>
+        <p>Each unit pairs with proven emergency-education (EiE) kits and foundational literacy and numeracy programs, rather than reinventing pedagogy — managed by our Textbook Team below.</p>
+      </div>
+      <div class="card">
+        <div class="num">04</div>
+        <div class="ic">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><rect x="5" y="6" width="9" height="9" stroke="currentColor" stroke-width="1.7"/><rect x="16" y="6" width="9" height="9" stroke="currentColor" stroke-width="1.7"/><rect x="5" y="17" width="9" height="7" stroke="currentColor" stroke-width="1.7"/><rect x="16" y="17" width="9" height="7" stroke="currentColor" stroke-width="1.7"/></svg>
+        </div>
+        <h3>Low-cost &amp; repeatable</h3>
+        <p>A standardized bill of materials enabling predictable per-unit cost and scaling across sites — the same spec, every time, anywhere.</p>
+      </div>
+    </div>
+
+    <!-- ——— The journey: interactive route map on real geography ——— -->
+    <div class="sub-block reveal">
+      <h3 class="subhead">From Songdo to the school site.</h3>
+      <p class="lede">The model's quiet advantage: <b style="color:var(--ink);">the classroom ships as its own crate.</b> Brighter Boxes sources a surplus shipping container in Korea, retrofits it to the Cuick spec, packs it with its own education payload, and sends it through the same global logistics network as any commercial cargo. Click each stop to follow one unit's journey from South Korea to South Sudan.</p>
+      <figure class="map-card">
+        <div class="map-scroll">
+        <svg viewBox="0 0 760 375" role="img" aria-label="Map of the deployment route from Songdo, South Korea across the Indian Ocean to Mombasa, Kenya, then overland through the Nimule border crossing to a school site in South Sudan. Six interactive stops." xmlns="http://www.w3.org/2000/svg">
+          <title>Deployment corridor — Songdo to South Sudan</title>
+          <!-- ocean -->
+          <rect x="0" y="0" width="760" height="375" fill="#D9E4E2"/>
+          <!-- landmasses (simplified equirectangular, ~lon 18E–140E / lat 46N–14S) -->
+          <g fill="#F1EEE1" stroke="#C6CBBC" stroke-width="1" stroke-linejoin="round">
+            <!-- Africa (eastern) -->
+            <path d="M0,78 L49.8,84 L81,90 L90,103 L93.5,112 L112,150 L129,185 L146,205 L158,214 L181,217 L208,212 L196,238 L174,272 L152,290 L135,312 L131,330 L140,355 L142,375 L0,375 Z"/>
+            <!-- Eurasia: Levant–Arabia–Iran–India–SE Asia–China–Korea -->
+            <path d="M0,0 L0,40 L24.9,50 L56,57 L78,61 L112,59 L104,89 L99,97 L99,114 L106,103 L118,137 L131,181 L159,207 L168,206 L192,199 L212,187 L233.6,177.6 L260.4,146.4 L239.9,122.7 L201.8,130.8 L186.9,102.2 L190.6,98.4 L205.6,113.4 L224.3,120.2 L241.7,119 L271,129.6 L305.3,132.1 L320.8,146.4 L340.2,167 L352,196.2 L370.6,236.1 L388.1,205 L401.8,180.7 L423.6,160.7 L447.3,150.8 L463.5,160.1 L477.8,187.5 L500.9,234.9 L513.4,262.9 L535.1,278.4 L532,256.7 L516.5,203.1 L534.5,221.2 L553.2,223 L569.4,204.4 L547.6,168.2 L561.3,152.6 L595.5,146.4 L618,138.9 L634.2,125.2 L647.3,92.2 L638,72.3 L651.7,54.8 L633,44.2 L646,31.8 L663.5,39.2 L675.9,53 L674.1,71 L683,73 L692.7,67.9 L694.6,56.1 L689.6,46.1 L697.1,29.3 L708.9,19.3 L760,0 Z"/>
+            <!-- Sumatra -->
+            <path d="M481,252 L500,268 L520,285 L543,310 L549,324 L535,330 L510,300 L490,275 L474,258 Z"/>
+            <!-- Borneo -->
+            <path d="M575,270 L610,262 L632,282 L625,310 L595,318 L572,295 Z"/>
+            <!-- Philippines -->
+            <path d="M655,190 L662,186 L668,208 L661,226 L654,218 Z"/>
+            <path d="M641,234 L650,230 L656,246 L648,258 L640,250 Z"/>
+            <!-- Japan (southwest arc) -->
+            <path d="M704,100 L720,90 L742,78 L760,68 L760,74 L744,86 L722,98 L708,106 Z"/>
+            <!-- Madagascar (northern tip) -->
+            <path d="M162,375 L168,352 L180,342 L192,352 L196,375 Z"/>
+            <!-- Sri Lanka / Taiwan -->
+            <ellipse cx="391" cy="245" rx="8" ry="11"/>
+            <ellipse cx="644" cy="133" rx="6" ry="11"/>
+          </g>
+          <!-- inland seas carved back to water -->
+          <ellipse cx="99.7" cy="15.6" rx="52" ry="15" fill="#D9E4E2" stroke="#C6CBBC" stroke-width="1"/>
+          <ellipse cx="202.5" cy="24.9" rx="15" ry="21" fill="#D9E4E2" stroke="#C6CBBC" stroke-width="1"/>
+          <!-- geography labels -->
+          <text class="geo-label" x="14" y="234">SOUTH SUDAN</text>
+          <text class="geo-label" x="225" y="338">INDIAN OCEAN</text>
+          <text class="geo-label" x="248" y="185">ARABIAN SEA</text>
+          <!-- compass -->
+          <g stroke="#95A09A" stroke-width="1.2" fill="#95A09A">
+            <line x1="732" y1="230" x2="732" y2="210"/>
+            <path d="M732,205 L728,213 L736,213 Z"/>
+          </g>
+          <text class="geo-label" x="727" y="245">N</text>
+          <!-- route -->
+          <path class="flow" d="M676,53 L692,68 L688,84 L665,95 L634,122 L610,175 L565,235 L535,278 L505,252 L481,246 L420,256 L386,262 L300,285 L200,300 L135,312 L117,295 L91,285 L87,264 L100,243" stroke="#123A30" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <!-- moving cargo marker (progressive enhancement) -->
+          <rect class="cargo" x="-5" y="-3.5" width="10" height="7" rx="1" fill="#BC7A1E"/>
+          <!-- stops -->
+          <g class="rn" data-i="0" tabindex="0" role="button" aria-label="Stop 1: Songdo, South Korea — source, retrofit and pack">
+            <circle class="hit" cx="676" cy="53" r="20"/>
+            <circle class="ring" cx="676" cy="53" r="13"/>
+            <circle class="c" cx="676" cy="53" r="7"/>
+            <line x1="668" y1="49" x2="646" y2="41" stroke="#95A09A" stroke-width="1"/>
+            <text class="nm" x="642" y="36" text-anchor="end">Songdo</text>
+            <text class="rl" x="642" y="48" text-anchor="end">build &amp; pack</text>
+          </g>
+          <g class="rn" data-i="1" tabindex="0" role="button" aria-label="Stop 2: Busan — export port">
+            <circle class="hit" cx="692" cy="68" r="20"/>
+            <circle class="ring" cx="692" cy="68" r="13"/>
+            <circle class="c" cx="692" cy="68" r="7"/>
+            <text class="nm" x="688" y="96" text-anchor="middle">Busan</text>
+            <text class="rl" x="688" y="108" text-anchor="middle">export</text>
+          </g>
+          <g class="rn" data-i="2" tabindex="0" role="button" aria-label="Stop 3: Indian Ocean — sea freight">
+            <circle class="hit" cx="300" cy="285" r="20"/>
+            <circle class="ring" cx="300" cy="285" r="13"/>
+            <circle class="c" cx="300" cy="285" r="7"/>
+            <text class="nm" x="300" y="309" text-anchor="middle">Sea transit</text>
+            <text class="rl" x="300" y="321" text-anchor="middle">≈4–6 weeks</text>
+          </g>
+          <g class="rn" data-i="3" tabindex="0" role="button" aria-label="Stop 4: Mombasa, Kenya — gateway port">
+            <circle class="hit" cx="135" cy="312" r="20"/>
+            <circle class="ring" cx="135" cy="312" r="13"/>
+            <circle class="c" cx="135" cy="312" r="7"/>
+            <text class="nm" x="150" y="309">Mombasa</text>
+            <text class="rl" x="150" y="321">gateway port</text>
+          </g>
+          <g class="rn" data-i="4" tabindex="0" role="button" aria-label="Stop 5: Nimule — Northern Corridor and border crossing">
+            <circle class="hit" cx="87" cy="264" r="20"/>
+            <circle class="ring" cx="87" cy="264" r="13"/>
+            <circle class="c" cx="87" cy="264" r="7"/>
+            <line x1="78" y1="263" x2="64" y2="260" stroke="#95A09A" stroke-width="1"/>
+            <text class="nm" x="60" y="256" text-anchor="end">Nimule</text>
+            <text class="rl" x="60" y="268" text-anchor="end">border</text>
+          </g>
+          <g class="rn" data-i="5" tabindex="0" role="button" aria-label="Stop 6: School site, South Sudan — assembly and opening">
+            <circle class="hit" cx="100" cy="243" r="20"/>
+            <circle class="ring" cx="100" cy="243" r="13"/>
+            <circle class="c" cx="100" cy="243" r="7"/>
+            <text class="nm" x="110" y="236">School site</text>
+            <text class="rl" x="110" y="248">assembly</text>
+          </g>
+        </svg>
+        </div>
+        <div class="route-detail">
+          <div class="step"><span id="route-step">01</span><small>of 06</small></div>
+          <div>
+            <h4 id="route-title"></h4>
+            <p id="route-body"></p>
+            <div class="meta" id="route-meta"></div>
+          </div>
+          <div class="route-nav">
+            <button class="btn btn-ghost" id="route-prev" aria-label="Previous stop">←</button>
+            <button class="btn btn-ghost" id="route-next" aria-label="Next stop">→</button>
+          </div>
+        </div>
+        <figcaption><span>Fig. 02 — Deployment corridor (interactive)</span><span>simplified geography · route &amp; timings indicative · final routing set with implementing partners</span></figcaption>
+      </figure>
+    </div>
+
+    <!-- ——— Textbook team ——— -->
+    <div class="sub-block reveal">
+      <h3 class="subhead">The Textbook Team — remote curriculum management.</h3>
+      <p class="lede">A container is only a classroom if there's something worth teaching inside it. Our education team (Pillar A) builds and manages that layer remotely from Songdo — designed for settings with low literacy, no internet, and limited electricity.</p>
+      <div class="cards two reveal" style="margin-top:1.8rem;">
+        <div class="card">
+          <div class="num">A1</div>
+          <h3>Adapt, don't reinvent</h3>
+          <p>We package proven emergency-education materials and foundational literacy &amp; numeracy programs — adapted for low-resource, offline classrooms — rather than writing pedagogy from scratch.</p>
+        </div>
+        <div class="card">
+          <div class="num">A2</div>
+          <h3>Offline by design</h3>
+          <p>Printed subject packets in math, reading, health, and art, plus short video micro-lessons for TV/USB playback. No internet connection required, ever.</p>
+        </div>
+        <div class="card">
+          <div class="num">A3</div>
+          <h3>School-in-a-Box</h3>
+          <p>Every unit ships with a complete teacher kit — lesson guides, materials, and supplies — so a community teacher can run a functional classroom from day one.</p>
+        </div>
+        <div class="card">
+          <div class="num">A4</div>
+          <h3>Managed remotely, refreshed physically</h3>
+          <p>Curriculum is versioned in Songdo and updated through USB refresh packs and reprints delivered on partner visits — with a feedback loop from local teachers shaping every revision.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FUNDING ============ -->
+<section class="sec" id="funding">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Funding</p>
+      <h2 class="title">Our funding, transparently — from day zero.</h2>
+      <p class="lede">Foundations and donors deserve concrete numbers. Here are ours, published honestly from the start and updated as they change.</p>
+    </div>
+
+    <div class="fund-grid reveal">
+      <div class="fund-zero">
+        <div class="big">$0</div>
+        <div class="when">Raised to date · July 2026</div>
+        <p>We are pre-fundraise, and we say so. Every dollar from the first will be published on this page — so partners and donors can hold us to it. The annual funding target will be published the moment the first Impact Unit is fully costed with suppliers.</p>
+      </div>
+      <div class="fund-chart">
+        <svg viewBox="0 0 560 220" role="img" aria-label="Bar chart of funds raised to date versus the first Impact Unit target. Raised to date: zero dollars. Target: to be determined once the unit is costed.">
+          <title>Funds raised vs. first-unit target</title>
+          <text x="40" y="28" font-family="'IBM Plex Mono',monospace" font-size="10" fill="#59655F" letter-spacing="1.5">USD RAISED</text>
+          <g stroke="#E4E5DE" stroke-width="1" stroke-dasharray="2 5">
+            <line x1="40" y1="50" x2="540" y2="50"/>
+            <line x1="40" y1="90" x2="540" y2="90"/>
+            <line x1="40" y1="130" x2="540" y2="130"/>
+          </g>
+          <line x1="40" y1="170" x2="540" y2="170" stroke="#16201C" stroke-width="1.4"/>
+          <!-- raised bar (zero) -->
+          <rect x="110" y="166" width="100" height="4" fill="#123A30"/>
+          <text x="160" y="150" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="22" fill="#123A30">$0</text>
+          <text x="160" y="192" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="#59655F" letter-spacing="1">RAISED TO DATE · JUL 2026</text>
+          <!-- target bar (being costed) -->
+          <rect x="350" y="58" width="100" height="112" fill="#EFF3EF" stroke="#356254" stroke-width="1.4" stroke-dasharray="5 4"/>
+          <text x="400" y="120" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="14" fill="#59655F">TBD</text>
+          <text x="400" y="192" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="#59655F" letter-spacing="1">FIRST IMPACT UNIT — BEING COSTED</text>
+        </svg>
+        <div class="cap"><span>Fig. 03 — Funding status</span><span>updates as funds arrive</span></div>
+      </div>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step">
+        <div class="dot">Complete</div>
+        <h3>Design &amp; engineering rationale documented</h3>
+        <p>The design concept is documented and the thermal and ventilation approach is defined.</p>
+      </div>
+      <div class="step pending">
+        <div class="dot">Pre-pilot · in progress</div>
+        <h3>Seeking validation &amp; a demonstration site</h3>
+        <p>We are seeking technical validation and a potential demonstration site before any scaling.</p>
+      </div>
+    </div>
+
+    <div class="tiers reveal">
+      <div class="tier">
+        <div class="amt">$50</div>
+        <h3>One desk, two students</h3>
+        <p>Funds one classroom desk — seating for two students in a deployed unit.</p>
+      </div>
+      <div class="tier">
+        <div class="amt">$500</div>
+        <h3>One solar power set</h3>
+        <p>Off-grid solar for an entire classroom — power and light so lessons don't stop when the grid does.</p>
+      </div>
+      <div class="tier">
+        <div class="amt">1<small> unit</small></div>
+        <h3>The Impact Unit</h3>
+        <p>Fully stocks a single container classroom: desks, chairs, and essential student supplies — pencils, pens, erasers, notebooks.</p>
+      </div>
+    </div>
+
+    <div class="sub-block reveal" style="margin-top:clamp(36px,5vw,52px);">
+      <h3 class="subhead">Planned funding sources.</h3>
+      <div class="cards" style="grid-template-columns:repeat(4,1fr);">
+        <div class="card">
+          <div class="num">S1</div>
+          <h3>School &amp; community campaigns</h3>
+          <p>Fundraising drives at Chadwick International and in the Songdo community.</p>
+        </div>
+        <div class="card">
+          <div class="num">S2</div>
+          <h3>Corporate &amp; teacher sponsorship</h3>
+          <p>Sponsorships from companies and educators — recurring where possible.</p>
+        </div>
+        <div class="card">
+          <div class="num">S3</div>
+          <h3>Foundation &amp; grant applications</h3>
+          <p>Applications to youth-service and education-in-emergencies grant programs.</p>
+        </div>
+        <div class="card">
+          <div class="num">S4</div>
+          <h3>Individual donors</h3>
+          <p>Direct giving at the $50 and $500 impact levels, acknowledged publicly.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="prior reveal">
+      <div class="row">
+        <div class="n">F1</div>
+        <div><h4>Prototype materials &amp; thermal testing</h4><p>Build and instrument the first retrofit at Chadwick to validate the ventilation and heat-management approach.</p></div>
+      </div>
+      <div class="row">
+        <div class="n">F2</div>
+        <div><h4>First demonstration unit</h4><p>A supervised demonstration deployment at a site identified with an experienced field partner.</p></div>
+      </div>
+      <div class="row">
+        <div class="n">F3</div>
+        <div><h4>First education kit production run</h4><p>Printing subject packets and loading the offline video library for the first School-in-a-Box kits.</p></div>
+      </div>
+    </div>
+    <p style="margin-top:2rem;">
+      <a class="btn btn-primary" href="mailto:nkim2028@chadwickschool.org?subject=Cuick%20School%20%E2%80%94%20funding%20conversation">Start a funding conversation <span class="arr">→</span></a>
+    </p>
   </div>
 </section>
 
@@ -892,20 +963,23 @@
 <footer class="site">
   <div class="wrap foot-grid">
     <a class="brand" href="#top" aria-label="Cuick School">
-      <svg class="mark" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
-        <rect x="1" y="1" width="8" height="8" rx="1.5" fill="#EEF4F0"/>
-        <rect x="11" y="1" width="8" height="8" rx="1.5" fill="#EEF4F0"/>
-        <rect x="21" y="1" width="8" height="8" rx="1.5" fill="#BC7A1E"/>
-        <rect x="1" y="11" width="8" height="8" rx="1.5" fill="#EEF4F0"/>
-        <rect x="1" y="21" width="8" height="8" rx="1.5" fill="#EEF4F0"/>
-        <rect x="11" y="21" width="8" height="8" rx="1.5" fill="#EEF4F0"/>
-        <rect x="21" y="21" width="8" height="8" rx="1.5" fill="#EEF4F0"/>
+      <svg class="mark" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M11.5 7 A4.5 4.5 0 0 1 20.5 7 Z" fill="#BC7A1E"/>
+        <path d="M16 10 L5 12.5 L5 27 L16 24.5 Z" fill="none" stroke="#EEF4F0" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="M16 10 L27 12.5 L27 27 L16 24.5 Z" fill="none" stroke="#EEF4F0" stroke-width="1.7" stroke-linejoin="round"/>
+        <line x1="16" y1="10" x2="16" y2="24.5" stroke="#EEF4F0" stroke-width="1.7"/>
+        <g stroke="#EEF4F0" stroke-width="1.1" opacity=".7">
+          <line x1="8.7" y1="11.9" x2="8.7" y2="26"/>
+          <line x1="12.4" y1="11" x2="12.4" y2="25.2"/>
+          <line x1="19.6" y1="11" x2="19.6" y2="25.2"/>
+          <line x1="23.3" y1="11.9" x2="23.3" y2="26"/>
+        </g>
       </svg>
       <span class="wm"><b>Cuick&nbsp;School</b><span>A Brighter Boxes project</span></span>
     </a>
     <div class="foot-note">
       A project by Brighter Boxes, Chadwick International (Songdo, South Korea).<br>
-      Project concept v1.1 · Prepared for prospective field &amp; technical partners · Sources cited in Research · <a href="https://cuickschool.org">cuickschool.org</a>
+      Project concept v1.2 · Prepared for prospective field &amp; technical partners · Sources cited in Research · Field photos: Oxfam East Africa, CC BY 2.0 · <a href="https://cuickschool.org">cuickschool.org</a>
     </div>
   </div>
 </footer>
