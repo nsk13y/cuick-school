@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cuick School — Modular, climate-adapted classrooms for South Sudan | Brighter Boxes</title>
-<meta name="description" content="Cuick School (Brighter Boxes, Chadwick International): rapid-deployment, climate-adapted modular container classrooms for crisis-affected children in South Sudan. Education in emergencies, temporary learning spaces, off-grid solar, School-in-a-Box curriculum. Pre-pilot — seeking humanitarian partners." />
-<meta name="keywords" content="Cuick School, Brighter Boxes, container classroom, modular classroom, education in emergencies, temporary learning space, South Sudan education, climate-adapted school, off-grid solar school, School-in-a-Box, INEE, Sphere standards, humanitarian logistics" />
+<title>Cuick School — Modular, climate-adapted classrooms for Cox's Bazar, Bangladesh | Brighter Boxes</title>
+<meta name="description" content="Cuick School (Brighter Boxes, Chadwick International): rapid-deployment, climate-adapted modular container classrooms for Rohingya refugee children in Cox&#39;s Bazar, Bangladesh. Education in emergencies, temporary learning spaces, cyclone- and heat-adapted design, off-grid solar, School-in-a-Box curriculum. Pre-pilot — seeking humanitarian partners." />
+<meta name="keywords" content="Cuick School, Brighter Boxes, container classroom, modular classroom, education in emergencies, temporary learning space, Cox's Bazar education, Rohingya refugee education, Bangladesh learning centres, climate-adapted school, off-grid solar school, School-in-a-Box, INEE, Sphere standards, humanitarian logistics" />
 <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M10.5 8 A5.5 5.5 0 0 1 21.5 8 Z" fill="%23BC7A1E"/><path d="M15 10.5 L4 13 L4 28 L15 25.5 Z" fill="%23123A30"/><path d="M17 10.5 L28 13 L28 28 L17 25.5 Z" fill="%23123A30"/></svg>' />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -143,7 +143,7 @@
     position:relative;isolation:isolate;min-height:clamp(400px,58vh,560px);
     display:flex;align-items:flex-end;background:var(--pine-700);color:#F2F6F2;
   }
-  .impact img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
+  .impact img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;color:transparent;}
   .impact::after{
     content:"";position:absolute;inset:0;z-index:-1;
     background:linear-gradient(180deg,rgba(14,32,26,.18) 0%,rgba(14,32,26,.55) 55%,rgba(14,32,26,.88) 100%);
@@ -174,7 +174,7 @@
   /* research stats (fixed spacing) ------------------------------- */
   .research{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:.5rem 0 0;border-top:1px solid var(--line);}
-  .stat-row.second{border-top:none;grid-template-columns:repeat(2,1fr);}
+  .stat-row.second{border-top:none;grid-template-columns:repeat(3,1fr);}
   .stat{padding:1.8rem 1.5rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
   .stat:first-child{padding-left:0;}
   .stat:last-child{border-right:none;}
@@ -184,9 +184,9 @@
   .stat .src{margin-top:.6rem;font-family:var(--f-mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);opacity:.75;}
 
   /* field photos -------------------------------------------------- */
-  .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:2rem;}
-  .ph{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
-  .ph img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--pine-050);}
+  .field-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:2rem;}
+  .ph{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+  .ph img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--pine-050);color:transparent;}
   .ph .frame{
     aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;
     background:repeating-linear-gradient(45deg,#F4F5EF 0,#F4F5EF 10px,#EDEEE7 10px,#EDEEE7 20px);
@@ -196,6 +196,8 @@
   .ph .cap{padding:.85rem 1rem;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);line-height:1.5;}
   .ph .cap b{color:var(--ink);font-weight:600;display:block;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.3rem;}
   .ph .cap .cr{display:block;margin-top:.4rem;font-family:var(--f-mono);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;opacity:.7;}
+
+  .ph .cap .cr a,.impact .credit a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor;}
 
   /* standards card ------------------------------------------------ */
   .std-card{
@@ -213,45 +215,68 @@
 
   /* route map ---------------------------------------------------- */
   .map-card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 18px 12px;}
-  .map-scroll{overflow-x:auto;border-radius:4px;}
-  .map-scroll svg{min-width:700px;width:100%;height:auto;display:block;}
+  .map-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:14px;align-items:start;}
+  .map-pane{position:relative;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#D9E4E2;}
+  .map-pane .tag{position:absolute;top:8px;left:8px;z-index:1;font-family:var(--f-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:rgba(255,255,255,.88);padding:.3em .6em;border-radius:2px;}
+  .map-svg{display:block;width:100%;height:auto;}
+  .sea-bg{fill:#D9E4E2;}
+  .land path{fill:#F1EEE1;stroke:#C2C8B8;stroke-width:.6;stroke-linejoin:round;}
+  .land-hi path{fill:#E6DDC1;stroke:#A7A48C;stroke-width:.8;stroke-linejoin:round;}
+  .roads path{fill:none;stroke:#BDB59B;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;}
+  .geo-labels text{font-family:var(--f-mono);font-size:10px;letter-spacing:2.2px;fill:#8B958F;}
+  .geo-labels text.sea{fill:#6F8F89;font-style:italic;letter-spacing:2.6px;}
+  .leg-sea{fill:none;stroke:#123A30;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:4 7;}
+  .leg-road{fill:none;stroke:#123A30;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
+  .leg-road.spur{stroke-width:1.6;}
+  .box-b rect{fill:rgba(255,255,255,.35);stroke:#123A30;stroke-width:1.2;stroke-dasharray:3 2;}
+  .box-b text{font-family:var(--f-mono);font-size:11px;font-weight:500;fill:#123A30;}
+  .cargo rect{fill:#0E2E26;stroke:#FFFFFF;stroke-width:1;}
+  .dist{font-family:var(--f-mono);font-size:11px;fill:#123A30;font-weight:500;paint-order:stroke;stroke:rgba(251,251,247,.85);stroke-width:3px;}
+  .dist.sub{font-size:9.5px;font-weight:400;fill:#59655F;}
+  .scalebar line{stroke:#16201C;stroke-width:1.2;}
+  .scalebar text,.north text{font-family:var(--f-mono);font-size:9.5px;fill:#16201C;}
+  .north line{stroke:#59655F;stroke-width:1.2;} .north path{fill:#59655F;}
   .rn{cursor:pointer;outline:none;}
   .rn .hit{fill:transparent;}
-  .rn .c{fill:var(--surface);stroke:var(--pine);stroke-width:2;transition:all .15s ease;}
-  .rn .ring{fill:none;stroke:var(--pine);stroke-width:1;opacity:0;transition:opacity .15s ease;}
-  .rn .nm{font-family:var(--f-mono);font-size:11.5px;fill:var(--ink);letter-spacing:.4px;}
-  .rn .rl{font-family:var(--f-mono);font-size:9px;fill:var(--muted);letter-spacing:.6px;text-transform:uppercase;}
+  .rn .c{fill:#FFFFFF;stroke:#123A30;stroke-width:2;transition:fill .15s ease,stroke-width .15s ease;}
+  .rn .ring{fill:none;stroke:#123A30;stroke-width:1;opacity:0;transition:opacity .15s ease;}
+  .rn .nm{font-family:var(--f-mono);font-size:12.5px;fill:#16201C;letter-spacing:.3px;paint-order:stroke;stroke:rgba(251,251,247,.88);stroke-width:3.2px;stroke-linejoin:round;}
+  .rn .rl{font-family:var(--f-mono);font-size:9.5px;fill:#59655F;letter-spacing:.6px;text-transform:uppercase;paint-order:stroke;stroke:rgba(251,251,247,.88);stroke-width:3px;stroke-linejoin:round;}
   .rn:hover .c,.rn:focus-visible .c{stroke-width:3;}
-  .rn.active .c{fill:var(--pine);}
+  .rn.active .c{fill:#123A30;}
   .rn.active .ring{opacity:1;}
-  .rn.active .nm{fill:var(--pine);font-weight:500;}
-  .geo-label{font-family:'IBM Plex Mono',monospace;fill:#95A09A;letter-spacing:2.5px;font-size:9.5px;}
-  .route-detail{border-top:1px solid var(--line);margin-top:6px;padding-top:16px;display:grid;grid-template-columns:auto 1fr auto;gap:1.2rem;align-items:start;}
-  .route-detail .step{font-family:var(--f-mono);font-size:1.5rem;color:var(--pine-300);line-height:1.1;padding-top:.15rem;}
-  .route-detail .step small{display:block;font-size:.62rem;letter-spacing:.14em;color:var(--muted);margin-top:.35rem;text-transform:uppercase;}
+  .rn.active .nm{fill:#123A30;font-weight:500;}
+  .map-key{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;padding:.75rem .2rem 0;font-family:var(--f-mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+  .map-key span{display:inline-flex;align-items:center;gap:.5em;}
+  .map-key i{display:inline-block;width:22px;height:0;border-top:2px solid #123A30;}
+  .map-key i.sea{border-top:2px dashed #123A30;}
+  .map-key i.box{width:12px;height:8px;border:none;background:#0E2E26;outline:1px solid #fff;}
+  @keyframes dashmove{to{stroke-dashoffset:-60;}}
+  .flow{animation:dashmove 3.2s linear infinite;}
+  @media (max-width:760px){ .map-grid{grid-template-columns:1fr;} .tag-x{display:none;} }
+  .stop-list{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:.9rem;}
+  .chip{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.03em;text-align:left;padding:.6em .75em;border:1px solid var(--line);background:var(--surface);border-radius:3px;color:var(--muted);cursor:pointer;transition:border-color .15s ease,background .15s ease,color .15s ease;}
+  .chip b{color:var(--pine-300);font-weight:500;margin-right:.55em;}
+  .chip:hover{border-color:var(--pine-300);color:var(--ink);}
+  .chip:focus-visible{outline:2px solid var(--pine);outline-offset:2px;}
+  .chip.active{border-color:var(--pine);background:var(--pine-050);color:var(--ink);}
+  .route-detail{border-top:1px solid var(--line);margin-top:16px;padding-top:16px;display:grid;grid-template-columns:auto 1fr auto;gap:1.2rem;align-items:start;}
+  .route-detail .rstep{font-family:var(--f-mono);font-size:1.5rem;color:var(--pine-300);line-height:1.1;padding-top:.15rem;}
+  .route-detail .rstep small{display:block;font-size:.62rem;letter-spacing:.14em;color:var(--muted);margin-top:.35rem;text-transform:uppercase;}
   .route-detail h4{font-family:var(--f-display);font-weight:600;font-size:1.08rem;letter-spacing:-.01em;margin:0 0 .4rem;}
-  .route-detail p{margin:0;color:var(--muted);font-size:.95rem;max-width:70ch;}
-  .route-detail .meta{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ochre);margin-top:.6rem;}
+  .route-detail p{margin:0;color:var(--muted);font-size:.95rem;max-width:72ch;}
+  .route-detail .meta{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--pine-300);margin-top:.6rem;}
   .route-nav{display:flex;gap:.5rem;}
   .route-nav button{padding:.55em .8em;}
-  @keyframes dashmove{to{stroke-dashoffset:-60;}}
-  .flow{stroke-dasharray:4 8;animation:dashmove 3.2s linear infinite;}
-  @supports (offset-path:path('M0,0 L10,10')){
-    .cargo{
-      offset-path:path('M676,53 L692,68 L688,84 L665,95 L634,122 L610,175 L565,235 L535,278 L505,252 L481,246 L420,256 L386,262 L300,285 L200,300 L135,312 L117,295 L91,285 L87,264 L100,243');
-      offset-rotate:0deg;
-      animation:ride 18s linear infinite;
-    }
-    @keyframes ride{from{offset-distance:0%;}to{offset-distance:100%;}}
-  }
 
   /* funding ------------------------------------------------------ */
-  .steps{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:2rem 0 0;}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:2rem 0 0;}
   .step{background:var(--surface);padding:1.7rem 1.7rem;position:relative;}
   .step .dot{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:.6em;color:var(--muted);}
   .step .dot::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--pine);display:inline-block;flex:0 0 auto;}
   .step.pending .dot::before{background:transparent;border:1.5px solid var(--ochre);}
   .step.pending .dot{color:var(--ochre);}
+  .step.next .dot::before{background:transparent;border:1.5px solid var(--muted);}
   .step h3{font-family:var(--f-display);font-weight:600;font-size:1.1rem;margin:.85rem 0 .45rem;letter-spacing:-.01em;}
   .step p{margin:0;color:var(--muted);font-size:.96rem;}
 
@@ -325,6 +350,7 @@
     .contact-grid,.std-card,.fund-grid{grid-template-columns:1fr;}
     .cards{grid-template-columns:1fr 1fr;}
     .field-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
   }
   @media (max-width:620px){
     body{font-size:16px;}
@@ -382,9 +408,9 @@
 <section class="hero wrap">
   <div class="hero-grid">
     <div class="reveal">
-      <p class="eyebrow">Project concept · v1.2 · for field &amp; technical partners</p>
-      <h1>Rapid-deployment, climate-adapted classrooms for children in <em>South&nbsp;Sudan</em>.</h1>
-      <p class="intro">Across South Sudan, climate disasters and protracted conflict have left hundreds of thousands of children without safe, usable learning spaces. Cuick School proposes a standardized modular classroom unit — a retrofitted shipping container transported and assembled quickly in low-resource environments, engineered for extreme heat, and paired with established emergency-education curricula.</p>
+      <p class="eyebrow">Project concept · v2.0 · for field &amp; technical partners</p>
+      <h1>Rapid-deployment, climate-adapted classrooms for children in <em>Cox's&nbsp;Bazar, Bangladesh</em>.</h1>
+      <p class="intro">In the Rohingya refugee camps of Cox's Bazar — the world's largest refugee settlement — hundreds of thousands of children are out of school, and the bamboo learning centres that do exist are exposed to cyclones, monsoon floods, fire and extreme heat. Cuick School proposes a standardized modular classroom unit — a retrofitted shipping container transported and assembled quickly in low-resource environments, designed for the region's climate hazards, and paired with established emergency-education curricula.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#partner">What we're asking of partners <span class="arr">→</span></a>
         <a class="btn btn-ghost" href="#solution">See the model</a>
@@ -393,9 +419,9 @@
 
     <!-- Fig. 01: engineering elevation of the unit -->
     <figure class="hero-fig reveal">
-      <svg viewBox="0 0 560 430" role="img" aria-label="Technical elevation sketch of a Cuick School modular classroom unit: a ventilated classroom beneath a raised shade canopy, with passive ventilation through the gap, an ambient heat source, and an illustrative footprint dimension." xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 560 430" role="img" aria-label="Technical elevation sketch of a Cuick School modular classroom unit: a ventilated classroom on raised footings beneath a shade canopy, with passive ventilation through the gap, sun, monsoon rain and cyclone wind, and an illustrative footprint dimension." xmlns="http://www.w3.org/2000/svg">
         <title>Cuick School modular classroom — concept elevation</title>
-        <desc>An illustrative engineering elevation showing the classroom unit, a raised shade canopy on posts, a passive-ventilation airflow path through the gap between them, an ambient heat source, and an approximate footprint dimension. Not to scale.</desc>
+        <desc>An illustrative engineering elevation showing the classroom unit on raised footings, a shade canopy on posts, a passive-ventilation airflow path through the gap between them, heat from the sun, monsoon rain and cyclone wind, and an approximate footprint dimension. Not to scale.</desc>
         <defs>
           <marker id="ah" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
             <path d="M0 0 L6 3 L0 6 Z" fill="#356254"/>
@@ -412,7 +438,12 @@
           <line x1="101" y1="55" x2="107" y2="49"/>
           <line x1="55" y1="101" x2="49" y2="107"/>
         </g>
-        <text x="126" y="83" font-family="'IBM Plex Mono',monospace" font-size="13" fill="#BC7A1E" letter-spacing="0.5">40°C+ ambient</text>
+        <text x="126" y="83" font-family="'IBM Plex Mono',monospace" font-size="13" fill="#BC7A1E" letter-spacing="0.5">heat + humidity</text>
+        <g stroke="#59655F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M470 104 H514 A12 12 0 0 0 514 80 A16 16 0 0 0 485 74 A12 12 0 0 0 470 104 Z" fill="#FFFFFF"/>
+          <line x1="478" y1="112" x2="472" y2="126"/><line x1="492" y1="112" x2="486" y2="126"/><line x1="506" y1="112" x2="500" y2="126"/>
+        </g>
+        <text x="492" y="144" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" fill="#59655F" letter-spacing="0.5">monsoon · cyclone</text>
         <text x="295" y="138" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" fill="#59655F" letter-spacing="0.5">shade canopy</text>
         <rect x="150" y="150" width="290" height="11" fill="#123A30"/>
         <line x1="150" y1="161" x2="440" y2="161" stroke="#123A30" stroke-width="1"/>
@@ -424,6 +455,9 @@
         <rect x="200" y="300" width="34" height="58" rx="1" stroke="#123A30" stroke-width="1.5" fill="#FBFBF7"/>
         <rect x="262" y="276" width="44" height="38" rx="1" stroke="#123A30" stroke-width="1.5" fill="#FBFBF7"/>
         <rect x="326" y="276" width="44" height="38" rx="1" stroke="#123A30" stroke-width="1.5" fill="#FBFBF7"/>
+        <rect x="198" y="358" width="14" height="20" fill="#E4E5DE" stroke="#123A30" stroke-width="1.4"/>
+        <rect x="378" y="358" width="14" height="20" fill="#E4E5DE" stroke="#123A30" stroke-width="1.4"/>
+        <text x="425" y="373" font-family="'IBM Plex Mono',monospace" font-size="11" fill="#59655F" letter-spacing="0.5">raised footings</text>
         <line x1="120" y1="378" x2="455" y2="378" stroke="#123A30" stroke-width="1.6"/>
         <g stroke="#59655F" stroke-width="1">
           <line x1="138" y1="378" x2="130" y2="388"/>
@@ -456,16 +490,16 @@
 
 <!-- ============ THE PROBLEM — IMPACT BANNER ============ -->
 <section class="impact" id="problem">
-  <!-- Photo: Oxfam East Africa, "Children displaced in the crisis are not going to school" (South Sudan, 2014).
-       License: CC BY 2.0, via Wikimedia Commons. Keep the on-page credit if you keep the photo.
-       To swap in your own photo, replace the src below. -->
-  <img class="bg" src="photos/problem-banner.jpg" alt="Children displaced by the crisis in South Sudan stand together at a displacement site — out of school." />
+  <!-- Photo: "Kutupalong rohingya camp classroom" by Aashaa (2022), CC BY-SA 4.0, via Wikimedia Commons.
+       It loads from Wikimedia at a standard size. To self-host it, save the file as photos/coxs-bazar-classroom.jpg:
+       the page switches to that copy automatically if Wikimedia is ever unavailable. Keep the credit line. -->
+  <img class="bg" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Kutupalong_rohingya_camp_classroom.jpg/1920px-Kutupalong_rohingya_camp_classroom.jpg" data-local="photos/coxs-bazar-classroom.jpg" onerror="if(this.dataset.local&amp;&amp;!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.local;}" alt="Rohingya children sit on the floor of a bamboo learning centre in Kutupalong camp, Cox&#39;s Bazar, while their teacher reads to the class." />
   <div class="wrap inner">
     <p class="k">The problem</p>
-    <p class="line">Right now in South Sudan, a child is more likely to be out of school than in one.</p>
-    <p class="sub">2.8M+ children out of school — over 70% of the school-age population, most of them girls (UNICEF). And in 40°C+ heat, even the classrooms that exist are closing.</p>
+    <p class="line">In the world's largest refugee settlement, about 350,000 children are out of school.</p>
+    <p class="sub">More than half of the camps' one million Rohingya refugees are children. Classes meet in small bamboo shelters, often without desks, chairs or power — and by early 2026, aid cuts had closed about half of them.</p>
   </div>
-  <span class="credit">Photo: Oxfam East Africa · CC BY 2.0 · Wikimedia Commons</span>
+  <span class="credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Kutupalong_rohingya_camp_classroom.jpg">Aashaa</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · Wikimedia Commons</span>
 </section>
 
 <!-- ============ RESEARCH ============ -->
@@ -473,46 +507,52 @@
   <div class="wrap reveal">
     <p class="eyebrow">Research</p>
     <h2 class="title">The numbers behind the problem — and the model.</h2>
-    <p class="lede" style="margin-bottom:1.6rem;">We build from published data, and we cite it. Full source list available on request.</p>
+    <p class="lede" style="margin-bottom:1.6rem;">We build from published data, and we cite it. Figures as of October 2026; full source list available on request.</p>
     <div class="stat-row">
       <div class="stat">
-        <div class="fig">2.8M+</div>
-        <div class="lab">children are out of school in South Sudan — over 70% of the school-age population, the largest group of them girls</div>
-        <div class="src">Source: UNICEF South Sudan</div>
-      </div>
-      <div class="stat heat">
-        <div class="fig">42–45°C</div>
-        <div class="lab">heatwaves forced nationwide school closures two years running (2024 &amp; 2025), with students collapsing in Juba</div>
-        <div class="src">Sources: Save the Children · AP</div>
+        <div class="fig">~1M</div>
+        <div class="lab">Rohingya refugees live in the Cox's Bazar camps — more than 500,000 of them children</div>
+        <div class="src">Source: Save the Children (Jun 2025)</div>
       </div>
       <div class="stat">
-        <div class="fig">200K+</div>
-        <div class="lab">children affected by recent climate disasters in the region</div>
-        <div class="src">Project concept note</div>
+        <div class="fig">~350K</div>
+        <div class="lab">children in the camps are out of school</div>
+        <div class="src">Source: UNICEF (Oct 2025)</div>
+      </div>
+      <div class="stat">
+        <div class="fig">1 in 2</div>
+        <div class="lab">learning centres closed after aid cuts — about 4,000 of roughly 8,000 were running in early 2026</div>
+        <div class="src">Source: Arab News (Feb 2026)</div>
       </div>
     </div>
     <div class="stat-row second">
       <div class="stat heat">
-        <div class="fig">40°C+</div>
-        <div class="lab">routine ambient temperatures make unventilated structures unsafe for learning — most existing schools are makeshift iron-sheet buildings with no electricity for cooling</div>
-        <div class="src">Source: AP (Feb 2025)</div>
+        <div class="fig">2,800+</div>
+        <div class="lab">shelters, learning centres and other facilities destroyed when Cyclone Mocha hit the camps in May 2023</div>
+        <div class="src">Source: RRRC, via BenarNews</div>
+      </div>
+      <div class="stat heat">
+        <div class="fig">42°C+</div>
+        <div class="lab">the April 2024 heatwave closed schools for 33 million children across Bangladesh</div>
+        <div class="src">Source: AFP, via The Financial Express</div>
       </div>
       <div class="stat">
-        <div class="fig">Weeks</div>
-        <div class="lab">to months lost to conventional school construction in displacement settings — time out-of-school children don't have</div>
-        <div class="src">Project concept note</div>
+        <div class="fig">20</div>
+        <div class="lab">learning centres burned in one camp fire in March 2023 — among 222 camp fires recorded in 2021–22</div>
+        <div class="src">Sources: UNICEF · Bangladesh Defence Ministry, via AP</div>
       </div>
     </div>
 
     <div class="field-grid">
-      <!-- Photo: Oxfam East Africa, Awerial displacement site, South Sudan (2014). CC BY 2.0 via Wikimedia Commons. -->
+      <!-- Field photos load from Wikimedia Commons at standard sizes; to self-host, save them under the data-local names. -->
       <figure class="ph">
-        <img loading="lazy" src="photos/awerial.jpg" alt="A boy at the Awerial displacement site in South Sudan compares clean water provided by Oxfam with untreated water from the Nile." />
-        <figcaption class="cap"><b>Field conditions — Awerial, South Sudan</b>Displacement sites in South Sudan's heat: families rebuilding daily life — water, shade, and school — from almost nothing. These are the conditions the unit is engineered for.<span class="cr">Photo: Oxfam East Africa · CC BY 2.0 · Wikimedia Commons</span></figcaption>
+        <img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/The_Hillside_Refuge.jpg/960px-The_Hillside_Refuge.jpg" data-local="photos/coxs-bazar-hillside.jpg" onerror="if(this.dataset.local&amp;&amp;!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.local;}" alt="Aerial view of Rohingya refugee camps covering steep, cleared hillsides in Ukhiya, Cox&#39;s Bazar." />
+        <figcaption class="cap"><b>Shelters on the hillsides — Ukhiya</b>The camps cover steep, cleared hills where monsoon rain, floods and landslides threaten fragile shelters. This is the ground a unit has to stand on.<span class="cr">Photo: <a href="https://commons.wikimedia.org/wiki/File:The_Hillside_Refuge.jpg">Md shameem ul islam</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Wikimedia Commons</span></figcaption>
       </figure>
-      <!-- To use a real photo here: replace the div.frame with
-           <img src="photos/your-image.jpg" alt="describe the photo" style="aspect-ratio:4/3;object-fit:cover;width:100%;">
-           Best source: your own build-session photos — they carry the most credibility with partners. -->
+      <figure class="ph">
+        <img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Displaced_Rohingya_children_in_Bangladesh_-_000189753.jpg/960px-Displaced_Rohingya_children_in_Bangladesh_-_000189753.jpg" data-local="photos/coxs-bazar-learning-centre.jpg" onerror="if(this.dataset.local&amp;&amp;!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.local;}" alt="Rohingya children at a child learning centre in Cox&#39;s Bazar." />
+        <figcaption class="cap"><b>A child learning centre — Cox's Bazar</b>Learning centres are the camps' schools. A Cuick unit is meant to make them safer and longer-lasting — not to replace the programs inside them.<span class="cr">Photo: <a href="https://commons.wikimedia.org/wiki/File:Displaced_Rohingya_children_in_Bangladesh_-_000189753.jpg">Australian Humanitarian Partnership (AHP) Bangladesh</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · Wikimedia Commons</span></figcaption>
+      </figure>
       <figure class="ph">
         <div class="frame">
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="6" width="22" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="13" cy="14" r="4.5" stroke="currentColor" stroke-width="1.6"/><rect x="9" y="3" width="8" height="3" rx="1" stroke="currentColor" stroke-width="1.6"/></svg>
@@ -533,20 +573,20 @@
         <div class="card">
           <div class="num">R2</div>
           <h3>Transport-native</h3>
-          <p>A container moves through the world's existing shipping network as standard cargo. No special freight, no custom handling: the school is its own crate.</p>
+          <p>A container moves through the world's shipping network as standard cargo — Korea to Chattogram via a regional hub and a feeder ship, no special freight. The school is its own crate.</p>
         </div>
         <div class="card">
           <div class="num">R3</div>
-          <h3>Durable &amp; securable</h3>
-          <p>A weathertight steel shell withstands rough handling and harsh climates — and locks, protecting solar equipment and supplies between school days.</p>
+          <h3>Fire- and storm-resistant</h3>
+          <p>Unlike bamboo and plastic sheeting, a steel shell doesn't burn and can be anchored against cyclone winds. It also heats up fast — which is why passive cooling comes first in our design.</p>
         </div>
       </div>
     </div>
 
     <div class="std-card reveal" id="standards">
       <div>
-        <h3>Built to recognized humanitarian standards.</h3>
-        <p><b>The project operates under a written child safeguarding commitment.</b> We develop the model against the frameworks the sector already uses — and we actively seek partner review of our climate and safeguarding approach to ensure full compliance <b>before</b> any deployment, not after.</p>
+        <h3>Built to humanitarian standards — and to local rules.</h3>
+        <p><b>The project operates under a written child safeguarding commitment.</b> We develop the model against the frameworks the sector already uses and inside the rules that govern the camps — and we actively seek partner review of our climate and safeguarding approach to ensure full compliance <b>before</b> any deployment, not after.</p>
       </div>
       <div class="std-refs">
         <div class="ref">
@@ -558,6 +598,11 @@
           <div class="tag">Shelter &amp; WASH</div>
           <div class="name">Sphere Standards</div>
           <div class="desc">Shelter and water, sanitation, and hygiene considerations are guided by the Sphere Standards.</div>
+        </div>
+        <div class="ref">
+          <div class="tag">Bangladesh camp rules</div>
+          <div class="name">Camp authorities &amp; the Education Sector</div>
+          <div class="desc">Permanent school buildings aren't allowed in the camps, so the unit is being designed to be temporary and fully removable. Nothing deploys without approval from camp authorities (RRRC and Camp-in-Charge) and coordination with the Education Sector, co-led by UNICEF and Save the Children.</div>
         </div>
       </div>
     </div>
@@ -595,7 +640,7 @@
           <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="10" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M6 25 C6 19 24 19 24 25" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
         </div>
         <h3>Locally run, by design</h3>
-        <p>Deployment ends with handover, not dependence. Local teams assemble and maintain units, community teachers deliver the lessons, and partner NGOs anchor operations on the ground.</p>
+        <p>Deployment ends with handover, not dependence. Local teams assemble and maintain units, Rohingya and host-community teachers deliver the lessons, and partner NGOs anchor operations on the ground.</p>
       </div>
     </div>
   </div>
@@ -624,7 +669,7 @@
           <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="6" stroke="currentColor" stroke-width="1.8"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="15" y1="3" x2="15" y2="6"/><line x1="15" y1="24" x2="15" y2="27"/><line x1="3" y1="15" x2="6" y2="15"/><line x1="24" y1="15" x2="27" y2="15"/></g></svg>
         </div>
         <h3>Climate adaptation</h3>
-        <p>Passive ventilation, a reflective and insulated envelope, and shading engineered to keep interior temperatures within a safe learning range — in the same 40°C+ conditions that close iron-sheet schools.</p>
+        <p>Passive ventilation, a reflective and insulated envelope, and shading to keep interiors in a safe learning range — on a raised, anchored, non-combustible shell designed for a coast hit by cyclones, monsoon floods and camp fires.</p>
       </div>
       <div class="card">
         <div class="num">03</div>
@@ -632,7 +677,7 @@
           <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M5 7 H13 V24 H5 Z M25 7 H17 V24 H25 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="15" y1="7" x2="15" y2="24" stroke="currentColor" stroke-width="1.6"/></svg>
         </div>
         <h3>Curriculum-ready</h3>
-        <p>Each unit pairs with proven emergency-education (EiE) kits and foundational literacy and numeracy programs, rather than reinventing pedagogy — managed by our Textbook Team below.</p>
+        <p>Each unit pairs with proven emergency-education (EiE) kits and the Myanmar-curriculum programs already taught in the camps, rather than reinventing pedagogy — managed by our Textbook Team below.</p>
       </div>
       <div class="card">
         <div class="num">04</div>
@@ -644,103 +689,21 @@
       </div>
     </div>
 
-    <!-- ——— The journey: interactive route map on real geography ——— -->
+    <!-- ——— The journey: interactive route map (Natural Earth geography) ——— -->
     <div class="sub-block reveal">
-      <h3 class="subhead">From Songdo to the school site.</h3>
-      <p class="lede">The model's quiet advantage: <b style="color:var(--ink);">the classroom ships as its own crate.</b> Brighter Boxes sources a surplus shipping container in Korea, retrofits it to the Cuick spec, packs it with its own education payload, and sends it through the same global logistics network as any commercial cargo. Click each stop to follow one unit's journey from South Korea to South Sudan.</p>
+      <h3 class="subhead">From Songdo to the camps.</h3>
+      <p class="lede">The model's quiet advantage: <b style="color:var(--ink);">the classroom ships as its own crate.</b> Brighter Boxes sources a surplus shipping container in Korea, retrofits it to the Cuick spec, packs it with its own education payload, and sends it through the same logistics network as any commercial cargo — ending with about 150 km by road from Chattogram port to the camps at Ukhia. Click a stop to follow one unit's journey.</p>
       <figure class="map-card">
-        <div class="map-scroll">
-        <svg viewBox="0 0 760 375" role="img" aria-label="Map of the deployment route from Songdo, South Korea across the Indian Ocean to Mombasa, Kenya, then overland through the Nimule border crossing to a school site in South Sudan. Six interactive stops." xmlns="http://www.w3.org/2000/svg">
-          <title>Deployment corridor — Songdo to South Sudan</title>
-          <!-- ocean -->
-          <rect x="0" y="0" width="760" height="375" fill="#D9E4E2"/>
-          <!-- landmasses (simplified equirectangular, ~lon 18E–140E / lat 46N–14S) -->
-          <g fill="#F1EEE1" stroke="#C6CBBC" stroke-width="1" stroke-linejoin="round">
-            <!-- Africa (eastern) -->
-            <path d="M0,78 L49.8,84 L81,90 L90,103 L93.5,112 L112,150 L129,185 L146,205 L158,214 L181,217 L208,212 L196,238 L174,272 L152,290 L135,312 L131,330 L140,355 L142,375 L0,375 Z"/>
-            <!-- Eurasia: Levant–Arabia–Iran–India–SE Asia–China–Korea -->
-            <path d="M0,0 L0,40 L24.9,50 L56,57 L78,61 L112,59 L104,89 L99,97 L99,114 L106,103 L118,137 L131,181 L159,207 L168,206 L192,199 L212,187 L233.6,177.6 L260.4,146.4 L239.9,122.7 L201.8,130.8 L186.9,102.2 L190.6,98.4 L205.6,113.4 L224.3,120.2 L241.7,119 L271,129.6 L305.3,132.1 L320.8,146.4 L340.2,167 L352,196.2 L370.6,236.1 L388.1,205 L401.8,180.7 L423.6,160.7 L447.3,150.8 L463.5,160.1 L477.8,187.5 L500.9,234.9 L513.4,262.9 L535.1,278.4 L532,256.7 L516.5,203.1 L534.5,221.2 L553.2,223 L569.4,204.4 L547.6,168.2 L561.3,152.6 L595.5,146.4 L618,138.9 L634.2,125.2 L647.3,92.2 L638,72.3 L651.7,54.8 L633,44.2 L646,31.8 L663.5,39.2 L675.9,53 L674.1,71 L683,73 L692.7,67.9 L694.6,56.1 L689.6,46.1 L697.1,29.3 L708.9,19.3 L760,0 Z"/>
-            <!-- Sumatra -->
-            <path d="M481,252 L500,268 L520,285 L543,310 L549,324 L535,330 L510,300 L490,275 L474,258 Z"/>
-            <!-- Borneo -->
-            <path d="M575,270 L610,262 L632,282 L625,310 L595,318 L572,295 Z"/>
-            <!-- Philippines -->
-            <path d="M655,190 L662,186 L668,208 L661,226 L654,218 Z"/>
-            <path d="M641,234 L650,230 L656,246 L648,258 L640,250 Z"/>
-            <!-- Japan (southwest arc) -->
-            <path d="M704,100 L720,90 L742,78 L760,68 L760,74 L744,86 L722,98 L708,106 Z"/>
-            <!-- Madagascar (northern tip) -->
-            <path d="M162,375 L168,352 L180,342 L192,352 L196,375 Z"/>
-            <!-- Sri Lanka / Taiwan -->
-            <ellipse cx="391" cy="245" rx="8" ry="11"/>
-            <ellipse cx="644" cy="133" rx="6" ry="11"/>
-          </g>
-          <!-- inland seas carved back to water -->
-          <ellipse cx="99.7" cy="15.6" rx="52" ry="15" fill="#D9E4E2" stroke="#C6CBBC" stroke-width="1"/>
-          <ellipse cx="202.5" cy="24.9" rx="15" ry="21" fill="#D9E4E2" stroke="#C6CBBC" stroke-width="1"/>
-          <!-- geography labels -->
-          <text class="geo-label" x="14" y="234">SOUTH SUDAN</text>
-          <text class="geo-label" x="225" y="338">INDIAN OCEAN</text>
-          <text class="geo-label" x="248" y="185">ARABIAN SEA</text>
-          <!-- compass -->
-          <g stroke="#95A09A" stroke-width="1.2" fill="#95A09A">
-            <line x1="732" y1="230" x2="732" y2="210"/>
-            <path d="M732,205 L728,213 L736,213 Z"/>
-          </g>
-          <text class="geo-label" x="727" y="245">N</text>
-          <!-- route -->
-          <path class="flow" d="M676,53 L692,68 L688,84 L665,95 L634,122 L610,175 L565,235 L535,278 L505,252 L481,246 L420,256 L386,262 L300,285 L200,300 L135,312 L117,295 L91,285 L87,264 L100,243" stroke="#123A30" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-          <!-- moving cargo marker (progressive enhancement) -->
-          <rect class="cargo" x="-5" y="-3.5" width="10" height="7" rx="1" fill="#BC7A1E"/>
-          <!-- stops -->
-          <g class="rn" data-i="0" tabindex="0" role="button" aria-label="Stop 1: Songdo, South Korea — source, retrofit and pack">
-            <circle class="hit" cx="676" cy="53" r="20"/>
-            <circle class="ring" cx="676" cy="53" r="13"/>
-            <circle class="c" cx="676" cy="53" r="7"/>
-            <line x1="668" y1="49" x2="646" y2="41" stroke="#95A09A" stroke-width="1"/>
-            <text class="nm" x="642" y="36" text-anchor="end">Songdo</text>
-            <text class="rl" x="642" y="48" text-anchor="end">build &amp; pack</text>
-          </g>
-          <g class="rn" data-i="1" tabindex="0" role="button" aria-label="Stop 2: Busan — export port">
-            <circle class="hit" cx="692" cy="68" r="20"/>
-            <circle class="ring" cx="692" cy="68" r="13"/>
-            <circle class="c" cx="692" cy="68" r="7"/>
-            <text class="nm" x="688" y="96" text-anchor="middle">Busan</text>
-            <text class="rl" x="688" y="108" text-anchor="middle">export</text>
-          </g>
-          <g class="rn" data-i="2" tabindex="0" role="button" aria-label="Stop 3: Indian Ocean — sea freight">
-            <circle class="hit" cx="300" cy="285" r="20"/>
-            <circle class="ring" cx="300" cy="285" r="13"/>
-            <circle class="c" cx="300" cy="285" r="7"/>
-            <text class="nm" x="300" y="309" text-anchor="middle">Sea transit</text>
-            <text class="rl" x="300" y="321" text-anchor="middle">≈4–6 weeks</text>
-          </g>
-          <g class="rn" data-i="3" tabindex="0" role="button" aria-label="Stop 4: Mombasa, Kenya — gateway port">
-            <circle class="hit" cx="135" cy="312" r="20"/>
-            <circle class="ring" cx="135" cy="312" r="13"/>
-            <circle class="c" cx="135" cy="312" r="7"/>
-            <text class="nm" x="150" y="309">Mombasa</text>
-            <text class="rl" x="150" y="321">gateway port</text>
-          </g>
-          <g class="rn" data-i="4" tabindex="0" role="button" aria-label="Stop 5: Nimule — Northern Corridor and border crossing">
-            <circle class="hit" cx="87" cy="264" r="20"/>
-            <circle class="ring" cx="87" cy="264" r="13"/>
-            <circle class="c" cx="87" cy="264" r="7"/>
-            <line x1="78" y1="263" x2="64" y2="260" stroke="#95A09A" stroke-width="1"/>
-            <text class="nm" x="60" y="256" text-anchor="end">Nimule</text>
-            <text class="rl" x="60" y="268" text-anchor="end">border</text>
-          </g>
-          <g class="rn" data-i="5" tabindex="0" role="button" aria-label="Stop 6: School site, South Sudan — assembly and opening">
-            <circle class="hit" cx="100" cy="243" r="20"/>
-            <circle class="ring" cx="100" cy="243" r="13"/>
-            <circle class="c" cx="100" cy="243" r="7"/>
-            <text class="nm" x="110" y="236">School site</text>
-            <text class="rl" x="110" y="248">assembly</text>
-          </g>
-        </svg>
+        <div class="map-grid">
+          <div class="map-pane"><div class="tag">A · Sea route<span class="tag-x">, Korea → Bangladesh</span></div><svg class="map-svg" id="map-main" viewBox="0 0 600 578" role="img" aria-labelledby="mapA-t" xmlns="http://www.w3.org/2000/svg"><title id="mapA-t">Sea route from Songdo and Busan, South Korea, via Singapore to Chattogram, Bangladesh</title><rect class="sea-bg" width="600" height="578"/><g class="land"><path d="M228.8,422.9L228.9,424.9L228.2,427.3L227.4,424.7L226.2,423.2L227.8,422.5ZM275.7,283.9L273.7,284.1L271.6,285.7L268.9,286.8L268.3,289.8L266,291.1L264.9,290.5L262.6,291.1L260.2,290.5L261,293.9L258.6,296.5L258.9,298.3L258.2,299.6L254,303.4L251.8,304.1L249.8,308.5L249.5,312.3L247.5,316.4L250.7,322.3L258,329.3L257.5,330.2L257.7,332.2L256.4,331.8L258.2,332.9L260.8,336.6L265.4,340.5L266.2,342.5L270.6,345.7L270.5,346.1L273.6,348.7L274,349.7L276.4,349.6L278.5,352.6L279.2,352.6L279.4,353.9L282.9,358.9L285.9,361.5L287.3,366.2L289,369.7L289,371.8L291.6,380.4L291.5,381.5L291,380.4L291.3,387.5L293.1,391.5L293.3,395.9L292,394L290.6,395.3L291.7,398.4L290.5,398.1L290.6,402.3L291.1,403.8L291,404.4L290.4,403.2L289.9,405.2L290.4,406.6L289.6,408.1L288.5,408.2L287.8,411.4L285.8,411.6L279.3,416.3L277.1,416.7L276,418.9L274.1,419.1L267.1,422.8L266.3,421.9L265.1,421.6L264.1,419.6L263.4,422.8L261.8,422.4L260.7,421.2L259.3,422L260.9,422.3L261.1,424.1L257.6,424L260.7,425.3L261.4,426.3L259.1,429.4L253.6,425L258.1,429.9L258.9,432.1L257.8,433.1L256.5,433.1L251.1,428.2L250,427.7L253.9,432.6L254.5,433.7L254,435L246,438.7L243.9,442.3L241.4,444.4L237.2,444.7L238.8,442.9L237.8,442.3L238.1,432.5L238.8,429.9L241.1,428.9L241.1,428.4L240.3,426.9L238.5,426.3L237.6,425.2L236,425.6L233.1,422.7L234.8,421.4L238.2,421.2L240.6,419.1L240.5,416.6L243.8,417.4L244.9,416.1L249.1,415.6L250.2,417.1L251.3,416.9L254,418L253.6,416.4L253.9,415L250.3,411.9L250.2,407.7L251.1,407.5L252.1,406.2L256.8,407.1L257,403.9L260.4,403.5L261.2,402.6L263.2,402.3L266.5,399.5L268,399.3L268.7,400L270.1,398.8L270.7,396.6L269.7,390.6L271.3,385.5L268,377L268.4,374L269.4,373L270.4,370.6L269.8,366.5L271.8,363L270.8,361.3L267.4,358.5L266,356.2L268.7,354.4L268.8,353.2L263.2,349.3L262.2,347.3L260.9,348.1L259.9,347.6L258.6,345.6L258,341.8L248.3,332L247.1,328.9L245.5,326.7L244,326.3L241.4,323.5L241,322.4L241.8,320.4L236.6,318.5L226.7,312.1L228.8,309.9L228.4,307.4L231.1,307.3L235.1,308.1L236.9,306.4L239.1,303L238.2,300.7L236.4,300.6L235.4,298.5L232.4,297.6L234.4,296.2L235,295L229.2,291.2L226.6,292.2L223.6,294.4L217.3,291.9L214.2,287L215.4,281.7L214.1,281L213.8,280.1L212.9,281.7L211.9,281.8L211,278.8L209.8,278.1L205.5,272.6L209.7,267.8L214,269.9L215.8,271.8L217.6,270.5L217.7,269.9L219.9,267.6L221.9,269.9L223.4,267.4L227.3,270.6L228.6,267.8L229.7,267.2L230.5,267.1L231.6,268.3L232.5,268.4L234.3,267.1L236.2,266.9L237.5,265.7L238.4,262.8L243.3,260.1L245.3,261.5L246.6,263.6L250.1,265.6L252,264.9L253.8,265L255.3,266.4L258.5,265.8L261.4,267.5L260.4,269.3L259,270.1L258.6,271.1L258.6,273.1L259.9,274.4L260,277.8L260.8,277.6L263.7,278.5L264.7,280.2L266.1,281.2L267.3,281.3L268.2,282.6L269.2,282.2L269.7,282.8L271.7,282.6L273.1,282ZM259.4,443.7L258.8,443.5L259.9,442.7ZM266,422.8L265,423.6L264.9,423L266.1,422.2ZM262.4,292.8L261.2,292.2L261.5,291.4ZM271.2,287.7L269.5,289.3L268.8,289.3L269.7,287ZM270.3,291.4L268.8,291.7L270.6,290ZM264.4,293.7L262.9,292.7L263.4,292.2L264.8,292.8Z"/><path d="M211.3,407.2L211.1,408.5L210.4,408L210.8,407ZM209.1,403.4L207.6,403.5L207.3,401.4ZM160.9,453.2L160.8,454.1L159.6,454.7L159.1,452.9L159.9,450L161.2,450.9ZM181.5,299.2L181.7,300.1L183.8,298.3L186.2,301L186.5,302.1L184.8,306.4L185,307.8L186.2,309L187.5,309.6L188.9,309.5L191.6,308.2L194.5,309L194.4,311.8L195.4,316.3L194,320.8L192.6,323.1L193.7,325L193.7,326.9L190.9,333.9L191.5,334.4L193.3,335.2L194,335L200.3,330.1L201.3,328.2L203.4,327.6L205.2,326L210.6,329.1L211.9,331L213.7,329.3L216.6,328.3L217.8,325.9L219.2,325.1L219,323.9L219.5,323.5L221.9,323.4L225.5,324.7L227.4,324.6L233.1,332.5L236.9,335.4L237.8,337.5L236.9,342.7L237,345.7L237.8,347.9L239.4,349.5L240.6,351.8L244.9,353.9L244.8,355.9L247.7,358L247.4,360.1L246.2,361.7L245.9,363L246.6,367L245.7,372L242,374.4L240.9,375.8L240,375.5L239.6,374.1L237.3,373.3L227.8,374.2L223.2,373.4L218.4,374.5L214.9,376.9L212.7,380.6L210.5,382.8L210.6,383.7L207.8,384.3L208,387.4L209.5,390.8L210,395L213.1,398L212.5,400.1L212.8,402.1L215.2,406.8L213.5,404.6L213.2,403.1L211.1,400.7L210.5,401.9L208.1,400.1L207.1,398.4L206.8,399.2L204.4,396.7L202,395.4L200.7,394.8L197.3,395.6L193.1,395L191.4,395.6L190.8,395.2L190.4,394.5L191.6,385.6L187.2,383.9L186.4,384.6L182.8,385L180.2,386.6L179.9,387.9L181.1,390.4L179.6,394.8L179.9,401.1L175.5,409.8L173.8,416.8L171.4,420.7L170.8,423L170,423.8L170.3,425.5L169.9,430.9L171.5,434.8L171,436.6L172.7,437.3L176.7,436L178,436.3L178.9,438.5L179.9,444.8L181.6,446.8L182,445.8L183.4,448.7L185.4,458.7L186.5,461.3L185.3,460.7L184.6,457.5L183.4,457.4L183.8,455.4L183.1,454.7L181.9,455.3L181.9,456.8L185.1,461.8L187,462L192.2,465.8L195.6,465.2L198,465.7L201.6,470.4L205.2,473.2L204.7,475L203.2,476.4L202.5,478.3L200.1,478.8L198.7,477.3L195.1,478.7L194.3,480.2L193.4,480.5L191.8,478.9L192.9,476.7L192.6,473.2L190.5,473.2L189.1,470.6L187.6,470.8L184.1,469.5L183.1,467.9L182.1,468.1L181.4,470.8L178.4,467.1L176.4,465.6L176.6,462.8L174.6,461.4L175.2,459.8L173.2,460L172.3,459.6L171.2,456.6L170.2,455.4L168.9,455.4L168.6,453.3L165.5,451.3L164.4,448.9L163,447.8L162,448.1L161.1,449.8L160.3,449.7L159.7,449.2L158.9,446.9L158.9,442.7L159.9,440.2L160.5,436.3L165,423.4L165.1,419.6L170.3,414.2L175.4,405.9L173.6,400.9L172.9,396.5L170.6,394.1L169.5,390.6L169.3,389.7L170.1,388.1L169.6,382.1L167.2,378L162.8,374.1L159,368.5L158.4,366.5L158.3,363.7L161.4,361.8L162.7,361.6L163.1,353.1L165.8,351.5L166.7,349.4L166,348.5L164.3,349.9L163.9,349.6L161.7,344.6L161.3,341.5L152.5,331.2L152.9,329.5L151.6,325L150.3,324.9L149.4,324.1L148.5,322.1L150.2,322.4L153,321.2L152.5,316.9L153.6,314.3L153.8,310.2L155.9,307.7L156.2,306.5L157.3,306.3L158.9,307.2L160.5,307.2L167,306.2L168.9,302L172.1,302.3L173.8,301.4L173.5,298.6L176.6,299.1L178.7,297.8ZM180.9,431.4L179.8,430.2L180.5,430.2ZM180.8,432.7L180.6,434.2L179.5,434.7L179.3,433ZM176,469.9L175.3,469L175.8,467.5L176.4,469.3ZM163.1,452.8L162.4,450.7L163.3,451.3ZM159.7,439.2L159,439.4L159.6,438.2ZM168.9,456.9L169.3,458.4L168.5,457.5L168.5,456.4Z"/><path d="M432.1,269.5L430.8,272.6L430.1,278.5L428.9,278.1L427,272.9L423.8,270.5L421,263.4L421.7,259.4L421.6,256L427.6,245.2L432.5,237.9L436.4,236.2L437.4,235L439.1,234.7L442.2,236.9L443.1,238.6L441.8,240.6L441.9,244.5L439.4,250.8L436.8,262.3L435.6,265ZM400.9,244.6L401.2,246L399.5,245.7L399.4,245.2Z"/><path d="M227.6,532.3L225.8,533.1L223.8,532.4L224.5,531.2L225.8,530.9L228,531.9Z"/><path d="M433.2,320.9L442.1,324.9L444.5,324.5L445.8,322.5L446.7,322.3L447.2,322.9L447.8,324.6L446.2,327.8L445.8,332.9L446.8,335.8L448.7,337.4L448.9,339L450.2,339.7L445.6,351.4L441.5,352.8L439.1,354.6L438.7,355.9L439.3,357.9L436.7,362.2L440.3,369.5L439.5,370.2L439.5,371.4L441.2,376.5L442.9,378.4L446.5,379.5L447.4,378.7L446.4,376.8L449.9,374.6L451.5,374.7L455.2,376.3L456.9,379.1L456.7,381.2L457.2,381.7L458.8,381.7L459.6,380.6L459.7,379.4L459.1,378.9L459.8,377.8L461.2,379L465.8,380.6L466.3,381.1L465.7,382L463.3,382.3L462.6,383L465.8,387.6L465.4,389.6L469.7,390.5L469.6,393.5L468.7,396.3L467.5,395.9L466.5,394.8L467.4,392L463.5,392L459.7,390.4L459.5,388.3L458,385.5L454.4,383.3L451.1,379.7L449.8,379.5L449.6,380L450.1,382.8L452,386.1L452.1,387.8L451.2,388.6L450.2,387.7L450,386.5L448.5,384.5L444.9,381.2L441.3,379.4L438,380.6L437.4,382.2L436.1,382.9L433.1,382.6L432.1,381.6L431.2,381.5L430.1,380L428.7,379.8L427.6,381L427.4,376.3L431.1,372.5L431.3,370.6L430.7,369.7L428.5,369L427,367.7L426.6,369.1L427.1,372.6L426.7,373.1L425.3,373L423,368.8L421.7,368.7L421,368.1L419.2,360.8L418.7,355.8L417.2,353.6L417.3,350.6L418,349.7L421.9,353.2L424,352.9L424.4,352.4L424.7,351L423.7,345.7L424.9,341.8L425.1,336.5L424.3,333.2L427.2,322.2L429.8,321ZM387.7,446.7L386.6,447.5L386.7,446.4L388.2,443.3L394.6,436.9L396.3,436.6L397.4,435.6L408.3,423.4L410.7,421.9L411.8,419.3L411.1,417.4L411.7,415.8L414,411.2L414.6,411.6L414.3,416.1L416.2,421.6L415.1,422.7L412.4,423.7L410.3,426.9L405.4,428.7L405.3,430.5L401.2,436.7L397.6,438.6L395.9,441.3ZM450,408L451.4,408.6L454.1,408.2L455.2,409L454.7,410.1L457.9,408.9L457.4,412L456.2,414.1L453.6,415.6L453.2,417.6L450.3,419.2L446.4,420.1L443.4,422.3L443.6,417L444.6,414.3L445.2,407.6L444.8,406.6L442.7,405.8L443,405L444.4,404.5L447.5,406ZM457.6,439.1L455.9,439.1L454.4,436L450.8,434L448.9,431.4L448.8,429.8L449.7,428.2L452.6,427.8L454.3,426.6L453.8,421.5L455.5,419.2L455.8,416.9L459.1,415.6L462.1,416.4L462.8,418.2L457.9,429.3L457.8,432.5L459.8,436.5L458.7,438.4ZM474.9,411.3L475.7,411.7L477.9,410.6L479.2,410.9L480.3,412.9L480.2,418.1L482,419.9L483.2,423.9L483,424.5L481.8,424.4L481.7,425.4L479.8,423.2L480.3,427.3L477.4,425.6L477.5,423.7L476.9,422.3L477.6,418.8L476.9,417L476,415.9L474,416.6L473.3,416.4L471.7,409.5L472,408.9L472.5,409.2ZM482.9,396.8L483.7,397.8L483.8,399.3L486.4,400.9L485.5,403.8L485.9,408.2L487.3,411.5L486.9,412.6L488.4,413.5L488.8,414.9L487.5,413.9L482.8,413.7L479.3,409.6L479,408.6L479.7,407.7L479.9,406.1L478.6,406L476.1,403L473.3,401.4L471.9,398.3L471.5,396.2L474.8,396.8L481.8,396.2ZM428.5,385L431.8,385L433.5,386.2L434.4,385.6L438.3,389.3L437.7,391.8L438.5,395.4L436.9,398L436.7,399.5L435.9,399.5L434.8,400.6L433.4,400.1L431.1,397L430.8,395.3L429.6,394L429.2,391.3L427.8,388.9L426.1,387.7L425.5,386.1L424.1,385.9L424.8,384.6ZM492.1,436L493.1,436.7L494.3,436.5L494.3,438.3L495.7,440.4L495.8,441.7L493.7,444.8L496.4,446.1L496.6,448L497.5,449.5L497.2,454L498.8,455.9L499,461.1L497.3,463.9L495.5,465.5L494.6,465.4L494.3,465.9L494.9,467.3L494.3,472.4L493.3,470.3L492.5,466L489.9,460.1L488.3,460.9L487.7,462.8L484.8,466.6L484.6,467.8L487.1,470.5L488,473.5L488,476.4L485.5,480.2L484.2,481L483.5,480.6L482.9,479.1L483.2,475.8L482.8,475.3L480.4,477.7L479.1,477.7L470.6,473.4L468.9,471.3L467.8,464.2L470.3,460.9L470.5,459.3L467.6,456L464,454.2L461.9,454.3L460.7,459.2L458.1,457.7L457.2,455.6L455.9,457.5L454.1,457.7L453.5,455.3L452.6,454.7L451.4,454.9L449.7,456.4L445.7,464.7L445.2,465.1L443.6,464.5L442.9,463.2L443.1,461.7L444.6,459.7L445.6,454.3L446.9,452.7L448.6,451.4L454.9,450.1L456,449.3L456,447.7L456.6,446.7L457.8,445.7L460.1,445.1L461.2,443.5L464.2,444.5L466.2,446.7L466.5,449.7L465,451.3L465.6,451.4L470.4,449.2L472.9,444.7L475.5,445.6L476.8,445.2L477.4,441.4L478.4,440.2L481.7,441.4L482.5,439.5L486,439.7L486.4,438.1L485,431.7L485.7,430.6L490.5,433.6ZM460.4,434.4L460,434.7L459.8,433.9L460.6,428.1L464.5,421.9L467.2,415.9L467.6,413.2L468.5,412.1L468.6,420.5L468.1,422.8L464.4,426.1L461.9,432.7ZM443.1,317.3L442.3,318.2L441.9,318L442.7,316.1L443.3,315.9L443.9,316.6ZM438.3,311.4L438.4,312.6L436.5,311.5L436.7,310.9ZM443.5,298.6L443,298.7L443.3,297.5L444.4,297.3ZM442.5,293.3L441.5,294.3L442.2,292.5ZM433.9,475.3L434.6,476.1L436.7,476.1L436.9,476.9L435.5,477.7L434.6,476.9L431.2,477.4L430.5,476.7L432.5,475ZM385,453.4L384.3,454.3L383.6,453.3L383.9,451.4L384.9,451.1ZM419,421.8L417.5,422.1L417.2,421L418.2,419.9L420.1,420.7ZM421.2,401.2L422.3,401.2L422.7,400.5L424.1,402.3L423.8,403.1L420.1,403.1L418.4,400.8L418.6,399.6L419,399.3ZM420.5,406.9L419.3,407L418.3,403.8L419,403.5L420.4,404.3L420.9,405.9ZM451.8,421.9L450.5,422.5L450.5,420.3L452.4,418.7L452.8,419.7ZM475.1,430.3L475,430.7L473.7,430.8L472.3,432.2L469.5,432.6L467.2,432.3L465.8,429.9L470.1,426L472,425.7L474.9,427.4L474.7,429.2ZM423,485.1L422.3,486.2L421.4,485.6L419.5,487.3L417.9,487.4L417.9,486.6L422,484.2L422.5,484.1ZM445.1,471L443.5,471.1L441.7,468.8L442,468.2L444.7,467.2L447.5,468.5L447.9,468.9ZM492.7,430.5L491.9,429.7L492.9,427L494.1,430.1ZM488.3,428.7L488.1,429.1L485.9,426.2L486.3,423.9L488,422.3ZM423.3,381.7L423.3,382.5L421.3,381.3L421.2,380.5L422.5,380.8ZM443,384.3L443.9,384.2L445.4,385.2L445.5,386.4L444.1,388.4L442,386.9L442.4,384ZM445.1,398.9L444.2,401.9L443.1,399.2L443.9,397.9L444,395.9L445.7,395.2ZM451.9,399.4L451.2,399.7L449.1,397.6L451.2,397.2L452.1,398ZM459.4,392.7L460.4,394.6L455.4,390.2L455.5,389.6L456.5,389.5ZM465.3,397.7L465.3,398.7L463.4,396.2L463,395.5L463.5,394.9L464.5,395.7ZM464.6,399.7L466.9,401.2L468.5,403.6L468.5,406.3L466.2,404.3L464.7,403.8L464.8,403.2L461.7,400.6L457.9,404.1L459.2,398.4L458.8,396.1L462.7,397.8ZM472.2,383.1L471.9,383.9L471,383.7L470.1,384.4L468.7,383.5L468.5,382.8L469.5,381.2L469.5,378.9L470.7,377.6L473,380.2L472.8,382.6ZM446.1,378L446.1,378.5L443.5,376.7L443.5,375.8ZM444.4,366.1L444.6,366.6L443.6,367.5L444.3,369.2L443.9,370.4L443.2,370.5L443.1,368.7L441.8,366.7L442.1,365.7L443.7,365.6ZM471.8,420.3L472,419.1L472.6,420ZM483.4,427.9L483.5,428.5L481.9,426.9L481.6,425.8L482.8,426.3ZM455.2,459.1L455.3,459.7L453.7,460.3L453.9,458.9ZM489.4,464.5L489.2,465.2L488.2,463.2L488.6,461.8L489.4,462.5ZM475.3,409.5L473.8,409.5L472.3,407.3L474.1,407.1L475.5,408.8ZM477.7,438.1L477.3,438.8L476,438.2L475.8,437.1L476.8,436.9ZM435,315L435,315.8L434.4,315.4L434.6,313.7ZM418.3,409.1L418.6,409.7L418,410.9L416.8,410.2L416.7,409.7ZM465.1,412L465.8,413.6L464.8,413.6L464.5,412.4ZM447.7,396.7L447.1,397.1L447.3,396ZM491.6,432.6L491.4,432.9L491.1,432.3L491.6,430.6ZM478.3,408.2L478,408.8L477.4,408.4L476.8,406.7ZM388.3,449.4L387.4,449.7L387.4,448.2L388.2,448.5ZM464.4,437L464.5,438.2L463.4,438.6L461.9,437.5L463.9,436.5Z"/><path d="M554.1,512L553.6,511.8L554.3,511.6ZM595.1,459.5L594.4,459.7L594.2,457.7L595.8,455.5Z"/><path d="M508.2,0L512.3,1L516.2,0.8L517.8,1.8L519,0L536.2,0L537.2,3.1L536.5,6L536.9,9.1L536.5,10.2L532.1,12.3L529.3,16L524.4,18.8L522.1,21.7L519.7,23.2L515.6,23.8L514.4,25.4L510.8,27.2L510.3,28.5L510.6,32.2L510.3,33.5L509.5,33.1L509.1,33.5L508.7,36.1L513.4,38L515.7,40.9L520,44.2L520.5,45.1L518,49.2L516.5,49.9L507.5,49.9L505.1,50.3L500,55.9L499.6,58L496.4,56.5L494.4,57.3L493.4,58.6L492.6,56.6L491.3,56.6L489.2,54.9L488.3,55.2L487,57.5L485.4,58.7L484.3,58.8L483.7,57L479.9,55.7L483,53.8L482.5,53.4L479.9,53.5L476.3,52.7L478.5,51.1L478.6,49.4L480.8,46.1L483.7,44.5L486.7,44.1L482,42.3L481.9,41.3L484.9,34.9L484.3,31.2L481.2,30.2L477.3,27.5L476.8,29.2L475.7,29.8L474.7,27L472.2,25.2L472.6,22.1L478.7,16.5L480,16.5L480.9,15.2L485,13.4L487.7,11.5L488.7,10.1L491.9,9.5L497.9,2.3L498.5,0ZM478.9,31L478.2,31.4L478.2,30.6L479.2,29.9Z"/><path d="M0,190L1.9,190L1.1,193L1.5,193.8L8.1,194.3L10.1,196.2L11.9,199.3L12.8,199L12.9,196.9L13.6,196.5L14.6,197.8L16.9,199L18.2,198.6L18.7,196.9L19.4,196.7L20.3,196.8L21,197.8L24.2,199L25.7,200.3L31.5,200.6L35.2,199.6L37.8,200.2L35.8,209.8L37.3,212.6L37.9,215.3L36.3,219.7L34.2,219.2L31.6,219.7L29,219.3L27.4,220.2L25.1,219.2L24.2,217.6L20.4,219.2L16.4,217.3L12.1,216.3L9.5,216.9L8.8,216.4L7.8,213.9L6.8,213.8L3.5,215.1L2.3,214.7L1.5,213.5L0,213.1Z"/><path d="M181.4,470.8L182.1,468.1L183.1,467.9L184.1,469.5L187.6,470.8L189.1,470.6L190.5,473.2L192.6,473.2L192.9,476.7L191.8,478.9L193.4,480.5L194.3,480.2L195.1,478.7L198.7,477.3L200.1,478.8L201.5,478.8L202.5,478.3L203.2,476.4L204.7,475L205.2,473.2L207.3,473.7L208.1,474.1L210.4,477.8L217.2,483.3L221,490L221.4,492.2L221.6,495.5L220.3,503L221.4,506L221.3,513.1L222.4,515L225.7,517.3L230.6,527.6L231.5,530.5L231,531.6L230.1,531.9L229.4,531.4L228.9,529.9L227.8,528.8L227.9,530.8L224.3,530.9L222.6,532.3L221.8,532.3L220.3,529.7L212.7,526L210.6,523.8L205.7,521.3L201.4,517.4L198.2,516.1L195.5,513.7L196.3,512.1L195.6,509.2L188.6,500.7L189.5,500L187.4,495.8L187.4,492.4L185.7,487.7L184.2,481.1L184.1,476.4ZM390.9,498.2L385.2,496.2L378.2,495.8L377,496.6L374.8,495.9L372.3,496.8L370,496.3L368.1,497.9L366.8,501L366.8,506.9L365.5,511.9L363.7,512.4L363,512L361.4,513.5L361,516.7L362.2,517.5L362.1,518L357.4,521.3L357.1,522.3L358,524.5L357.6,525.6L356.4,526.1L355.6,528.9L354.2,530.9L352.6,530.3L346.8,531.1L343.5,533.5L342.2,532.6L336.1,531.1L335.9,529.7L335.3,529.5L329.7,529.6L326.2,531L324.9,534.6L323.1,534.9L321.7,536.2L317.8,536.4L313.2,535.7L306.1,538L296.8,530L295.8,528.9L295.6,527L294.6,526.1L295.5,524L296.6,526L298.4,527.1L301.4,527.9L304.2,527.7L308.1,529.7L310.7,529.9L313.2,531.5L314.7,531.5L312.7,530.5L312.3,529.6L313.9,527.4L314,525.5L315,523.5L315.2,522.6L314.5,521.9L314.3,520.7L314.9,519.1L316.2,519.9L317.3,519.7L317.3,516.7L319.5,514.5L332.8,511.4L336.5,509.8L341.4,503.4L347.1,497.3L348.2,493.3L348.8,493.1L350,493.9L351.9,497.1L353,497.2L354.9,499.7L355.8,499.8L357.3,498.2L358.1,495.5L357,491.6L360.3,489.4L360.3,491.9L361.3,495.6L363.8,495.9L362.7,491.2L361.7,489.4L364.5,489L366.7,487.1L367,485.9L365.6,485.2L365,483.2L367.2,481L367.5,481.6L368.9,481.8L370.5,480.8L372.7,477.6L373.7,474.6L377.9,469.9L381.3,464.2L382,464.7L382.2,466.2L381.5,468.9L383,468.2L385.5,464.5L387,465.1L387.5,468L391.7,470.5L392.3,472.9L391.4,473.8L391.7,476.1L391.4,476.9L390,477.6L393.8,476.9L396,475.5L397.4,477.8L395.2,478.7L395.7,479.7L399,478.3L400.2,478.5L402.2,479.4L403.1,481.1L407.5,483.1L410.1,483L411.1,483.8L411,485.8L409.6,487L404.1,488.7L400.6,488L399.1,488.4L398.2,490.3L399.9,492.2L402.8,494.2L403.1,494.7L402.6,495.7L396.1,497.3L392.4,496.1ZM230.7,515.5L229.8,515.5L229.5,515.1L230.2,513.8ZM183.5,484.7L182.3,484.8L182.4,482.8L182.9,482.6L184.1,483.3ZM178.2,470.5L179,471.8L176.9,473L175.8,471.1L177,471.2ZM385.7,462.1L385,462.7L384.8,460.9L385.8,460L387.2,459.8L387.2,461.4ZM195.8,512.4L195.2,512.3L195.7,511.5ZM316.7,519.3L315.7,519L315.6,515.4L316,515.1L316.5,515.8ZM394.6,498L391.8,498.2L391.9,497.3L392.5,497.1Z"/><path d="M205.5,272.6L209.8,278.1L211,278.8L211.9,281.8L212.9,281.7L213.8,280.1L214.1,281L215.4,281.7L214.2,287L217.3,291.9L223.6,294.4L226.6,292.2L229.2,291.2L235,295L234.4,296.2L232.4,297.6L235.4,298.5L236.4,300.6L238.2,300.7L239.1,303L236.9,306.4L235.1,308.1L231.1,307.3L228.4,307.4L228.8,309.9L226.7,312.1L236.6,318.5L241.8,320.4L241,322.4L241.4,323.5L244,326.3L245.5,326.7L247.1,328.9L248.3,332L258,341.8L258.6,345.6L259.9,347.6L260.9,348.1L262.2,347.3L263.2,349.3L268.8,353.2L268.7,354.4L266,356.2L267.4,358.5L270.8,361.3L271.8,363L269.8,366.5L270.2,369.9L269,371.6L267.5,371.3L265.3,373.4L264.4,373.3L263.3,374.6L261.8,374.7L258,371.4L256.3,373L254.7,372.7L254,374L251.7,374.4L253.5,378L252.8,379.6L250.9,379.5L248.9,377.6L246.4,376.7L244.2,377.2L242.9,376.1L242.2,374.3L245.1,372.8L246,371.3L246.6,367L245.9,363L246.2,361.7L247.4,360.1L247.7,358L244.8,355.9L244.9,353.9L240.6,351.8L239.4,349.5L237.8,347.9L237,345.7L236.9,342.7L237.8,337.5L236.9,335.4L233.1,332.5L227.4,324.6L225.5,324.7L221.9,323.4L219.5,323.5L219,323.9L219.2,325.1L217.8,325.9L216.6,328.3L213.7,329.3L211.9,331L210.6,329.1L205.2,326L203.4,327.6L201.3,328.2L200.3,330.1L194,335L193.3,335.2L190.9,333.9L193.7,326.9L193.7,325L192.6,323.1L194,320.8L195.4,316.3L194.4,311.8L194.5,309L191.6,308.2L187.5,309.6L185,307.8L184.8,306.4L186.5,301.6L183.8,298.3L181.4,300L182.2,295.7L183.9,293.1L187.5,292.3L186.3,291.5L186.4,290.6L187.4,289.7L188.4,287.2L193,284.4L193.7,283.2L194.4,283.7L194.1,285.2L195,287.9L198.5,287.4L200.5,288.5L201.6,287.7L200.7,286.4L200.8,279.8L199.2,277.7L198.3,274.3L199.4,273.3L200.1,271.6L200.9,271.1L202.1,272.5L204.3,271.9Z"/><path d="M580.4,81.7L579.9,82.2L578.9,82L578.3,81.2L578.5,80.3L579.5,79.6L580.6,81ZM600,106.2L598.9,108.2L599.2,109.8L597.9,111.1L596.8,111L596,109.7L598,107.1ZM547.5,167L545.3,167L544.7,165.2L546,164.2L547.7,165.2L548.1,165.5ZM551.5,165.1L550.5,165.3L550.4,164.5L551.4,161.3L552.7,159.1L552.7,161.7ZM541,139.4L540,139.9L539.5,139.2L540.2,138.5L539.8,137.7L540.1,135.2L542,134.9L542.4,137.8ZM531.4,112.2L530.6,112.8L530.2,111.9L530.6,109.4L532,109.9ZM532.6,108.9L532.4,109.6L531.2,108.6L531.9,105.2L533.4,104L533.7,106.2L532.6,108ZM524,131.5L526.1,131.8L526.7,133.4L525.5,133.6L525,134.3L524.3,134L523.8,133.2ZM544.6,136.6L543.5,136.7L542.9,136.1L544.4,135.1L545.5,135.3ZM592.2,107L591,107.9L590.2,106.5L591.9,106.2L592.5,106.4ZM528.9,130.7L528,129.1L529.3,126.5L530.2,128.5ZM533.9,125.2L532.4,125.9L533.5,123.6L534.8,123.2ZM537.5,117.6L536.7,118.2L536.1,117.8L536.6,116.1L537.3,116.5ZM570.9,112.3L570.6,112.9L569.5,112.7L570.5,111.5ZM567.2,114.8L567.8,115.3L569.3,115.3L568.3,116.2L566.5,115.8L566.5,114.8ZM536.6,147.5L536.2,147.7L536.5,146.6L537.4,145.6ZM554.1,119.7L556.4,120.2L559,119L560.4,119.7L560.5,121.2L558.4,124.5L562.8,124.7L562.2,126.7L563.4,127.7L562.9,128.8L564.1,129.6L564,130.1L559.9,136L557.5,144.3L557.5,147.3L556,151L552.8,150.6L552.4,151.4L553.2,153.1L548.2,156.5L549.5,152.9L548.5,148.6L549.6,147.9L549.3,146.8L547.9,146.6L546.7,148.8L546.5,151L547.7,152.9L547.1,154.2L542.4,152.6L541.8,151L543.5,150.4L543.9,148.3L542.3,145.9L542.3,141.3L544.7,139.5L547.7,133.8L546,133.3L546.8,132.2L546.6,130.8L544.6,127.1L542.9,125.9L541.5,126.9L542.1,130.5L543.9,130.5L544.1,132.7L542.9,133L540.6,131.7L537.2,134.5L537.9,132.3L536.3,130.2L536.1,127.5L537.9,129.9L539.9,130.5L538.8,128.1L535,125L535.3,123.5L535.9,123.2L538.1,123.8L537.9,122.1L540.9,120.9L542,119.8L544.4,119.3L545.8,116.4L548.6,115L551.4,115.9L552.7,118.7ZM592.3,110.3L593.9,110.9L595.6,110.7L596.1,116.2L596.9,116.6L592.5,119.7L590.9,122.1L590.2,124.9L587.5,122L583.6,121.1L579.4,123.2L577.7,127.2L576.2,128.6L575.7,130.7L574.4,131.9L573.7,131.9L571.7,131.8L572.5,129.8L569.9,129.6L569.9,128.3L569.1,127.5L570.1,124.2L568.9,123.6L569,122.2L564.4,123.5L571.7,118.5L573.4,114.1L575.2,112.6L575.9,112.7L577.6,115.1L578.3,115L583,113.8L583.7,112.1L583.2,110.5L584.5,110.6L587.4,109L588.9,108.8ZM600,104.7L596.9,102.9L595,102.8L591,103.6L587.6,106.3L581.3,107.7L577.7,109.6L576.2,109.2L571.9,110.4L569.1,108.9L567.8,109.3L566.9,110.7L565.8,116.3L560.9,113.3L554.8,114.8L552.9,113.7L551,114.4L550.7,110.2L552.1,108.3L556.3,108L559.3,105.1L562.3,103.4L567.1,99.1L571.4,94.9L572.4,93.3L577.9,91.2L579.2,91.3L580.5,92.7L583.4,91.9L586.3,92.2L590.6,91.5L593.5,90.2L600,89.2ZM471.5,244.7L470.8,246.8L469.6,246.9L469,245.8L469.4,245.3L470.5,245.5L471.6,243.8ZM466.7,247.8L464.2,247.7L464.2,247.3L465,246.9L465.3,246L467.2,246.7ZM485.3,241.7L483.2,241.8L483.4,240ZM519.1,216.3L515.4,218.9L514.4,219.1L514.9,220.6L513.5,221.6L513.6,223L511.8,223.7L512.7,219.2L513.8,218.8L515.3,217.1L514.7,216.6L514.9,215.7L516.6,216.4L517.2,216.1L519.1,213.2L520,214.1ZM528,201.9L526.8,201.8L526.9,199.5L527.4,199.3L528.2,201.2ZM533.4,195.2L532.4,196.3L530,194.7L536.3,191L536.5,192.2L533.5,194.4ZM531.9,196.6L530.8,196.7L530.3,195.4Z"/><path d="M149.8,530.7L152.4,534.1L153.4,534.5L155.2,536.6L154.5,540.8L153.8,541.5L152.2,541.1L151.2,538.3L148.9,536.9L147.6,534.1L145,531.2L146.9,531.2L148.3,529.8ZM170,569.6L168.9,569.7L165.9,567.6L163.2,562.7L164.1,559.9L166.4,559.3L167.2,559.7L169.6,565.6L171.2,567.8L171.3,569.2ZM251.1,578L249.7,576L249.4,574.5L248.5,573.9L246.6,573.3L244.1,573.8L241.6,572.8L242.3,571.3L244.5,570.1L244.5,568.2L245.5,567.2L247,566.6L248.4,569.1L249.1,568.2L248.6,566.7L250.9,566.4L252.3,567.4L253.9,570.7L254.5,574.6L256.9,578ZM279.8,504L278.2,504.4L277.2,503.8L278.9,502.5L277.1,502L276,500.5L276,499.7L279,497.6L280.7,500.4L280.7,502.2ZM549.8,548.3L552.3,548.8L555.3,550.1L556.1,551.8L555.1,552.7L551.4,552.4L548.2,549.3L547.5,549.3L547.7,550L549.1,551.8L550.8,552.4L550.8,553.3L549,553.6L548.3,551.9L546.6,552.7L546,551.5L542.8,550.8L543.5,549.5L544.4,549.2L545.2,549.5ZM521.4,523.7L519.6,523.9L518.6,520.7L520,518.7L521.7,517.4L523.2,517.1L524.3,518.6L523.5,521.6L522.6,523.1ZM517.8,568.2L516.7,568.9L515,568.5L510.7,569L508.7,568L508.7,567.4L509.5,565.7L511.8,564.3L514.9,565.6L517.8,567.5ZM492.7,577.7L491.7,577.3L490.4,573.2L491.1,572L491.9,572.4L491.7,574.3L492.8,576.7ZM492.3,569.8L496,570.2L491.5,571.3L485.2,571.6L484.6,570.4L486.3,569.9ZM479.6,568.8L480.8,569.2L482.3,568.9L482.4,569.7L483.8,570L483.8,570.8L480.1,571.6L478,571L475.7,572L473,572.4L472,570.6L473,568.2L476,567.9ZM552,564.1L550.1,564.1L549.4,563.4L548.1,559.8L550.8,559L552.4,559.3L552.9,559.9ZM237.9,578L239.6,576.8L243.4,576.6L246.7,578ZM192.4,578L190.2,574L190.3,571.5L185.8,563.9L183.7,558.2L178.3,552.1L176,547.8L172,545.8L169.9,544.1L165.6,530.4L163.1,525.9L157,522L153.5,520.9L152.4,520L151.1,514.1L148.7,512.6L143.6,505.4L141.6,503.8L137.3,502.5L134.8,499.4L126.9,492.3L122.5,484.8L123,483.3L122.7,481.4L124.8,480.6L127.5,480.9L130.1,482L133.6,484.7L137.9,485.5L142.1,484.9L146.3,485.7L149.4,485.4L150.6,485.7L154.9,489.7L156,492.3L159,495.3L158.9,497.9L159.7,499.1L163.9,501.1L165.3,503.2L169.8,505.3L176.8,510.1L186.3,522L188.2,522.9L190.7,524.9L189.8,522.6L189.9,521.4L191.2,520.8L192.6,521.2L195.6,524.2L196.9,527.2L197.7,528L201.4,528.8L204.2,531L205.9,533.2L206.9,536.4L208.7,538.2L209.6,538.9L215.4,540.3L216.8,542.4L216.1,543.3L210.6,545.7L214.8,545L220.1,542.1L221.7,542.5L224.1,544.8L225.4,547.7L221.1,550.6L220.9,552.6L222.1,553.9L221.3,555.2L222.4,557.4L224.7,558.9L230.4,561L232.3,560.8L234.2,570.1L234.8,571.4L238.1,573.4L237.9,575.1L236,576.9L235.7,578ZM409.2,578L410.1,574L411.9,571.5L411.7,565.2L414.1,559.2L416.5,556.5L418.1,558.6L416.7,549.4L418.4,547.8L417.7,545.4L419,543L420.4,541.5L420.7,540L422.8,538L423.2,536.6L423.9,536.5L425,538.1L426.2,538.5L427.2,538L430.4,533.3L433,532.4L434.5,533.1L436.8,533.4L439.1,535.5L442.4,535.2L449.2,536.1L454.1,538.2L456.8,537L466.2,538.2L471.3,536L472.9,534.1L474.4,533.5L475.2,531.6L477.5,530.7L479.9,527.9L482,528.6L482.8,530.3L481.4,531.8L479.6,535.3L476.4,538.4L473.1,542.7L470.6,543.7L463.7,544.7L459.2,544.4L457,542.5L456,542.4L442.1,543.1L438.2,542.3L432.2,543L426.9,542L424.2,542.9L422.3,545.1L420.9,547.8L420.2,550.7L420.4,553.5L421.2,556.1L422.9,558.7L426.2,560.8L428,564.7L432.4,565.2L433.8,564.4L435.3,561.7L438.9,558.2L440.9,559.4L443.6,559.5L447.4,557.4L454.7,557.4L454,556.2L458.1,555.1L459.4,555.4L461,556.8L460.8,559.8L459.6,560.6L456.6,558.8L454.8,559.1L450.1,564.5L447,567L442.3,568.6L439.8,571L436.7,570.3L436.2,571.7L438,572.8L438.9,574.1L441.2,575.2L443.2,578ZM302.1,578L301.2,572.3L299.5,570.7L300.4,566.6L299.8,563.6L297.4,560.4L293.4,558.7L292,558.8L291.1,558L291.3,557.1L292.5,556L289.9,554.2L289.5,553L290.3,548.4L291.1,547.9L287.3,544L286.9,538.8L287.5,534.7L289.6,533.3L288.1,533.4L288.9,530.3L291.3,527.8L292.5,525.2L295.5,524L294.5,525.5L294.8,526.6L295.6,527L295.8,528.9L306.1,538L313.2,535.7L317.8,536.4L321.7,536.2L323.1,534.9L324.9,534.6L326.2,531L329.7,529.6L335.3,529.5L335.9,529.7L336.1,531.1L342.2,532.6L343.5,533.5L346.8,531.1L352.6,530.3L354.2,530.9L355.6,528.9L356.4,526.1L357.6,525.6L358,524.5L357.1,522.3L357.4,521.3L362.1,518L362.2,517.5L361,516.7L361.4,513.5L363,512L363.7,512.4L365.5,511.9L366.8,506.9L366.8,501L368.1,497.9L370,496.3L372.3,496.8L374.8,495.9L377,496.6L378.2,495.8L385.2,496.2L390.9,498.2L389.6,499.3L392.7,502.7L393.3,504L391.6,504.6L390.1,503.5L389.4,504.7L384.7,504.8L386,505.2L388.2,507.2L388.6,507.9L387.9,509.4L388.2,510L391.3,511.5L391.7,512.9L390.8,513.1L392.4,513.6L391.7,514.4L393.4,515.3L396.8,520.5L396.5,521.7L393.5,524L397,527.9L403.7,532.5L406.2,535.1L407.6,535.8L407.8,536.5L406.7,537.7L402.4,538.5L398.4,537.8L394.9,535.1L395.7,536.7L395.6,537.6L392.9,539.5L390.3,545.5L389.6,552.2L390.6,555L390.8,557.6L386.9,559.4L384,562.6L383,563L381.6,562.5L380.9,560.8L381,564.2L378.7,566L378.2,567.5L375.3,569.7L377.1,569.7L377.1,572.9L375.8,574L378.3,574.8L378.8,575.9L378.4,578ZM512.8,538.1L514.6,538.3L515.6,535.8L517.9,534.4L517.9,532.5L518.7,531.5L521.1,530.1L524.3,529.4L524.4,535L519.6,537.8L519.1,539.5L523.3,541.7L524.3,544L526.8,545.7L521.4,543.6L515.8,542.6L515.1,543L514.6,544.7L514.7,547.7L515.7,551.3L519,557.1L521.1,559L519.3,558.7L518.8,557.8L516.6,556.8L514.7,553.4L512.3,551.2L512.5,544.8L510.7,542.4L510.4,541L511.3,538.1L510.2,537.2L509.1,534.6L509,533.3L510.4,530.7L511.6,526.2L514.8,522.6L516.4,521.9L514.6,526.3L516.1,527.9L516.1,532.3L514.6,534.3L511.8,536.1L511.6,537.1ZM576.8,578L578.3,577.6L579.8,578ZM584.9,578L586.9,577L586.8,576L585.5,575.8L586.8,574.5L587.1,573.5L584.5,574.6L575.6,575.6L570,574.9L567.7,575.2L564.3,572.2L563.2,567L560.8,566.8L555.5,565L553.4,565.8L552,565.4L552.6,563.7L554.3,562.3L555.1,558.6L561.7,556.7L565.5,553.7L570.1,552.5L574.3,553.3L581.7,557L588.3,557.5L589.3,558.5L588.9,560.3L591.1,564.7L589.3,569L589.9,574.6L591.4,578ZM200.5,523.4L201.3,525L200.6,526.8L199.2,527.7L198,527.5L196.8,525.5L196.9,524L199.7,522.8ZM209.1,536.4L208.6,536.8L207.4,535.4L206.8,533.1L207.1,531.5L209.3,533.5ZM209.9,530.8L210,532.3L207.3,530.9L204.9,530.3L204.3,529L209.6,530.2ZM216.3,539.3L216.1,539.8L209.9,538L209.4,537.6L210.1,535.2L210.6,534.7L212.7,536.4L216,538ZM218,537.9L217,538.1L214.6,536.3L212.4,535.7L212.7,534.4L216,535.5ZM219.4,541.8L217.7,541.7L218.2,539.9L218.9,539.9L219.5,540.9ZM221.4,540.3L220.1,539L220.6,537.9L222,539.6ZM228.3,534.1L229.1,534.7L229.7,534.3L228.8,536.4L227.6,536.1L227.2,535.4ZM235,533.7L236,535.7L234.9,538.3L234.1,538.1L233.1,536.8L233.5,536.4L233.3,535.7L231,536.1L231,535.1L232.3,534.1ZM237.3,550.4L238.1,550L240.1,551.7L239,552.2L236.4,550.8L234.8,551.2L233.4,550.6L234.5,548.1L235.6,548.5ZM233.7,552.3L235.1,553.9L234.1,555.5L233,555.3L232.4,556.2L231.1,553.9L231.6,552.9L232.4,553.1ZM224.8,552.5L223.3,552.9L221.5,552.6L222.6,551L224.7,551.6L225.2,552.1ZM296.5,562.5L293.6,563.6L293.1,563.2L293.7,560.1L295.4,560L296.9,560.8L297.1,561.6ZM599.6,561.7L598.3,561.7L597.7,560.8L597.9,560L598.7,559.6L600,560.7ZM507,554.2L505.4,554.5L505.5,551.6L507.5,551.7L507,552.1ZM510.8,552.1L512.2,553.9L511.3,555.6L511.9,556.6L513.7,556.6L514.6,558L513.1,558.9L511.5,557.5L509.6,558L509.6,556L507.6,554.3L507.9,552.3L509.5,553.2L510.3,552ZM501.8,499.9L500.5,500L500.5,499.4L501.8,497.2L500.7,496.1L501.1,493.7L502.4,494.5L503.1,496.8ZM487.9,507L487.6,507.4L486.1,506.7L485.6,503.5L486.5,504.2ZM544.2,568.6L545.1,570L544.6,571.1L545,572L543,572.9L541.6,573.1L538.6,572.1L536.9,570.7L539.9,569.4ZM178.1,576.4L175.3,575.4L174.4,574.2L174.9,572.6L176.2,573.1ZM161.5,554.7L160.8,555.2L159.7,554.7L161.1,551L159.9,548.3L161,548.5L162.5,551.4ZM137.6,520L136.1,519.8L132.3,517.1L129.7,516.4L128.6,514.4L129.7,513.3L130.7,513.6L137,518.1ZM458.5,562.4L458.9,565L460.1,563.3L461.2,563.1L462.6,564.4L462.1,565.7L460.4,566.4L459.3,565.5L458.8,567.2L458.1,567.7L457.5,567L458.2,566.2L457.8,564L454.7,567.3L453.7,565.5L454,563.7L454.9,562.5ZM442.4,553.2L442.9,553.7L442.6,554.3L439.9,554.6L441,553.2ZM221.1,535.7L221.2,536.4L220.4,536.2L219.8,535.4L220.6,534.7ZM225.9,538.7L224.9,538.3L225,537.6ZM230.9,538.3L230.1,538.6L229.3,537.1ZM236.3,547.6L235.2,547.2L234,545.5ZM255.4,510.4L255.4,511.2L254.6,510.7L254.4,509.8L255.3,509.7ZM249.1,513.9L248.5,513.6L248.3,511.5L250,512.6ZM286.7,513.4L286.1,514L285.4,513.7L286.6,512.3ZM287.4,567.7L286.1,568.2L285.6,567.1L287.5,567.1ZM148,523.4L145.3,521.7L147.5,521.9ZM124.3,478.4L123.4,478.6L122.6,477.5L124.3,477.7ZM463.2,568.8L461.8,568.5L461.8,566.7L462.3,566.3L463.4,567.8ZM466.2,571.8L466.4,572.3L465.6,572.2L465.4,570.8ZM457.8,570.1L456.9,571.1L457.3,569.7ZM391.8,498.2L394.6,498L395.1,499.6L392.8,500.2L391.5,498.8ZM391.9,508.9L391.7,509.3L390.7,508.3L390.6,507.1L392.2,507.4ZM508.5,538.8L507.7,539.1L507.5,538.2L508.2,538.1ZM592.5,573.8L592.1,574L592,573.4L592.4,572.6L593,572.9ZM550.9,557.6L550,558.7L544.8,559.4L545.8,558.3ZM547.5,554.6L545.6,554.1L547.4,553.3L548.2,553.9ZM534.6,550.5L532.4,549.1L531.7,547.8L534.5,550ZM509.4,548.4L509.4,548.7L508.8,548.1L509.2,546.6ZM509,540.6L508.5,540.7L508.6,539.4L509.3,539.5ZM507.6,557.7L505.9,557.4L506.5,555.7L507.1,555.8ZM500.6,501.8L499.7,499.8L500.9,501.3ZM502.2,503L501.3,502.1L502.3,502.5ZM484.9,516.5L484.3,515.3L484.7,514.6L485.4,515.1Z"/><path d="M0,213.1L1.5,213.5L2.3,214.7L3.5,215.1L6.8,213.8L7.8,213.9L8.8,216.4L9.5,216.9L12.1,216.3L16.4,217.3L20.4,219.2L24.2,217.6L25.1,219.2L27.4,220.2L29,219.3L31.6,219.7L34.2,219.2L35.9,219.9L36.7,219.3L37.9,215.3L37.3,212.6L35.8,209.8L36.3,206.1L37.8,201.5L37.8,200.2L37.2,199.4L42.9,196.8L45.6,198L46.2,199.9L45,204.6L45.2,205.8L46.7,207.3L44.9,209.2L46,210.7L46.3,212.1L49.8,214.1L52,213.6L55,214.6L55.3,215.4L57.2,215.6L61.5,214.9L62.5,213.6L64.2,213.1L66.7,214.3L68.9,214.7L75.4,214.4L77.1,213.4L78.2,214.2L80.1,214.3L84,213.5L84.9,212.7L83.9,210.3L85,207.7L83.9,205.5L80.9,205.6L79.1,204.1L79.6,201.3L83.7,201.7L85.2,200.7L89,200.4L90.6,199.7L92.3,198.2L91.7,197.2L92.4,196.1L96.4,193.6L99,189.5L105.1,188.1L107.7,186.3L108.2,185L109.3,184.7L111.5,182.4L115.5,180.1L116.8,181L117.2,182L124.7,183.9L126.2,182.3L126.2,181.6L132.4,178.3L134.8,181L136.3,181L133.5,183.3L133.6,185.5L137.2,183.7L139,187.7L136.7,189.8L135.4,192.5L136.7,193.1L139.2,191.8L141.3,193.1L143.8,193.5L144.9,193L147.9,195.1L148,198.9L143.6,202.2L142.5,203.7L142.8,205.7L145.2,210L143.4,209.8L140.8,207.1L134.3,208.1L132.7,208.7L130.9,211L125.6,214.9L121.5,217L120.7,218.7L120.6,220.4L121.6,224.5L120.2,226.2L119.3,229L117.4,231.4L116,232.2L115,234.1L114.6,235.4L116.1,236.5L116.5,237.7L115,241.4L111.5,247.3L109.5,253.1L104.2,251.4L101.9,251.8L99.9,250.6L101,255.7L100.4,262.8L99.7,264.2L98,264.2L97.9,265.8L96.9,268.2L97.9,272.9L97.8,274.6L96.5,275.2L95.6,277.5L94.9,277.7L92.7,275.8L90.9,277.8L89.9,268.7L88.3,265.5L88,260.3L87,255.6L86.2,255.7L85.8,255.1L83.2,255.6L83.3,258L81.1,260.8L81,263.9L79.4,264.8L78.1,264.1L77.2,262L76.4,262L76.4,263.6L75.8,263.2L74,257L74.8,252.5L76.4,250.3L78.3,250.3L80.7,248.8L82.5,248.9L83.4,246.8L85.2,246.1L86.7,239.9L89.3,240.3L89.6,239L84.6,236.1L65.3,236.2L58,234.4L57.6,233.3L57.9,225.8L56.1,222.1L55,222.5L54.6,224.9L52.4,224.9L50.2,223.6L48.2,219.5L47.1,220L47.6,221.7L45.9,221.6L44.2,221.1L43.4,219.2L41,217.4L40.4,217.5L40.2,218.5L41.2,219.2L41.3,220.1L37.8,223.8L37,226.5L37.8,227.5L39,227.8L40.4,229L42,231.2L45.2,231.8L45.8,233.5L47.4,234.9L45.8,236L41.5,235.8L39.8,239.9L37.8,239.4L36.3,243.2L37.7,245.1L39.4,245.2L40.8,246.4L44.7,247.9L44.4,251.5L42.8,255.8L44.9,258.9L44.7,261.2L47.1,262.1L46.2,264L47,269.4L48.6,274L48.3,278.4L47.4,278.4L48.2,279.7L48.6,282L46.9,282L46.3,280.9L46,281.9L44.9,282.9L44.3,281L44.9,277.5L43.7,276L42.8,279.7L43,282L41.4,282.5L39.4,280.7L39,282.4L37.5,282.3L36.7,281.5L38.4,275.8L35.9,274.1L35.3,272.7L35.5,274.3L37.9,276L35.4,279.8L32.1,282L25.2,284L22.3,287.4L22.1,289.1L23.7,294.3L21.2,297.9L21,299.3L18,301.1L16.5,303.2L14.9,302.6L15.7,303.4L14.6,304.6L6.9,307.2L6,307.1L6.7,306.4L6.7,305L5.5,304.6L3,306.4L2,308.1L2.7,308.4L4.5,307.4L5.3,308L0,312ZM106.7,466.1L105.9,467.1L104.5,464.1L103.9,463.9L104.2,461.9L105.9,461.2L107.2,464.4ZM104.8,459.8L103.7,460.9L103.2,460.2L104.3,459.1ZM97.7,449L98,449.4L97.4,449.3L96.8,448.7L97.2,447.8ZM101.3,453.5L100.4,453.5L99.7,452.4L100,451.9L100.5,451.8ZM102.4,451.3L101.7,451.7L101.5,449.9L101.9,449.3L102.4,449.4ZM93.4,438.2L92.6,437.8L93.1,436.9L93.7,437.7ZM90,420.9L89.7,421.3L88.4,421L88.2,418.5L90.1,416.7L90.9,419.1ZM92.3,410.8L91.1,410.8L91.7,409.3ZM92.7,408.9L92,408.9L90.4,404.8L91.3,403.9L92.1,400.9L93.5,400.5L92.6,398.8L92.6,396.6L92.9,393.7L94,390.9L94.3,386.5L95.1,385L96.7,384.2L96.9,386L96.2,386.8L96.8,388.2L94.6,391.7L95.6,392.8L95.9,396.6L95.2,397.7L94.4,397.9L94.6,400.4L93,403.3L93.6,404.8ZM96.2,402.8L96.7,404.5L95.5,403.2ZM92.6,392.6L92.2,393.4L92.5,391.4Z"/><path d="M398.2,245L397.8,245.7L397.1,245.6L397.2,244.2ZM442.4,149.8L441.4,150.2L438.2,149L436,147.7L434.5,145.4L437.6,146.1L438.9,147.7L441.7,148.9ZM447.6,171.1L444.3,170.4L443.6,168.6L445.3,168.7L447.4,169.7L447.9,170.2ZM446.1,175.1L444.5,174.3L444.7,173.8L445.4,173.6ZM448.8,172.1L448.4,172.7L448.2,171.2L448.8,171.3ZM417.9,232.2L417,232.9L416.4,232.6L416.7,229.8L417.3,229.6L418.1,230.5ZM304.6,289.3L305.1,289.7L306.3,289.4L306,290.9L303.4,290.4L303.7,289.5ZM435,196.9L433.6,197.2L433.6,196.2L434.5,195.3ZM342.7,267.1L342.8,267.7L340.9,265.8L341.6,265.8ZM333.5,282.7L332.6,281.5L333.4,280.5L334.4,280.8L333.6,281.5ZM331.7,282.2L330.3,282.4L331.8,281.3ZM519,0L517.8,1.8L516.2,0.8L512.3,1L508.2,0ZM498.5,0L497.9,2.3L491.9,9.5L488.7,10.1L487.7,11.5L485,13.4L480.9,15.2L480,16.5L478.7,16.5L472.6,22.1L472.3,23.7L471.2,24.9L469.3,26.2L465.1,26.5L463.8,25.6L463,27.1L460.2,27.5L458.7,28.7L456.4,28.9L455.5,29.7L454.1,30L448,33.6L443.8,38.5L442.4,39.4L440.1,39.3L439.6,40L439.8,41.4L435.8,42.3L434,43.5L433.3,40.5L440.2,37.6L439.5,35.9L441.8,33.3L435.3,33.4L435.2,30.9L438.2,29.4L437.7,27.6L438.2,26.2L441.6,24.5L446.3,18.1L447.2,15.9L447.3,15.2L446.1,14.3L445.7,12.9L442.3,10.5L442,8.4L440.8,10.4L434.1,9.5L429.2,14.5L425.7,20.1L415.1,25.3L412.7,27.6L411.1,30.6L410.7,33L407.7,36.5L403.5,36.6L399.6,38.3L397.8,36.3L396.5,35.8L394.4,36.4L393.4,37.2L390.6,44.1L391.9,48.2L393.2,49.9L396.2,51.9L402.5,53.2L405.6,52.7L407.3,54L409.1,59.2L407.9,60.1L407.4,64.8L409.3,66.7L413.4,67.9L417.1,67.4L418.7,66L418.6,64.5L423.7,60.4L423.1,59.5L429,57.2L432.6,58.8L434.6,60.7L436.7,61L439.7,62.8L443.6,63.1L444.7,61.8L448.1,63.7L452,63.7L450.9,65L451,67L449.4,68.8L450.3,69.7L450.2,70.6L448.1,72.3L446.9,72L445.9,70.4L443.2,70.4L432.6,75.6L429.7,75.3L430.7,78.1L429.3,77.9L428.5,78.6L428.2,82.2L427.7,82.8L424.7,83.9L424,83.1L423.9,81.3L422.2,81.7L421.1,82.9L422.2,84.4L423.4,84.9L420.7,86.8L419.7,88.5L418.4,90L416.6,90.8L414.3,94.2L413.2,95L412.2,97.8L410.6,99.3L410,101.7L410.4,103.1L412.2,103.1L415,105.5L419.6,107.5L423.2,110L426.1,119.2L430.5,128.2L430.8,130.6L430.2,133.2L436.1,136.6L436.8,137.3L436.8,139.7L437.4,140.5L440.1,141.9L442,144L442.4,146.8L441.2,146.9L436.2,144.6L431.7,144.5L429.5,142.2L426.2,141.1L420.4,143.5L422.3,143.9L426,142.3L428.6,142.9L429.5,145.2L432.7,146.6L436.2,149.9L439.9,152.2L442,155.8L442.5,157.9L437,159.6L435.7,160.9L432,162.9L430.8,165.2L429.9,165.7L425.4,165.2L422.3,167.3L424.2,167.2L425.9,166.4L427.6,168.8L430.9,168.4L433.9,166.4L435.1,166.4L437.2,167.5L440.1,170.9L445,172.4L438.1,177.7L440.3,177.4L442.7,175.8L443.3,176.1L443.6,177.7L443,182.6L442.2,182.6L441.5,181.3L440.6,180.9L438.4,181.2L437.4,182.6L440,184.3L440.2,185.1L439.7,185.6L438.5,185.3L440,186.4L439.6,187.6L438.2,188.3L437.7,189.3L439.3,194.1L438.1,193.7L435.3,195L434.6,193.4L433.7,193.6L431.5,197.6L429,197.9L430,199.5L427.1,203.8L427.5,205.1L427.3,206L424.6,209.5L423.3,210.3L421.7,213.1L420.5,216.5L419.6,217.2L418.6,216.8L417.9,213.7L416.5,215.2L415.1,214.5L415.7,216.7L416.7,216.8L417.4,217.7L418.6,220.5L413.6,224.3L409.7,223.4L412,225.7L414,224.9L415.4,225L415.8,226.1L414.5,230.5L415.5,233.1L415.1,233.4L413.1,232.2L410.2,232.3L409.8,232.8L410,233.6L411.4,235.2L407.7,235.5L407,236.6L407.5,238.2L406.9,239.2L403.6,240.5L404.6,241.7L403.9,243.3L402.7,243.8L399.5,243.9L397,243.2L396.2,244.1L396.1,245.1L394.1,245.2L394.5,246.3L396.3,246.5L396.7,248.3L394.1,251.3L392.9,251.3L391.5,253.6L389.6,253.6L389,256.5L388.4,256.9L388,255.3L387.5,255.2L385,257L382.9,256.1L382.3,258.7L379.6,260L380.4,260.9L378.5,262.2L378.2,264.5L377.6,265.3L375,264.8L373.9,266L370.2,267.2L367.7,266.5L366.7,266.9L366,268.2L364.6,268.2L362.3,267L359,268.7L358.2,269.6L357,269.4L356.5,268L355.8,267.8L354.5,269.5L354.7,270.7L352.1,269.9L351.2,270.5L349.5,270.2L348.2,270.9L347.2,270.7L343.4,266.4L343,264.3L343.4,262.9L342.2,263.2L341.3,263.9L341.3,265.3L340,265.7L342.6,269.9L342.6,272.3L343.1,273L342.6,274.6L341.9,274.4L341.7,275L339.2,276.4L337.8,276.6L337.1,274.9L336.1,276L335.4,278.8L334.8,279.1L333.7,278.3L331,280.4L329.1,279.1L329.2,278.1L328.3,277.8L328.7,280.1L327.7,280.9L323.3,279.5L322.5,281.2L321.3,281.2L319.2,283.3L316.7,283.6L315.8,284.2L312.2,283.9L312,284.9L309.3,285.5L306.8,287.7L305.5,287.5L304.9,286.1L304.5,288.2L302.3,290L301.8,291.2L302.2,292.3L304.4,292.5L304.7,293.2L303.8,294.7L306.1,296.6L305.4,298.7L304.1,299.5L301.5,299.9L299.3,299.5L298.6,298L299.8,298.1L299.6,297.5L298.3,296.7L297.5,295.3L297.7,294.2L296,291.5L296.5,289.8L296.2,288.8L297.1,287.5L297.4,286.1L299.1,285.6L299.2,284.3L298,284.2L297.1,283.2L296.2,283.7L295.1,281.8L294.3,281.5L294.5,283.5L292.2,284.6L289,284.8L289.6,283.5L289.2,282.9L288.4,282.4L285.3,282.3L283.4,280.5L283.1,278.8L281.8,278.8L282,282.3L281.3,282.6L279.9,281.5L279,283.3L275.7,283.9L273.1,282L271.7,282.6L269.7,282.8L269.2,282.2L268.2,282.6L267.3,281.3L266.1,281.2L264.7,280.2L263.7,278.5L260.8,277.6L260,277.8L259.9,274.4L258.6,273.1L258.6,271.1L259,270.1L260.4,269.3L261.4,267.5L258.5,265.8L255.3,266.4L253.8,265L252,264.9L250.1,265.6L246.6,263.6L245.3,261.5L243.3,260.1L238.4,262.8L237.5,265.7L236.2,266.9L234.3,267.1L232.5,268.4L231.6,268.3L230.5,267.1L229.7,267.2L228.6,267.8L227.3,270.6L223.4,267.4L221.9,269.9L220.3,267.8L219.6,267.6L217.7,269.9L217.6,270.5L215.8,271.8L214,269.9L209.7,267.8L205.5,272.6L204.3,271.9L202.1,272.5L201.1,271.2L200.5,271.3L199.4,273.3L198.3,274.3L199.2,277.7L200.8,279.8L200.7,286.4L201.6,287.4L200.7,288.4L198.5,287.4L195,287.9L194.1,285.2L194.4,283.7L193.7,283.2L193.6,281L193,280.7L190,282L187.3,284.4L181.8,284.3L181.1,283.3L181.1,281.9L179.7,281.4L179.3,280.7L179,277.2L170.8,276.1L170.1,275.6L170.9,272.8L172.1,271.1L172.6,266.9L174.1,265.1L173,263.7L166.4,262.1L166.6,259.6L165.6,257.8L166,256.4L164.1,252.7L166,249.9L163,250.6L162,250L158.6,250L156.2,250.6L152.2,252.8L150.8,252.7L152.5,248.5L152,246.5L150.4,245L150.4,243.2L151,241.3L152.9,240L152.6,237.8L153.8,235L155,235.2L156.1,234.4L157.7,230.7L160,230.5L161.6,227.8L163.9,226.8L162.8,224L164.2,222.5L164.9,215.7L163.8,203.9L161.4,202.7L160.2,204.3L159.6,204.2L157.2,196.1L154.7,193.2L153.2,193.2L151.9,191.3L150.5,191.1L147.9,195.1L144.9,193L143.8,193.5L141.3,193.1L139.2,191.8L136.7,193.1L135.4,192.5L136.7,189.8L139,187.7L137.2,183.7L133.6,185.5L133.5,183.3L136.3,181L134.8,181L132.4,178.3L126.2,181.6L126.2,182.3L124.7,183.9L117.2,182L116.8,181L115.5,180.1L111.5,182.4L109.3,184.7L108.2,185L107.7,186.3L105.1,188.1L99,189.5L97.4,192.6L91.8,196.8L92.3,197.7L92,198.8L89,200.4L87,200.2L83.7,201.7L79.6,201.3L79.7,199.1L75.3,197L72.2,198.5L68.6,197.1L64.2,197L64.2,194.7L61.3,194L58.8,194.1L53.8,197.3L49.9,202L49.2,203.6L47.4,205.3L46.7,207.3L45.2,205.8L45,204.6L46.2,199.9L45.6,198L43.5,196.8L37.7,198.8L37.3,199.8L34.3,199.6L31.5,200.6L25.7,200.3L24.2,199L21,197.8L20.3,196.8L19.4,196.7L18.7,196.9L18.2,198.6L16.9,199L14.6,197.8L13.6,196.5L12.9,196.9L12.8,199L11.9,199.3L10.1,196.2L8.1,194.3L2.5,194.1L1.5,193.8L1.1,193L1.9,190L0,190L0,0ZM310.7,303.4L311.6,304.8L312.2,307.7L309.9,308.9L307.7,312.3L305.4,319.2L300.6,322.3L300.8,323L297.8,323.6L296.4,325.4L294.2,325.9L288.4,324L284.4,321.9L283.6,317.2L284,312.1L291.3,306.3L290.1,306.2L291.2,304.8L294.2,304.5L295.8,303.5L301,303.4L302.1,302.6L304.1,302.8L304.7,303.6L304.7,302.5L307.1,303.6L307.2,302L307.8,301.5Z"/><path d="M341.7,275L341.9,274.4L342.6,274.7Z"/><path d="M348.2,270.9L349.5,270.2L351.2,270.5L352,272.4L351.2,273.7L348.4,272.7L347.2,272.8L346.8,272ZM350.8,274.8L349.6,273.8L351,274.1ZM348,274.8L346.1,274.4L348.5,273.2Z"/><path d="M216.5,412L215.9,411.9L216.4,410.7ZM219.8,418.9L219.4,419.4L218.7,418.1ZM270.2,369.9L269.9,371.8L268.4,374L268,377L271.3,385.5L269.7,390.6L270.5,394.6L270.5,397.9L268.7,400L268,399.3L266.5,399.5L263.2,402.3L261.2,402.6L260.4,403.5L257,403.9L256.8,407.1L252.1,406.2L251.1,407.5L250.2,407.7L250.3,411.9L253.9,415L253.6,416.4L254,418L251.3,416.9L250.2,417.1L249.1,415.6L244.9,416.1L243.8,417.4L240.5,416.6L240.6,419.1L238.2,421.2L234.8,421.4L233.1,422.7L231.1,421.1L227.2,420.5L226.4,419.7L226.1,420.6L223.9,421.5L223,421L222.4,420.3L222.5,419.5L224.2,418.4L224.7,416.8L223.9,414.8L222.4,413.7L220.2,416.4L217.8,416.5L217.1,412.9L217.5,409.8L216.1,408.3L216.1,406.8L215.4,406L215,406.5L212.8,402.1L212.5,400.1L213.1,398L210,395L209.5,390.8L208,387.4L207.8,384.3L210.6,383.7L210.5,382.8L216.4,375.5L222.6,373.4L227.8,374.2L237.3,373.3L239.6,374.1L240.4,375.8L242.2,374.3L242.9,376.1L244.2,377.2L246.4,376.7L248.9,377.6L250.9,379.5L252.8,379.6L253.5,378L251.7,374.4L254,374L254.7,372.7L256.3,373L258,371.4L261.4,374.5L263.3,374.6L264.4,373.3L265.3,373.4L267.5,371.3L269,371.6Z"/><path d="M181.5,299.2L178.7,297.8L176.6,299.1L173.5,298.6L173.8,301.4L172.1,302.3L168.9,302L167,306.2L160.5,307.2L158.9,307.2L157.3,306.3L156.2,306.5L155.9,307.7L153.8,310.2L153.6,314.3L152.5,316.9L153,321.2L150.2,322.4L148.5,322.1L149.4,324.1L150.3,324.9L151.6,325L152.9,329.5L152.5,331.2L161.3,341.5L161.7,344.6L163.9,349.6L164.3,349.9L166,348.5L166.7,349.4L165.8,351.5L163.1,353.1L162.7,361.6L161.4,361.8L158.3,363.7L158.4,366.5L159,368.5L162.8,374.1L167.2,378L169.6,382.1L170.1,388.1L169.3,389.7L169.5,390.6L170.6,394.1L172.9,396.5L173.6,400.9L175.4,405.9L170.3,414.2L165.1,419.6L165.2,422.4L164.4,425.4L162.8,427.3L162,425.5L162.3,423.4L161.6,419.4L164.1,415.6L164.2,413.9L164.9,412.5L164.9,408.2L166.5,406.7L165.7,405.9L164.3,406.7L163.6,406.4L164.4,400.5L163.2,400.2L164.1,399L163.5,397.8L164,395.1L162.9,388.9L158.9,381.9L158.9,379.4L158.4,378.8L157.8,383L157.3,382.2L156.9,378.8L157.2,376.6L156,374.5L154.9,370.5L155.2,370L156.2,370.5L155.2,369.1L154.4,369.5L153.7,368L152.5,355.3L151,353.5L151.7,350.6L151.6,348L152.7,346.6L148.5,347.2L146.5,342.6L146.4,340L142.2,336.2L142.9,337.4L142.2,338.7L142.9,340.9L141.2,344.9L139.5,346.7L137.2,347.4L135.4,346.3L135,344.2L134.3,344.1L134.8,346.7L135.9,348.2L133.6,349.5L132.5,349.5L132.1,350.6L129.2,351.6L128.2,354L124.7,357.2L123.6,356.8L124.4,353.9L124.2,352.5L122.1,355.9L119.3,356L118.7,354L118.7,351.5L117.6,354.1L115.9,354.9L116.4,347.4L116,349.6L113.3,352.6L111.6,353.7L110.7,353.5L111.3,347.3L112.2,345.8L113.7,339.5L114.8,337.4L115.1,334.1L113.9,330.9L113.2,326.1L110,319.4L110.9,319.3L108.8,317.4L108.5,312.4L107.3,314.1L107.6,316.1L107.2,317.3L104.5,315.7L101.9,311.3L102.9,310.9L104.7,312.6L105.9,313L107.5,311.8L108,310.4L106.1,309.2L104.9,307.1L103.3,306.1L104.5,304.4L103,304.4L100.9,302.8L99,302.4L97.9,302.8L98.4,304.6L98.3,305.2L97.6,305.1L96,302.3L97.1,301L96.2,300.9L96.8,298.4L96.4,298.1L94.6,301.3L93.5,300.6L94.7,298.9L94.2,298L92.5,296.1L92.7,299.5L88.5,294.1L86.2,286.7L88,284.8L91.2,287L91.6,286.5L90.9,277.8L92.3,275.9L94.3,277.4L95.6,277.5L96.5,275.2L97.8,274.6L97.9,272.9L96.9,268.2L97.9,265.8L98,264.2L99.7,264.2L100.2,263.5L100.7,260.1L101,255.7L99.9,250.6L101.9,251.8L104.2,251.4L109.5,253.1L111.5,247.3L115,241.4L116.5,237.7L116.1,236.5L114.6,235.4L115,234.1L116,232.2L117.4,231.4L119.3,229L120.2,226.2L121.6,224.5L120.6,220.4L120.7,218.7L121.5,217L125.6,214.9L130.9,211L132.7,208.7L134.3,208.1L140.8,207.1L143.4,209.8L145.2,210L142.8,205.7L142.5,203.7L143.6,202.2L148,198.9L147.9,195.1L150.5,191.1L151.2,191L152.3,191.7L153.2,193.2L154.7,193.2L157.2,196.1L159.6,204.2L160.2,204.3L161.4,202.7L163.8,203.9L164.9,215.7L164.2,222.5L162.8,224L163.9,226.8L161.6,227.8L160,230.5L157.7,230.7L156.1,234.4L155,235.2L153.8,235L152.6,237.8L152.9,240L151,241.3L150.4,245L152,246.5L152.5,248.5L150.8,252.7L152.2,252.8L156.2,250.6L158.6,250L162,250L163,250.6L166,249.9L164.1,252.7L166,256.4L165.6,257.8L166.6,259.6L166.4,262.1L173,263.7L174.1,265.1L172.6,266.9L172.1,271.1L170.5,273.9L170.3,275.9L179,277.2L179.3,280.7L179.7,281.4L181.1,281.9L181.4,283.9L182.6,284.5L184.2,284L187.3,284.4L190,282L193,280.7L193.6,281L193.8,283L193,284.4L189.1,286.4L186.4,290.6L186.3,291.5L187.5,292.3L183.9,293.1L183,293.9ZM158.5,416.1L159.5,418.2L159.3,418.7L157.9,416.7L157,416.9L158,415.7ZM158.2,428.5L157.4,429.2L157.7,428L159.5,427.1ZM158.7,409.6L158.2,409.7L158.4,408.5L159.6,405.9L159.4,408.2ZM162.2,404.4L161.7,404.5L161.6,402.2L163.3,403.8ZM162.6,406.4L162.3,408.9L161.2,408.5L160.5,405.8L162.3,405.6ZM161,395.9L161.6,396.2L161.5,397.4L160.6,398.9L159.8,399.1L159.7,394.9ZM157.6,401.4L156.4,400.4L156.9,399.7L157.5,399.8ZM113.7,354.4L112.9,355.6L112.7,353.8L115.2,351.2L114.8,353.5ZM150.9,350.6L150.4,350.8L149.8,349.9L149.6,348L150.5,347.4L151.2,348.4ZM104.3,320L101.8,317.7L104.9,317.7ZM101.9,304.6L102.2,306.4L101,304.8L101,303.9ZM104.6,308.9L107.3,310.6L106.8,311.8L105.8,312.2L105.1,311.9L104.8,310.7L103.7,309.7ZM162.5,416L161.7,415.7L162.3,414.4ZM156.9,407L157,407.7L156.3,407L156.1,404.9ZM156.8,398.5L156,399.8L155.3,399ZM159.8,389.7L159.7,391.7L159,389.7L159.2,388.5ZM117.7,356L116.8,356L117.9,354.6ZM96.1,304.2L96.3,305.5L95.7,305L95,302.2Z"/><path d="M361.7,489.4L363.2,492.6L363.9,495.7L363.5,496L361.3,495.6L360.6,493.2L360.3,489.4ZM360.3,489.4L357,491.6L358.1,495.5L357.3,498.2L355.8,499.8L354.9,499.7L353,497.2L351.9,497.1L350.7,494.5L348.8,493.1L351.6,493L353.1,492.3L359.9,488L360.6,488Z"/><path d="M79.6,201.3L79.1,204.1L80.9,205.6L83.9,205.5L85,207.7L83.9,210.3L84.9,212.7L84,213.5L80.1,214.3L78.2,214.2L77.1,213.4L75.4,214.4L68.9,214.7L66.7,214.3L64.2,213.1L62.5,213.6L61.5,214.9L57.2,215.6L55.3,215.4L55,214.6L52,213.6L49.8,214.1L48.5,213.4L46.3,212.1L46,210.7L44.9,209.2L46.6,207.6L47.4,205.3L49.2,203.6L49.9,202L53.8,197.3L59.8,193.8L64.2,194.7L64.2,197L68.6,197.1L72.2,198.5L75.3,197L79.7,199.1Z"/></g><g class="land-hi"><path d="M499.6,58L500,55.9L505.1,50.3L507.5,49.9L516.5,49.9L518,49.2L520.5,45.1L523.4,52L528.6,59.5L532,65.6L533.7,73.6L532.7,79.9L532.8,83.9L533.5,84.6L534.9,84L533,92.1L530.6,96.8L527.8,98L522.1,98L521,99.2L521.3,101.3L517.1,100.4L516.4,99.1L512.6,100.1L511.7,101.1L512.9,102.6L512.6,103.5L511.6,104L510.3,101.8L508.9,102L508.7,103.2L509.7,104.9L507.9,107.3L506.1,106.1L507.1,104.4L507,103L504.4,105.2L502.8,107.6L501.1,106.6L499.3,108.1L499,109.4L498.4,109.4L497.8,106.8L495.2,104.2L495.6,103.5L498.3,103.9L497.7,103L499.1,102L497,102L495.5,97.2L496.3,96.3L497.9,92.1L499.4,91L497.8,90.5L497.9,89.9L500.6,88.1L501,86.6L499.8,85.9L500.3,84.5L498.5,82.2L498.6,77.6L497.9,74.4L496.7,75L494.2,74.4L493.9,73.2L494.6,71.7L497.8,69.7L498.9,69.5L501.4,70.5L502.5,72.4L503.7,70.7L502.4,70.1L501,66.9L501.5,65.3L499.8,63L499.9,61.5L498.8,59ZM524.9,102.4L523.8,103.3L521.9,101.4L524,99.3L524.7,99.2ZM516.8,102.3L516.7,103.7L515.8,103.8L515.3,102.9L514.5,103.3L514,101.3L515,100.6L516.5,101.2ZM494.8,108.6L494,108.9L493.3,108.2L493.5,107.6L495,105.8L496.1,106.1L496.6,106.8L496,107.8ZM498.2,58.6L498.2,60.7L497.1,60.4L496.4,58.1L496.9,57.3ZM501,109L501.2,109.7L500.3,109.6L499.8,108.3L500.4,108.3ZM513.6,105.1L513.5,105.5L512.8,104.8L513.4,104.1ZM497,77.4L496.8,78.3L496.1,77.7L495.8,75.6ZM494.1,103.4L493.4,103.6L492.1,101.4L492.9,100.7L494,101.9ZM551,62.6L550.4,63L549.7,62.1L550.8,61.4ZM495.9,125.2L494.9,125.3L494,123.9L496.1,121.8L500.3,120.5L502.8,121L503.2,122L502.5,123.5L499,125Z"/><path d="M48.6,276.4L48.6,274L47,269.4L46.2,264L47.1,262.1L44.7,261.2L44.9,258.9L42.8,255.8L44.4,251.5L44.7,247.9L40.8,246.4L39.4,245.2L37.7,245.1L36.3,243.2L37.8,239.4L39.8,239.9L41.5,235.8L45.8,236L47.4,234.9L45.8,233.5L45.2,231.8L42,231.2L40.4,229L39,227.8L37.8,227.5L37,226.5L37.8,223.8L41.3,220.1L41.2,219.2L40.2,218.3L41,217.4L43.4,219.2L44.2,221.1L45.9,221.6L47.6,221.7L47.1,220L48.2,219.5L50.2,223.6L52.4,224.9L54.6,224.9L55,222.5L56.1,222.1L57.9,225.8L57.6,233.3L58,234.4L65.3,236.2L84.6,236.1L88.5,238.1L89.8,239.6L89.3,240.3L86.7,239.9L85.2,246.1L83.4,246.8L82.5,248.9L80.7,248.8L78.3,250.3L76.4,250.3L74.8,252.5L73.9,255.9L75.8,263.2L76.4,263.6L76.4,262L77.2,262L78.1,264.1L79.4,264.8L81,263.9L81.1,260.8L83.3,258L83.2,255.6L85.8,255.1L86.2,255.7L87,255.6L88,260.3L88.3,265.5L89.9,268.7L91.6,286.5L90.8,287.1L88,284.8L86.5,285.9L86.3,287.9L87.9,293.1L84.7,288.2L84.1,281.6L81.9,274.6L82.4,273L81.6,273.7L78.4,268.4L77.8,266.1L74.6,269.2L71.3,269.8L69.9,268.2L67.9,264.2L67.2,256.8L66.7,259.1L63.2,258.6L64.7,259.8L66.3,260.1L67.1,261.1L67.1,262.8L65.6,263.9L66.6,265.8L65.5,266.1L65.2,267.8L67.4,272.9L67.1,274.2L64.3,276.9L62.8,279.8L61.9,279.9L60.9,279L61.1,277.3L62.5,275.5L59.5,277.3L59,276.1L58.7,273.6L59.8,271.5L58.6,272.5L57.7,277.8L54.8,280.6L53.8,274L54,278.7L52.2,281.2L50.8,281.2L49.1,279.2ZM73.8,275.3L72.5,276.2L73,270.8L74.1,273.9ZM78.7,272.6L78.1,273L77.6,272.7L76.9,271.4L77.5,269.6ZM69.3,276.4L66.2,276.7L68.2,273.3L67.8,270.6L66.8,269.6L66,266.7L67.2,266.4L68.1,267L68.8,269.3L70.4,271.3L70,275.5ZM82.5,279.7L82.1,280.8L81.8,280L82.2,278.5ZM83.4,283.9L82.3,283.6L82.3,281.3L82.9,281.1L83.4,281.7ZM67.7,265.1L67.9,265.6L67.2,265.3L66.4,264.4L67,264.1Z"/></g><g class="geo-labels" text-anchor="middle"><text class="" x="306" y="163.7">CHINA</text><text class="" x="21.6" y="259.4">INDIA</text><text class="" x="60" y="229">BANGLADESH</text><text class="" x="134.4" y="282.7">MYANMAR</text><text class="" x="196.8" y="351.3">THAILAND</text><text class="sea" x="43.2" y="358.7">BAY OF</text><text class="sea" x="43.2" y="371.2">BENGAL</text><text class="sea" x="375.6" y="398.3">SOUTH CHINA SEA</text></g><path class="leg-road" d="M499.8,63.9L528.5,98"/><path class="leg-sea flow" d="M528.5,98L523.2,108.2L498,142.6L451.2,204.8L415.2,247.5L388.8,277.6L354,322.3L318,390.9L285.6,452L252,500.3L235.2,530.3L226.1,533.2L219.6,532.5L202.8,523.7L189.6,511.1L175.2,495.4L159.6,478.6L138,464.1L122.4,427.7L108,390.9L102,372.4L91.2,347.5L81.6,316L78.6,287.9L81.6,273.7"/><path id="route-main" d="M499.8,63.9L528.5,98L523.2,108.2L498,142.6L451.2,204.8L415.2,247.5L388.8,277.6L354,322.3L318,390.9L285.6,452L252,500.3L235.2,530.3L226.1,533.2L219.6,532.5L202.8,523.7L189.6,511.1L175.2,495.4L159.6,478.6L138,464.1L122.4,427.7L108,390.9L102,372.4L91.2,347.5L81.6,316L78.6,287.9L81.6,273.7" fill="none" stroke="none"/><g class="box-b"><rect x="72" y="269.1" width="24.0" height="26.5"/><text x="84.0" y="263.1" text-anchor="middle">B</text></g><g class="cargo"><rect x="-6" y="-3.5" width="12" height="7" rx="1"/><animateMotion dur="24s" repeatCount="indefinite" rotate="auto"><mpath href="#route-main"/></animateMotion></g><g class="rn" data-i="0" tabindex="0" role="button" aria-label="Stop 1: Songdo, South Korea — source, retrofit and pack"><circle class="hit" cx="499.8" cy="63.9" r="20"/><circle class="ring" cx="499.8" cy="63.9" r="13"/><circle class="c" cx="499.8" cy="63.9" r="7"/><text class="nm" x="485.8" y="60.9" text-anchor="end">Songdo</text><text class="rl" x="485.8" y="73.9" text-anchor="end">build &amp; pack</text></g><g class="rn" data-i="1" tabindex="0" role="button" aria-label="Stop 2: Busan — export port"><circle class="hit" cx="528.5" cy="98" r="20"/><circle class="ring" cx="528.5" cy="98" r="13"/><circle class="c" cx="528.5" cy="98" r="7"/><text class="nm" x="541.5" y="86" text-anchor="start">Busan</text><text class="rl" x="541.5" y="97.5" text-anchor="start">export</text></g><g class="rn" data-i="2" tabindex="0" role="button" aria-label="Stop 3: Singapore — transshipment to a feeder vessel"><circle class="hit" cx="226.1" cy="533.2" r="20"/><circle class="ring" cx="226.1" cy="533.2" r="13"/><circle class="c" cx="226.1" cy="533.2" r="7"/><text class="nm" x="240.1" y="530.2" text-anchor="start">Singapore</text><text class="rl" x="240.1" y="543.2" text-anchor="start">transshipment</text></g><g class="scalebar"><line x1="12" y1="512.3" x2="119.9" y2="512.3"/><line x1="12" y1="508.29999999999995" x2="12" y2="516.3"/><line x1="119.9" y1="508.29999999999995" x2="119.9" y2="516.3"/><text x="66.0" y="505.29999999999995" text-anchor="middle">1,000 km</text></g></svg></div>
+          <div>
+            <div class="map-pane"><div class="tag">B · Final leg<span class="tag-x"> by road</span></div><svg class="map-svg" id="map-detail" viewBox="0 0 400 441" role="img" aria-labelledby="mapB-t" xmlns="http://www.w3.org/2000/svg"><title id="mapB-t">Final leg by road from Chattogram port to Cox's Bazar and the Ukhia refugee camps</title><rect class="sea-bg" width="400" height="441"/><g class="land"><path d="M400,118L399,118.3L397.1,119.8L393.4,127L393.1,129.8L393.7,132.7L395.9,138.5L395.4,142L393.6,143.3L392.3,143.4L391.1,142.8L387.5,137.7L384.2,135.8L381.2,136.8L377.8,147.7L375.5,149.8L373.4,147.8L372.4,141.5L370.8,135.3L367.2,130.5L354.3,118.1L341.6,108.6L336.8,107.2L334.8,108.8L334.2,111.6L334.8,120L333.9,120.5L332.4,120.1L331.2,124.3L331.7,133.5L330.2,136.4L328,137.6L323.1,138.6L319.6,142.8L315.2,145.4L312,127.3L307.5,112.8L309.9,110.6L312.8,110.7L315.1,109.6L315.4,104.1L303.5,29.8L300.9,23L300.2,19.4L300.6,6.8L300,0L400,0Z"/><path d="M342.9,441L339.9,436.9L332.6,424.2L327,420.1L331.9,429.8L339.3,441L302.6,441L301.4,439.1L294.1,431.8L291.9,427.7L290.7,426.4L285.8,425.3L281.7,422.3L276.2,419.7L274.2,415.1L272.1,405.4L261.1,373.1L257.6,367.6L256.2,364.2L254.1,345L253,342.4L244.9,335.5L242.4,329L237.7,324.6L236.2,321.7L235,317.9L236.8,308.1L237,304L235.6,295.4L235.7,291.2L236.7,287.5L242.3,279.4L245,270.2L247.3,266L250.6,265.5L256.9,265.6L264.5,256.4L270.9,258.6L273.6,262.1L274.8,269.2L276.2,273L277.9,274.7L280.1,275.9L284.6,277.5L293.1,278.3L299.7,276.9L304.9,278L308.8,286.7L310.3,295.3L311.7,299.8L314.1,302.5L318.2,302.1L322.9,299.1L326.8,295L328.6,291.5L327.8,287.1L320.7,265.4L318.5,254.6L315.1,197.9L318.6,164.9L318,158.4L315.2,145.4L319.6,142.8L323.1,138.6L328,137.6L330.2,136.4L331.7,133.5L331.2,124.3L332.4,120.1L333.9,120.5L334.8,120L334.2,111.6L334.8,108.8L336.8,107.2L341.6,108.6L354.3,118.1L367.2,130.5L370.8,135.3L372.4,141.5L373.4,147.8L375.5,149.8L377.8,147.7L381.2,136.8L384.2,135.8L387.5,137.7L391.1,142.8L392.3,143.4L393.6,143.3L395.4,142L395.9,138.5L393.7,132.7L393.1,129.8L393.4,127L397.1,119.8L399,118.3L400,118L400,441Z"/></g><g class="land-hi"><path d="M51.9,0L52.9,2L52.2,4.8L50.6,7.8L48.3,16.2L40.5,23.1L25.5,26.6L17.8,22.9L13.9,17L11.7,7.7L9.7,5.2L7.1,0ZM5.2,0L6.4,2.8L8,9.2L7.6,13.3L3.5,15.3L0,15.9L0,0ZM300,0L300.6,6.8L300.2,19.4L300.9,23L303.5,29.8L315.4,104.1L315.1,109.6L312.8,110.7L309.9,110.6L307.5,112.8L312,127.3L315.2,145.4L318,158.4L318.6,164.9L315.1,197.9L318.5,254.6L320.7,265.4L327.8,287.1L328.6,291.5L326.8,295L322.9,299.1L318.2,302.1L314.1,302.5L311.7,299.8L310.3,295.3L308.8,286.7L304.9,278L299.7,276.9L293.1,278.3L284.6,277.5L280.1,275.9L277.9,274.7L276.2,273L274.8,269.2L273.6,262.1L270.9,258.6L264.5,256.4L256.9,265.6L250.6,265.5L247.3,266L245,270.2L242.3,279.4L236.7,287.5L235.7,291.2L235.6,295.4L237,304L236.8,308.1L235,317.9L236.2,321.7L237.7,324.6L242.4,329L244.9,335.5L253,342.4L251.7,350.7L251.4,359.5L252.3,368.3L254.4,376.2L260.1,385L261.1,387.2L261.5,391.2L265.2,402.5L266.7,405.2L267.3,407.5L266.8,409.8L265.1,411.4L263.9,410.7L260.2,406.4L255.6,395.3L241.9,370.3L238.6,356.4L237.3,354.2L226.8,345.3L219.4,332.8L210.5,322.3L209.1,318.8L208.8,314.3L210.5,300.5L210.1,295.4L209.1,291.3L198,270.9L196.1,268.9L193.9,267.6L191.9,264.5L190.6,260.7L189.9,257.1L191.2,257.1L192.7,258.5L194.2,254.6L196.6,250.6L199.8,248.3L203.6,249.7L201.1,247.3L199.1,243.3L198,238.9L198,234.9L199.7,232.5L202.5,229.8L204.4,226.8L203.6,223.2L206.6,219.6L207.2,218L206.3,215.9L207.6,213.9L207.2,212L205.7,210.6L204.6,210.2L205.9,206L205.9,204.1L205.1,202.4L204.8,204.2L203.6,205.5L205.1,205.5L202.5,212.9L200.1,216L196.8,215.9L195.2,213.3L196.8,206.6L196.8,204L195.4,204L194.4,207.7L192.5,207.4L190.7,204.9L189.9,201.7L190.6,196.9L192.4,195.7L195,195.2L198,192.3L196.8,190.8L193.5,193.2L192.1,191.4L193.3,188.2L198,186.3L198,184.8L188.7,185.5L181.7,187.7L179.9,185.9L180.2,180.8L182.3,176.2L185.9,174.3L184.3,172.1L185.1,170.1L187.3,168.4L189.9,167.1L189.9,165.5L187.8,165.8L186,166.7L183.1,170.2L182.1,167.5L181.1,163.1L180.2,154.5L179.6,152.4L176.8,149.1L176.2,147.2L176.2,139L171,117L170.7,109.5L173.4,110.9L172.4,108L170.7,108.4L169.2,111.2L169.2,115.3L168,115.3L165.8,111.6L163.9,106.9L162.6,101.6L162.4,96.3L163.4,93L166.9,89.2L168,87.3L167.7,83.7L166,82L162.4,79.8L161.8,74.4L165.3,71.8L170.5,70.3L174.8,68L177,64.1L181.6,48.8L177.5,48.8L175.1,60.4L175.5,62.1L168.8,68.2L165.3,69.4L164.7,70.5L159.7,73.2L158.3,75.3L158.8,78.8L165.3,82.7L165.2,86.9L161.8,89.5L157.4,89.2L154.3,84.3L150.9,59.6L148.7,51.7L135.2,25L117.4,0ZM187.1,192.3L187.7,202L195,216.2L196.8,224.7L194,243.1L192.2,246.9L187.8,247L182.8,246.2L178.9,246.7L179.9,251.2L177.5,252.5L175.4,252.3L173.7,251L172.5,249.3L171,244L171.1,242.5L174.2,238L174.7,235.7L174.8,230.6L173.8,221.9L169.6,207.6L170.7,199.6L172.6,195.4L174.5,193.4L176.7,193.6L179.6,195.9L180.6,198.7L177.5,208.4L180.7,204.6L181.9,199.4L181.7,193.9L180.2,189.2L187.1,187.7ZM177.5,169.4L176.9,172.8L174.1,178.3L172.6,185.8L168.2,197.6L166.5,199.6L164.8,196L168,178.2L166.5,167.1L167.2,163.4L168.7,160.6L173.4,155.2L174.5,156.6L177.2,166.3ZM29.8,63.4L31.3,68.8L34.3,71.5L36.3,79.3L36.4,84.3L37.4,91.4L28.3,109L21.3,114.3L18.7,114.9L16.5,118.7L12.7,121.1L7.7,120.9L4.5,120.1L2.3,118.5L1,115.3L6.8,108.4L10.5,102.7L11.8,99.1L13.7,88.6L13.8,73.4L15,56.6L18.5,56L25.4,59.6ZM31.7,31.7L40,29.3L42.2,33.5L40.2,38.5L36,41.3L31.9,43.2L26.8,43.4L22.7,40.8L24.7,34.8ZM93.5,13.8L111.3,37.2L112.7,46.4L111,53.7L101.5,54.8L95.2,51.2L89.3,42.6L85.9,34L84.8,27L89.4,16Z"/></g><g class="roads"><path d="M127.9,0L146.9,42.9L149.4,52.7L151.8,58.1L155.1,61.7L165,67.9L166.7,69.7"/><path d="M184,69.7L180.7,68.8L177.4,70.6L174.9,74.2L169.2,72.4L166.7,69.7"/><path d="M184,69.7L187.3,70.6L191.4,73.3L201.3,86.6L204.6,93.8L209.6,101.8L212.1,107.1L213.7,116.9L216.2,122.3L220.3,124.9L222,127.6L222,132.9L219.5,141L213.7,146.3L212.9,149.8L213.7,164.1L212.9,174.7L216.2,189.8L213.7,220L211.2,224.5L214.5,233.3L212.1,239.5L213.7,246.6L217.8,252L219.5,256.4L219.5,262.6"/><path d="M219.5,262.6L207.1,264.4L200.5,263.5L193.9,259.9"/><path d="M219.5,262.6L221.1,268.8L223.6,275L223.6,278.5L222,283L218.7,285.6L217.8,291.8L218.7,295.4L227.7,304.2"/></g><g class="geo-labels" text-anchor="middle"><text class="sea" x="34" y="222.4">BAY OF</text><text class="sea" x="34" y="234.2">BENGAL</text><text class="" x="284" y="86.6">BANGLADESH</text><text class="" x="344" y="366.2">MYANMAR</text></g><path class="leg-sea flow" d="M90,441.1L76,291.2L100,183.6L140,110.3L158,88.7L160,74.7"/><path class="leg-road" d="M160,74.7L166.7,69.7L169.2,72.4L174.9,74.2L177.4,70.6L180.7,68.8L184,69.7L187.3,70.6L191.4,73.3L196.4,79.5L201.3,86.6L204.6,93.8L209.6,101.8L212.1,107.1L213.7,116.9L216.2,122.3L220.3,124.9L222,127.6L222,132.9L219.5,141L213.7,146.3L212.9,149.8L213.7,164.1L212.9,174.7L215.4,185.4L216.2,189.8L215.4,198.7L213.7,220L211.2,224.5L212.1,226.2L214.5,233.3L212.1,239.5L213.7,246.6L217.8,252L219.5,256.4L219.5,262.6L221.1,268.8L223.6,275L223.6,278.5L222,283L218.7,285.6L217.8,291.8L218.7,295.4L222,298.9L227.7,304.2L229,309.4"/><path class="leg-road spur" d="M219.5,262.6L207.1,264.4L200.5,263.5L193.9,259.9"/><text class="dist" x="226" y="166">≈ 150 km</text><text class="dist sub" x="226" y="178">by road</text><g class="rn" data-i="3" tabindex="0" role="button" aria-label="Stop 4: Chattogram port — arrival and customs clearance"><circle class="hit" cx="160" cy="74.7" r="20"/><circle class="ring" cx="160" cy="74.7" r="13"/><circle class="c" cx="160" cy="74.7" r="7"/><text class="nm" x="146" y="71.7" text-anchor="end">Chattogram</text><text class="rl" x="146" y="84.7" text-anchor="end">port · customs</text></g><g class="rn" data-i="4" tabindex="0" role="button" aria-label="Stop 5: Cox's Bazar — partner hub and staging"><circle class="hit" cx="193.9" cy="259.9" r="20"/><circle class="ring" cx="193.9" cy="259.9" r="13"/><circle class="c" cx="193.9" cy="259.9" r="7"/><text class="nm" x="179.9" y="256.9" text-anchor="end">Cox&#39;s Bazar</text><text class="rl" x="179.9" y="269.9" text-anchor="end">partner hub</text></g><g class="rn" data-i="5" tabindex="0" role="button" aria-label="Stop 6: Ukhia camps — assembly and opening"><circle class="hit" cx="229" cy="309.4" r="20"/><circle class="ring" cx="229" cy="309.4" r="13"/><circle class="c" cx="229" cy="309.4" r="7"/><text class="nm" x="243" y="306.4" text-anchor="start">Ukhia camps</text><text class="rl" x="243" y="319.4" text-anchor="start">Kutupalong–Balukhali</text></g><g class="scalebar"><line x1="16" y1="409" x2="64" y2="409"/><line x1="16" y1="405" x2="16" y2="413"/><line x1="64" y1="405" x2="64" y2="413"/><text x="40.0" y="402" text-anchor="middle">25 km</text></g><g class="north"><line x1="380" y1="34" x2="380" y2="16"/><path d="M380,11 L376,19 L384,19 Z"/><text x="380" y="46" text-anchor="middle">N</text></g></svg></div>
+            <div class="map-key" aria-hidden="true"><span><i class="sea"></i>sea freight</span><span><i></i>road</span><span><i class="box"></i>the unit</span></div>
+            <div class="stop-list"><button class="chip" data-i="0" aria-pressed="false"><b>01</b>Songdo</button><button class="chip" data-i="1" aria-pressed="false"><b>02</b>Busan</button><button class="chip" data-i="2" aria-pressed="false"><b>03</b>Singapore</button><button class="chip" data-i="3" aria-pressed="false"><b>04</b>Chattogram</button><button class="chip" data-i="4" aria-pressed="false"><b>05</b>Cox's Bazar</button><button class="chip" data-i="5" aria-pressed="false"><b>06</b>Ukhia camps</button></div>
+          </div>
         </div>
-        <div class="route-detail">
-          <div class="step"><span id="route-step">01</span><small>of 06</small></div>
+        <div class="route-detail" aria-live="polite">
+          <div class="rstep"><span id="route-step">01</span><small>of 06</small></div>
           <div>
             <h4 id="route-title"></h4>
             <p id="route-body"></p>
@@ -751,7 +714,7 @@
             <button class="btn btn-ghost" id="route-next" aria-label="Next stop">→</button>
           </div>
         </div>
-        <figcaption><span>Fig. 02 — Deployment corridor (interactive)</span><span>simplified geography · route &amp; timings indicative · final routing set with implementing partners</span></figcaption>
+        <figcaption><span>Fig. 02 — Deployment corridor (interactive)</span><span>map data: Natural Earth · route &amp; timings indicative · final routing set with implementing partners</span></figcaption>
       </figure>
     </div>
 
@@ -763,7 +726,7 @@
         <div class="card">
           <div class="num">A1</div>
           <h3>Adapt, don't reinvent</h3>
-          <p>We package proven emergency-education materials and foundational literacy &amp; numeracy programs — adapted for low-resource, offline classrooms — rather than writing pedagogy from scratch.</p>
+          <p>We package proven emergency-education materials aligned with the Myanmar curriculum used in the camps' learning centres — taught in Burmese and English, with Rohingya-language support — rather than writing pedagogy from scratch.</p>
         </div>
         <div class="card">
           <div class="num">A2</div>
@@ -797,7 +760,7 @@
     <div class="fund-grid reveal">
       <div class="fund-zero">
         <div class="big">$0</div>
-        <div class="when">Raised to date · July 2026</div>
+        <div class="when">Raised to date · October 2026</div>
         <p>We are pre-fundraise, and we say so. Every dollar from the first will be published on this page — so partners and donors can hold us to it. The annual funding target will be published the moment the first Impact Unit is fully costed with suppliers.</p>
       </div>
       <div class="fund-chart">
@@ -813,7 +776,7 @@
           <!-- raised bar (zero) -->
           <rect x="110" y="166" width="100" height="4" fill="#123A30"/>
           <text x="160" y="150" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="22" fill="#123A30">$0</text>
-          <text x="160" y="192" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="#59655F" letter-spacing="1">RAISED TO DATE · JUL 2026</text>
+          <text x="160" y="192" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="#59655F" letter-spacing="1">RAISED TO DATE · OCT 2026</text>
           <!-- target bar (being costed) -->
           <rect x="350" y="58" width="100" height="112" fill="#EFF3EF" stroke="#356254" stroke-width="1.4" stroke-dasharray="5 4"/>
           <text x="400" y="120" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="14" fill="#59655F">TBD</text>
@@ -830,7 +793,12 @@
         <p>The design concept is documented and the thermal and ventilation approach is defined.</p>
       </div>
       <div class="step pending">
-        <div class="dot">Pre-pilot · in progress</div>
+        <div class="dot">In progress</div>
+        <h3>Adapting the design for Cox's Bazar</h3>
+        <p>Cyclone anchoring, raised flood-safe footings, fire safety, and the camps' rules against permanent structures.</p>
+      </div>
+      <div class="step next">
+        <div class="dot">Next · pre-pilot</div>
         <h3>Seeking validation &amp; a demonstration site</h3>
         <p>We are seeking technical validation and a potential demonstration site before any scaling.</p>
       </div>
@@ -912,28 +880,28 @@
     <div class="reveal">
       <p class="eyebrow">What we're asking of partners</p>
       <h2 class="title">Three things, in order of priority.</h2>
-      <p class="lede">We're looking for the experience and judgment of partners already working in the field — in education clusters, shelter, and logistics. Concretely, we're asking for:</p>
+      <p class="lede">We're looking for the experience and judgment of partners already working in Cox's Bazar — in education, shelter, and logistics. Concretely, we're asking for:</p>
     </div>
     <div class="ask-list reveal">
       <div class="ask-item">
         <div class="n">01</div>
         <div>
           <h3>A short conversation</h3>
-          <p>To align our model with field realities and existing education-cluster priorities.</p>
+          <p>To align our model with field realities and the priorities of the Cox's Bazar Education Sector.</p>
         </div>
       </div>
       <div class="ask-item">
         <div class="n">02</div>
         <div>
           <h3>A technical review</h3>
-          <p>Of our climate and safeguarding approach, by your specialists.</p>
+          <p>Of our climate, fire-safety and safeguarding approach, by your specialists.</p>
         </div>
       </div>
       <div class="ask-item">
         <div class="n">03</div>
         <div>
           <h3>Guidance toward a demonstration unit</h3>
-          <p>Toward a possible supervised demonstration unit at an appropriate site.</p>
+          <p>Toward a possible supervised demonstration unit at an appropriate site — in the camps or the surrounding host communities, with the authorities' approval.</p>
         </div>
       </div>
     </div>
@@ -979,7 +947,7 @@
     </a>
     <div class="foot-note">
       A project by Brighter Boxes, Chadwick International (Songdo, South Korea).<br>
-      Project concept v1.2 · Prepared for prospective field &amp; technical partners · Sources cited in Research · Field photos: Oxfam East Africa, CC BY 2.0 · <a href="https://cuickschool.org">cuickschool.org</a>
+      Project concept v2.0 · Prepared for prospective field &amp; technical partners · Sources cited in Research · Photos via Wikimedia Commons, credited in place · Map data: Natural Earth · <a href="https://cuickschool.org">cuickschool.org</a>
     </div>
   </div>
 </footer>
@@ -1009,37 +977,38 @@
   var ROUTE = [
     {
       t: "Songdo — source, retrofit & pack",
-      b: "Brighter Boxes sources a surplus ISO shipping container in Korea and retrofits it to the Cuick spec: ventilation openings, a reflective insulated envelope, and a flat-packed shade canopy kit. The finished classroom is then loaded with its own payload — School-in-a-Box teacher kits, printed subject packets, the offline video library, a solar + storage set, and flat-packed furniture.",
+      b: "Brighter Boxes sources a surplus ISO shipping container in Korea and retrofits it to the Cuick spec: ventilation openings, a reflective insulated envelope, and a flat-packed shade-canopy kit. The finished classroom is then loaded with its own payload — School-in-a-Box teacher kits, printed learning packets, the offline video library, a solar + storage set, and flat-packed furniture.",
       m: "Indicative: weeks 0–4 · build & pack"
     },
     {
       t: "Busan — export",
-      b: "The unit travels as standard ISO cargo on a scheduled container service — no special freight required. Export documentation and customs preparation are handled with a freight partner before the vessel departs.",
+      b: "The unit travels as standard ISO cargo on a scheduled container service — no special freight required. Export documents and customs preparation are handled with a freight forwarder before the vessel leaves Korea.",
       m: "Indicative: week 4 · port of export"
     },
     {
-      t: "Indian Ocean — sea freight",
-      b: "Roughly four to six weeks in transit to East Africa. Because the unit is a standard container, it moves through the same global logistics network as any commercial cargo — which is what keeps per-unit cost predictable and the model repeatable.",
-      m: "Indicative: weeks 5–9 · at sea"
+      t: "Singapore — transshipment",
+      b: "Containers bound for Chattogram usually change ships at a regional hub — Singapore, Port Klang or Colombo — and finish the trip on a smaller feeder vessel. Our unit moves the same way as any other box, which keeps per-unit cost predictable and the model repeatable.",
+      m: "Indicative: weeks 5–8 · at sea"
     },
     {
-      t: "Mombasa — gateway port",
-      b: "Arrival at the Port of Mombasa, East Africa's main gateway for South Sudan-bound cargo. Customs clearance and onward transport are coordinated with the local implementing partner — the handover point from our team to experienced hands on the ground.",
-      m: "Indicative: weeks 9–10 · clearing"
+      t: "Chattogram — port & customs",
+      b: "Arrival at Chattogram, Bangladesh's main seaport. Import clearance and onward transport are arranged with a registered implementing partner — the handover point from our team to experienced hands on the ground.",
+      m: "Indicative: weeks 8–10 · clearing"
     },
     {
-      t: "Nimule — Northern Corridor & border",
-      b: "Around 1,700 km overland on the Northern Corridor through Kenya and Uganda, entering South Sudan at the Nimule border crossing — the country's main freight entry point. Security and timing on this leg are planned with the implementing partner.",
-      m: "Indicative: weeks 10–12 · overland"
+      t: "Cox's Bazar — partner hub",
+      b: "About 140 km south by road, Cox's Bazar town is the base of the humanitarian response. The unit is staged here while the site, permissions and local assembly team are confirmed with the partner and camp authorities.",
+      m: "Indicative: week 10 · staging"
     },
     {
-      t: "School site — assembly & opening",
-      b: "The final leg runs up the Nimule–Juba highway toward the site. A small trained local team assembles the unit in days, not months: foundation, shade canopy, solar power, furniture. The education kit is activated with local teachers — and the classroom opens.",
-      m: "Indicative: week 12+ · assembly in days"
+      t: "Ukhia camps — assembly & opening",
+      b: "The last leg runs south to the camps at Ukhia (Kutupalong–Balukhali). Only with the authorities' approval, a small trained team assembles the unit in days, not months: removable footings, anchors, shade canopy, solar power, furniture. The education kit is activated with Rohingya and host-community teachers — and the classroom opens.",
+      m: "Indicative: week 11+ · assembly in days"
     }
   ];
 
   var nodes = Array.prototype.slice.call(document.querySelectorAll('.rn'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
   var elT = document.getElementById('route-title');
   var elB = document.getElementById('route-body');
   var elM = document.getElementById('route-meta');
@@ -1048,7 +1017,12 @@
 
   function go(i){
     cur = (i + ROUTE.length) % ROUTE.length;
-    nodes.forEach(function(n, k){ n.classList.toggle('active', k === cur); });
+    nodes.forEach(function(n){ n.classList.toggle('active', parseInt(n.getAttribute('data-i'), 10) === cur); });
+    chips.forEach(function(c){
+      var on = parseInt(c.getAttribute('data-i'), 10) === cur;
+      c.classList.toggle('active', on);
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
     elT.textContent = ROUTE[cur].t;
     elB.textContent = ROUTE[cur].b;
     elM.textContent = ROUTE[cur].m;
@@ -1056,14 +1030,20 @@
   }
 
   nodes.forEach(function(n){
-    n.addEventListener('click', function(){ go(parseInt(n.dataset.i, 10)); });
+    n.addEventListener('click', function(){ go(parseInt(n.getAttribute('data-i'), 10)); });
     n.addEventListener('keydown', function(ev){
-      if (ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); go(parseInt(n.dataset.i, 10)); }
+      if (ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); go(parseInt(n.getAttribute('data-i'), 10)); }
     });
   });
+  chips.forEach(function(c){ c.addEventListener('click', function(){ go(parseInt(c.getAttribute('data-i'), 10)); }); });
   document.getElementById('route-prev').addEventListener('click', function(){ go(cur - 1); });
   document.getElementById('route-next').addEventListener('click', function(){ go(cur + 1); });
   go(0);
+
+  // pause the moving container for visitors who prefer reduced motion
+  if (reduce){
+    Array.prototype.forEach.call(document.querySelectorAll('svg'), function(svg){ if (svg.pauseAnimations) svg.pauseAnimations(); });
+  }
 </script>
 </body>
 </html>
